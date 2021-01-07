@@ -20,7 +20,7 @@ public class PlanetSpin : MonoBehaviour
     {
         if (Rdr.isVisible)
         {
-            transform.Rotate(0, 0, (360 / ((rotate_time) * 60 * 60 * 10)) * Time.deltaTime, Space.Self);
+            transform.Rotate(0, 0, (rotate_time) * Time.deltaTime, Space.Self);
             yield return new WaitForSeconds(.01f);
         }
     }

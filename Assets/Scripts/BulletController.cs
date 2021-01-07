@@ -2,12 +2,12 @@
 
 public class BulletController : MonoBehaviour
 {
-    public float speed = 20f;
+    public float range = 3f;
     public Rigidbody2D R2D;
+    public int damage = 10;
 
     private void Start()
     {
-        R2D.AddRelativeForce(transform.up * speed);
-        Destroy(this.gameObject, 2f);
+        Destroy(this.gameObject, range);
     }
 }

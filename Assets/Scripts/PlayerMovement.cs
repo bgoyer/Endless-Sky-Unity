@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private static GameObject AutoPilotTarget;
     public bool canControl = true;
     private PlayerAudioControler Audio;
+
     private void Start()
     {
         Audio = this.transform.GetComponent<PlayerAudioControler>();
@@ -112,6 +113,11 @@ public class PlayerMovement : MonoBehaviour
 
             R2D.drag = 0f;
         }
+    }
+
+    public void SetControl(bool state)
+    {
+        canControl = state;
     }
 
     private bool active = false;

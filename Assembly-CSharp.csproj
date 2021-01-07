@@ -56,18 +56,23 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Data\Models\Inventory\Weapon\GunModel.cs" />
     <Compile Include="Assets\Scripts\BulletController.cs" />
     <Compile Include="Assets\Scripts\Data\Models\ModelBase.cs" />
+    <Compile Include="Assets\Scripts\Data\Models\Inventory\Weapon\WeaponBase.cs" />
     <Compile Include="Assets\Scripts\OffScreenIndicator\OffScreenIndicatorCore.cs" />
     <Compile Include="Assets\Scripts\BackgroundScroller.cs" />
     <Compile Include="Assets\Scripts\Quit.cs" />
     <Compile Include="Assets\Scripts\Data\Models\Inventory\Mineral\MineralModel.cs" />
     <Compile Include="Assets\Scripts\PlayerAudioControler.cs" />
+    <Compile Include="Assets\Scripts\Data\Models\Inventory\Weapon\TurretModel.cs" />
     <Compile Include="Assets\Scripts\Data\Services\PlayerService.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\OffScreenIndicator\Target.cs" />
     <Compile Include="Assets\Scripts\OffScreenIndicator\AsteroidFieldObjectPool.cs" />
     <Compile Include="Assets\Scripts\SystemHUD.cs" />
+    <Compile Include="Assets\Scripts\CannonController.cs" />
+    <Compile Include="Assets\Scripts\PopulateCharacters.cs" />
     <Compile Include="Assets\Scripts\SetBoxIndicatorName.cs" />
     <Compile Include="Assets\Scripts\OffScreenIndicator\PlanetObjectPool.cs" />
     <Compile Include="Assets\Scripts\PlayerCameraController.cs" />
@@ -77,12 +82,14 @@
     <Compile Include="Assets\Scripts\OffScreenIndicator\OffScreenIndicator.cs" />
     <Compile Include="Assets\Scripts\Landing.cs" />
     <Compile Include="Assets\Scripts\OffScreenIndicator\StarObjectPool3.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Data\Models\Player\PlayerModel.cs" />
     <Compile Include="Assets\Scripts\OffScreenIndicator\StarObjectPool4.cs" />
     <Compile Include="Assets\Scripts\Data\Services\MineralService.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Data\Models\CelestialBodyModel.cs" />
-    <Compile Include="Assets\Scripts\PlanetInteract.cs" />
+    <Compile Include="Assets\Scripts\Laser.cs" />
+    <Compile Include="Assets\Scripts\AsteroidController.cs" />
     <Compile Include="Assets\Scripts\OffScreenIndicator\ArrowObjectPool.cs" />
     <Compile Include="Assets\Scripts\Data\Models\Inventory\InventoryModelBase.cs" />
     <Compile Include="Assets\Scripts\OffScreenIndicator\BoxObjectPool.cs" />
@@ -94,9 +101,10 @@
     <Compile Include="Assets\Scripts\Data\Services\ServiceBase.cs" />
     <Compile Include="Assets\Scripts\FPS.cs" />
     <Compile Include="Assets\Scripts\FollowPlayer.cs" />
-    <Compile Include="Assets\Scripts\Data\Models\Inventory\Weapon\TurretModel.cs" />
-    <Compile Include="Assets\Scripts\Data\Models\Inventory\Weapon\WeaponBase.cs" />
-    <Compile Include="Assets\Scripts\Data\Models\Inventory\Weapon\GunModel.cs" />
+    <Compile Include="Assets\Scripts\AsteroidFieldController.cs" />
+    <Compile Include="Assets\Scripts\InventoryController.cs" />
+    <Compile Include="Assets\Scripts\BuySell.cs" />
+    <Compile Include="Assets\Scripts\FlotsamController.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
@@ -766,9 +774,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>

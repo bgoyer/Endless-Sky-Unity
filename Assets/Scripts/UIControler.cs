@@ -15,11 +15,13 @@ public class UIControler : MonoBehaviour
             {
                 map.SetActive(false);
                 HideHud.SetActive(true);
+                //  player.GetComponent<GameController>().Pause();
             }
             else
             {
                 map.SetActive(true);
                 HideHud.SetActive(false);
+                // player.GetComponent<GameController>().Play();
             }
         }
         if (Input.GetKeyDown(KeyCode.Escape) && player.activeInHierarchy == true)
@@ -28,11 +30,13 @@ public class UIControler : MonoBehaviour
             {
                 menu.SetActive(false);
                 HideHud.SetActive(true);
+                player.GetComponent<GameController>().Play();
             }
             else
             {
                 menu.SetActive(true);
                 HideHud.SetActive(false);
+                player.GetComponent<GameController>().Pause();
             }
         }
     }

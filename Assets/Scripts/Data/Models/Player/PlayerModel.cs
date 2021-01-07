@@ -1,4 +1,3 @@
-
 namespace ES.Data.Models.Player
 {
     public class PlayerModel : ModelBase
@@ -6,18 +5,21 @@ namespace ES.Data.Models.Player
         private Location location;
 
         public int Credits { get; set; }
-        public Location Location {
-            get {
-                if (location is null) 
+
+        public Location Location
+        {
+            get
+            {
+                if (location is null)
                 {
                     location = new Location();
                 }
                 return location;
-            } 
+            }
         }
 
         // Ship
-        // 
+        //
     }
 
     public class Location

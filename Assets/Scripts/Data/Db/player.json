@@ -1,1 +1,14 @@
-{}
+{
+  "playerModel": [
+    {
+      "credits": 0,
+      "location": {
+        "celestialBody": null,
+        "y": -216,
+        "x": -216
+      },
+      "name": "Brendan",
+      "plural": null
+    }
+  ]
+}
