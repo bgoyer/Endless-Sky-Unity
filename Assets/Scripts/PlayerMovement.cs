@@ -59,62 +59,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void AutoPilot(Transform target)
-    {
-        StartCoroutine(StartAutoPilot(target));
-    }
-
-    private IEnumerator StartAutoPilot(Transform target)
-    {
-        canControl = true;
-        float distance = Vector3.Distance(target.position, PlayerShip.transform.position);
-        if (distance >= 500)
-        {
-            canControl = false;
-
-            R2D.drag = 10f;
-
-            yield return new WaitUntil(() => CurrentVelocity.x == 0 && CurrentVelocity.y == 0);
-
-            R2D.drag = 0f;
-
-            Vector3 vectorToTarget = target.position - PlayerShip.transform.position;
-
-            float angle = (Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg) - 90;
-
-            Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-
-            for (float i = 0; i <= 1; i += (WarpRotSpeed / 6000))
-            {
-                PlayerShip.transform.rotation = Quaternion.Slerp(PlayerShip.transform.rotation, q, i);
-                yield return new WaitForSeconds(.01f);
-            }
-
-            Audio.Warp();
-
-            yield return new WaitForSeconds(1.6f);
-
-            Audio.InWarp();
-
-            R2D.AddRelativeForce(Vector2.up * WarpSpeed * 10, ForceMode2D.Impulse);
-
-            while (distance > 200)
-            {
-                distance = Vector3.Distance(target.position, PlayerShip.transform.position);
-                yield return null;
-            }
-            R2D.drag = 2.5f;
-
-            Audio.StopSound();
-
-            yield return new WaitUntil(() => CurrentVelocity.x == 0 && CurrentVelocity.y == 0);
-
-            canControl = true;
-
-            R2D.drag = 0f;
-        }
-    }
-
     public void SetControl(bool state)
     {
         canControl = state;

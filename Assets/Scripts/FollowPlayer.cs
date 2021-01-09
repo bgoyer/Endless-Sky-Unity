@@ -2,10 +2,19 @@
 
 public class FollowPlayer : MonoBehaviour
 {
-    public Transform player;
+    public Transform ship;
+    private GameObject player;
+    private void Start()
+    {
+        player = GameObject.Find("/Player").gameObject;
+    }
 
     private void Update()
     {
-        transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
+        if (player.transform.childCount > 0)
+        {
+            ship = player.transform.GetChild(0).transform;
+            this.transform.position = new Vector3(ship.position.x, ship.position.y, -10);
+        }
     }
 }

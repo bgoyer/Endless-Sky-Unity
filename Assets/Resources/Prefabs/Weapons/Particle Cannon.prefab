@@ -51,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 03b440148859cad429cae3741f210baf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,3 +97,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammo: {fileID: 2855968813266003347, guid: 87f53c23d840c3d4285b12125fe9e1e5, type: 3}
   bulletHolder: {fileID: 0}
+  speed: 200

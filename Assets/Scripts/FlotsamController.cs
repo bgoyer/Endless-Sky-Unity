@@ -11,6 +11,7 @@ public class FlotsamController : MonoBehaviour
     private void Start()
     {
         LootTip = GameObject.Find("/HUD/LootTip");
+        Destroy(this.gameObject, 30f);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -23,7 +24,7 @@ public class FlotsamController : MonoBehaviour
 
     IEnumerator OnTrigger()
     {
-        GameObject.Find("/Player/Inventory").GetComponent<InventoryController>().Aluminum += matAmount;
+        GameObject.Find("/Player").transform.GetChild(0).GetComponent<InventoryController>().PlayerInventory.Aluminum += matAmount;
         LootTip.GetComponent<Text>().text = $"You looted {matAmount} {matType}";
         this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         yield return new WaitForSeconds(3);

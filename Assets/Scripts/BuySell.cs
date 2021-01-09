@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BuySell : MonoBehaviour
 {
-    private InventoryController PlayerInventory;
+    private Inventory PlayerInventory;
     private Player player;
     private void Start()
     {
-        PlayerInventory = GameObject.Find("/Player/Inventory").GetComponent<InventoryController>();
+        PlayerInventory = GameObject.Find("/Player/Inventory").GetComponent<InventoryController>().PlayerInventory;
         player = GameObject.Find("/Player").GetComponent<Player>();
     }
     public void Sell()
