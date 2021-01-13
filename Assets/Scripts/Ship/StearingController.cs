@@ -18,7 +18,7 @@ public class StearingController : MonoBehaviour
     {
         keyMap = GameObject.Find("/SceneScripts").GetComponent<KeyMap>();
         ship = this.transform.parent.parent.gameObject;
-        canControl = ship.transform.parent.gameObject.GetComponent<ShipVariables>().CanControl;
+        canControl = ship.gameObject.GetComponent<ShipVariables>().CanControl;
         r2D = ship.GetComponent<Rigidbody2D>();
 
     }
@@ -57,11 +57,19 @@ public class StearingController : MonoBehaviour
     {
         if (active == false)
         {
+            var lastVelVector = r2D.velocity;
             active = true;
             float angle = (Mathf.Atan2(-ship.GetComponent<Rigidbody2D>().velocity.y, -ship.GetComponent<Rigidbody2D>().velocity.x) * Mathf.Rad2Deg) - 90;
             Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
             for (float i = 0; i <= 1; i += (rotSpeed / 3000))
             {
+                if (lastVelVector != r2D.velocity)
+                {
+                    angle = (Mathf.Atan2(-ship.GetComponent<Rigidbody2D>().velocity.y, -ship.GetComponent<Rigidbody2D>().velocity.x) * Mathf.Rad2Deg) - 90;
+                    q = Quaternion.AngleAxis(angle, Vector3.forward);
+                    i = 0;
+
+                }
                 ship.transform.rotation = Quaternion.Slerp(ship.transform.rotation, q, i);
                 yield return new WaitForSeconds(.01f);
                 if (Input.GetKeyUp(keyMap.TurnAround))

@@ -13,17 +13,25 @@ public class HyperDriveController : MonoBehaviour
     private Vector2 currentVelocity;
     private AudioSource warpingSFX;
     private AudioSource inWarpSFX;
-    public void Start()
+    private ShipVariables shipVar;
+    private int currentFuel;
+    private void Start()
     {
-        canControl = this.transform.parent.parent.parent.GetComponent<ShipVariables>().CanControl;
+        shipVar = this.transform.parent.parent.GetComponent<ShipVariables>();
+        canControl = shipVar.CanControl;
+        currentFuel = shipVar.HyperdriveFuel;
         ship = this.transform.parent.parent.gameObject;
         r2D = ship.GetComponent<Rigidbody2D>();
-        AudioSource warpingSFX = this.transform.parent.Find("Warping").gameObject.GetComponent<AudioSource>();
-        AudioSource inWarpSFX = this.transform.parent.Find("Hum").gameObject.GetComponent<AudioSource>();
+        AudioSource warpingSFX = this.transform.GetChild(1).gameObject.GetComponent<AudioSource>();
+        AudioSource inWarpSFX = this.transform.parent.GetChild(0).gameObject.GetComponent<AudioSource>();
     }
     public void AutoPilot(Transform target)
     {
-        StartCoroutine(StartAutoPilot(target));
+        if (/**currentFuel >= Mathf.CeilToInt((ship.transform.position - target.position).magnitude)**/ true)
+        {
+            StartCoroutine(StartAutoPilot(target));
+        }
+        
     }
 
     private IEnumerator StartAutoPilot(Transform target)
@@ -52,11 +60,11 @@ public class HyperDriveController : MonoBehaviour
                 yield return new WaitForSeconds(.01f);
             }
 
-            warpingSFX.Play();
+            Warp();
 
             yield return new WaitForSeconds(1.6f);
 
-            inWarpSFX.Play();
+            InWarp();
 
             r2D.AddRelativeForce(Vector2.up * WarpSpeed * 10, ForceMode2D.Impulse);
 
@@ -76,13 +84,13 @@ public class HyperDriveController : MonoBehaviour
             r2D.drag = 0f;
         }
     }
-    public void Warp()
+    private void Warp()
     {
         warpingSFX.volume = 1;
         warpingSFX.Play();
     }
 
-    public void InWarp()
+    private void InWarp()
     {
         inWarpSFX.volume = 1;
         inWarpSFX.Play();

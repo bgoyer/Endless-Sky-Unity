@@ -8,7 +8,7 @@ public class ThrusterController : MonoBehaviour
     public float MaxSpeed = 10f;
 
     private KeyMap keyMap;
-    private GameObject Ship;
+    private GameObject ship;
     private bool canControl;
     private Rigidbody2D r2D;
     
@@ -16,9 +16,9 @@ public class ThrusterController : MonoBehaviour
     private void Start()
     {
         keyMap = GameObject.Find("/SceneScripts").GetComponent<KeyMap>();
-        Ship = this.transform.parent.parent.parent.gameObject;
-        canControl = Ship.transform.parent.gameObject.GetComponent<ShipVariables>().CanControl;
-        r2D = Ship.GetComponent<Rigidbody2D>();
+        ship = this.transform.parent.parent.parent.gameObject;
+        canControl = ship.gameObject.GetComponent<ShipVariables>().CanControl;
+        r2D = ship.GetComponent<Rigidbody2D>();
 
     }
     private void Update()
@@ -27,19 +27,24 @@ public class ThrusterController : MonoBehaviour
         {
             Accelerate();
         }
+        if (Input.GetKeyUp(keyMap.Foreward))
+        {
+            transform.GetChild(0).gameObject.SetActive(false);
+        }
     }
 
     public void Accelerate()
     {
         if (canControl == true)
         {
-            if (Ship.transform.GetComponent<Rigidbody2D>().velocity.sqrMagnitude <= MaxSpeed)
+            if (ship.transform.GetComponent<Rigidbody2D>().velocity.sqrMagnitude <= MaxSpeed)
             {
                 r2D.AddRelativeForce(Vector3.up * Acceleration);
+                transform.GetChild(0).gameObject.SetActive(true);
             }
             else
             {
-                Ship.transform.GetComponent<Rigidbody2D>().velocity *= 0.999f;
+                ship.transform.GetComponent<Rigidbody2D>().velocity *= 0.999f;
             }
         }
     }

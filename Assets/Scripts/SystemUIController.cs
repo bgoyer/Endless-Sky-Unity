@@ -5,46 +5,48 @@ using UnityEngine.UI;
 public class SystemUIController : MonoBehaviour
 {
     public GameObject LocationText;
+    public GameObject systemUI;
 
     private string _locName;
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("PlayerShip"))
+        if (collision.gameObject.CompareTag("System"))
         {
-            _locName = this.transform.gameObject.name.ToUpper();
-            StartCoroutine("OnTrigger");
-            GameObject.Find("/HUD/HideWhenMapIsOpen/PlayerStats/System").GetComponent<Text>().text = this.transform.gameObject.name;
+            _locName = collision.gameObject.name.ToUpper();
+            StartCoroutine(OnTrigger(collision));
+            systemUI.GetComponent<Text>().text = collision.transform.name;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("PlayerShip"))
+        if (collision.gameObject.CompareTag("System"))
         {
-            _locName = this.transform.parent.gameObject.name.ToUpper();
-            StartCoroutine("OnTrigger");
-            GameObject.Find("/HUD/HideWhenMapIsOpen/PlayerStats/System").GetComponent<Text>().text = this.transform.parent.gameObject.name;
-            for (int body = 0; body < this.transform.childCount; body++)
+            _locName = collision.transform.parent.gameObject.name.ToUpper();
+            StartCoroutine(OnTrigger(collision));
+            systemUI.GetComponent<Text>().text = collision.transform.parent.gameObject.name;
+            for (int body = 0; body < collision.transform.childCount; body++)
             {
-                if (this.transform.GetChild(body).GetComponent<Target>() != null)
+                if (collision.transform.GetChild(body).GetComponent<Target>() != null)
                 {
-                    this.transform.GetChild(body).GetComponent<Target>().enabled = false;
+                    collision.transform.GetChild(body).GetComponent<Target>().enabled = false;
                 }
             }
         }
 
     }
 
-    private IEnumerator OnTrigger()
+    private IEnumerator OnTrigger(Collider2D collision)
     {
         LocationText.GetComponent<Text>().text = _locName;
 
-        for (int body = 0; body < this.transform.childCount; body++)
+        for (int body = 0; body < collision.transform.childCount; body++)
         {
-            if (this.transform.GetChild(body).GetComponent<Target>() != null)
+            if (collision.transform.GetChild(body).GetComponent<Target>() != null)
             {
-                this.transform.GetChild(body).GetComponent<Target>().enabled = true;
+                collision.transform.GetChild(body).GetComponent<Target>().enabled = true;
             }
         }
         for (float a = 0; a < 1; a += .05f)
@@ -61,4 +63,5 @@ public class SystemUIController : MonoBehaviour
             yield return new WaitForSeconds(.05f);
         }
     }
+
 }

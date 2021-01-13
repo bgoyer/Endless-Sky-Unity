@@ -22,7 +22,7 @@ public class CannonController : MonoBehaviour
             ammoclone.transform.position = this.transform.position;
             ammoclone.transform.rotation = this.transform.rotation;
             ammoclone.tag = "PlayerBullet";
-            ammoclone.GetComponent<Rigidbody2D>().AddForce(transform.up * (speed + ship.GetComponent<Rigidbody2D>().velocity.sqrMagnitude));
+            ammoclone.GetComponent<Rigidbody2D>().AddForce(transform.up * (speed + ship.GetComponent<Rigidbody2D>().velocity.magnitude));
         }
     }
 }
