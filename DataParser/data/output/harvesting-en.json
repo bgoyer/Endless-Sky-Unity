@@ -1,7 +1,7 @@
 {
     "harvestingModel": [
         {
-            "ID": "a4efed8c-b36f-453f-ba69-7736f57e89c6",
+            "ID": "5a9bdc8c-f4a4-46ce-9b5d-c04266128d03",
             "Type": "Outfit",
             "Name": "Aluminum",
             "Plural": "Aluminum",
@@ -19,7 +19,7 @@
             "Explode": "final explosion small"
         },
         {
-            "ID": "8b00eda7-bfbe-4e56-b6c0-1c3e4df4d3f9",
+            "ID": "29fdadc2-dc04-4107-83d3-d10b45b2b9fb",
             "Type": "Outfit",
             "Name": "Copper",
             "Plural": "Copper",
@@ -37,7 +37,7 @@
             "Explode": "final explosion small"
         },
         {
-            "ID": "8e171b60-0784-42e9-8b53-26c4dd9a502c",
+            "ID": "7c038a1a-4a23-42c5-8197-f84017717986",
             "Type": "Outfit",
             "Name": "Gold",
             "Plural": "Gold",
@@ -55,7 +55,7 @@
             "Explode": "final explosion large"
         },
         {
-            "ID": "47911c28-c3de-478e-9f97-88ab2fbacbec",
+            "ID": "48083aca-a5ad-40a7-a8c8-208b1da33cf6",
             "Type": "Outfit",
             "Name": "Iron",
             "Plural": "Iron",
@@ -73,7 +73,7 @@
             "Explode": "final explosion medium"
         },
         {
-            "ID": "4696a890-3dcd-4f08-a53a-cfc12f81d336",
+            "ID": "8fd230d4-568d-45d2-b9f9-f1809141d20b",
             "Type": "Outfit",
             "Name": "Lead",
             "Plural": "Lead",
@@ -91,7 +91,7 @@
             "Explode": "final explosion large"
         },
         {
-            "ID": "2feb090c-70c1-4a56-b561-d63d53f21045",
+            "ID": "901dcac9-1594-4d46-b48a-045315860cf4",
             "Type": "Outfit",
             "Name": "Neodymium",
             "Plural": "Neodymium",
@@ -109,7 +109,7 @@
             "Explode": "final explosion small"
         },
         {
-            "ID": "1fb3c5dd-c399-4360-94da-2cb9a343643d",
+            "ID": "2643ef92-2337-4cca-874f-b04931bb5a81",
             "Type": "Outfit",
             "Name": "Platinum",
             "Plural": "Platinum",
@@ -127,7 +127,7 @@
             "Explode": "final explosion large"
         },
         {
-            "ID": "d99e40d5-2656-4a21-bd61-2c569855785c",
+            "ID": "857c4aaa-a0e2-40f2-8612-eaf02f37eaf7",
             "Type": "Outfit",
             "Name": "Silicon",
             "Plural": "Silicon",
@@ -145,7 +145,7 @@
             "Explode": "final explosion small"
         },
         {
-            "ID": "3192b5ac-c249-43cc-b5d4-05d63eb28a06",
+            "ID": "29a1fad5-bd6d-416f-8c0b-c523b603ec79",
             "Type": "Outfit",
             "Name": "Silver",
             "Plural": "Silver",
@@ -163,7 +163,7 @@
             "Explode": "final explosion medium"
         },
         {
-            "ID": "9b499df1-bd8c-42fd-a7c9-cf35a5158591",
+            "ID": "37c31637-1aa8-4fd9-9c99-503c7546d030",
             "Type": "Outfit",
             "Name": "Titanium",
             "Plural": "Titanium",
@@ -181,7 +181,7 @@
             "Explode": "final explosion medium"
         },
         {
-            "ID": "10960b24-ee14-45f9-aa0a-557feb387a8d",
+            "ID": "16ce2c51-c967-4ebf-be18-22b098c36d50",
             "Type": "Outfit",
             "Name": "Tungsten",
             "Plural": "Tungsten",
@@ -199,7 +199,7 @@
             "Explode": "final explosion medium"
         },
         {
-            "ID": "244c68b0-7f3d-46da-9138-acc00b52e8c1",
+            "ID": "995558cd-cb33-417c-ad00-da44fc9d664c",
             "Type": "Outfit",
             "Name": "Uranium",
             "Plural": "Uranium",
@@ -217,7 +217,7 @@
             "Explode": "final explosion medium"
         },
         {
-            "ID": "71c7c9f8-5085-45b1-94da-341a288d0794",
+            "ID": "fdadfae2-a5d6-40a2-943e-1e0d215c52c2",
             "Type": "Outfit",
             "Name": "Yottrite",
             "Plural": "Yottrite",

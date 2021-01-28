@@ -1,7 +1,7 @@
 {
     "weaponModel": [
         {
-            "ID": "bfcc2c20-a4cb-47d8-bac0-4f814d3e7f1d",
+            "ID": "568de3b5-9acb-4707-a6d6-c0b4e1c373d7",
             "Type": "Outfit",
             "Name": "Energy Blaster",
             "Category": "Guns",
@@ -26,7 +26,7 @@
             "Description": "Although not the most accurate or damaging of weapons, the Energy Blaster is popular because it is small enough to be installed on even the tiniest of ships. One blaster is not enough to do appreciable damage to anything larger than a fighter, but a ship equipped with several of them becomes a force to be reckoned with."
         },
         {
-            "ID": "c8636df0-12d9-4599-9210-01c2baace563",
+            "ID": "f6108fc9-e793-4db8-a0a4-8d20e3e41ad3",
             "Type": "Outfit",
             "Name": "Blaster Turret",
             "Category": "Turrets",
@@ -55,7 +55,7 @@
             "Description": "A Blaster Turret is a pair of Energy Blasters mounted on a rotating platform, allowing it to fire in any direction. Sophisticated software algorithms allow the turret to correct for a target's motion, making the Blaster Turret effective even against small, quickly moving fighters. Because it needs a special mounting point with a 360 degree field of view, not all ships are capable of being equipped with a turret."
         },
         {
-            "ID": "7f3dbf85-35d2-48c1-821a-c3c7ccb5d8eb",
+            "ID": "d17b252d-e2fc-4192-8390-3519dc214992",
             "Type": "Outfit",
             "Name": "Quad Blaster Turret",
             "Category": "Turrets",
@@ -84,7 +84,7 @@
             "Description": "A Quad Blaster Turret carries four guns on a single turret mount, doubling the firepower of an ordinary Blaster Turret for ships with enough space to install one and energy to drive it."
         },
         {
-            "ID": "e67be8f7-232f-4fd4-86ba-e7fe0644e9e9",
+            "ID": "6abb2ac5-aeac-47b0-a17c-3996ba997863",
             "Type": "Effect",
             "Name": "blaster impact",
             "Sprite": "effect/blaster impact",
@@ -95,7 +95,7 @@
             "VelocityScale": "-.05"
         },
         {
-            "ID": "e7426d7a-c590-4ea1-9fee-66c7b1120875",
+            "ID": "5c829c89-9cb0-433e-96c5-2cb6303e2902",
             "Type": "Outfit",
             "Name": "Modified Blaster",
             "Category": "Guns",
@@ -120,7 +120,7 @@
             "Description": "This is an Energy Blaster that has been tampered with to increase its power slightly, at the cost of reduced range and higher energy consumption. Modified Blasters also produce an extreme amount of heat when firing, increasing the risk that your ship will overheat."
         },
         {
-            "ID": "f2e5990b-5351-4549-9432-ddf6eee8d9d1",
+            "ID": "bf7162ed-b3d3-4911-9a98-41c0445d882f",
             "Type": "Outfit",
             "Name": "Modified Blaster Turret",
             "Category": "Turrets",
@@ -149,7 +149,7 @@
             "Description": "This is a turreted version of the Modified Blaster, which is an Energy Blaster modified for greater power at the cost of higher energy consumption and heat. These turrets are popular with pirates and others who are trying to cram as much firepower into their ships as possible."
         },
         {
-            "ID": "1d82b578-c6de-4e7e-b835-c188953126f9",
+            "ID": "39eec961-c1be-463d-b3a9-022e078d7a9d",
             "Type": "Outfit",
             "Name": "Beam Laser",
             "Category": "Guns",
@@ -175,7 +175,7 @@
             "Description": "In the early part of the space era, the settlements in the region of space known as the Deep developed in relative isolation from the rest of human space. One result of that isolation is that their weapons technology mostly uses beam weapons, instead of the energy projectile weapons that are more common elsewhere."
         },
         {
-            "ID": "39566436-2d79-4512-9ab1-e1d3c62954c3",
+            "ID": "788f4ec0-b5a5-4f0a-a814-bedff6aa4f5d",
             "Type": "Outfit",
             "Name": "Laser Turret",
             "Category": "Turrets",
@@ -205,7 +205,7 @@
             "Description": "Laser Turrets are hated by fighter pilots because it is nearly impossible to dodge them once you are within their reach. This turret carries a pair of lasers and can swivel almost instantly to fire on new targets as they approach. Laser Turrets are especially useful when mounted on slow-moving freighters to fend off packs of small pirate vessels."
         },
         {
-            "ID": "0ddc368f-b631-4943-aed8-696a79a0cbd2",
+            "ID": "2c515822-6759-441f-9d35-e5b008ae68cb",
             "Type": "Effect",
             "Name": "beam laser impact",
             "Sprite": "effect/laser impact",
@@ -217,7 +217,7 @@
             "VelocityScale": "-.005"
         },
         {
-            "ID": "34bb57f5-34fc-4a2a-82e3-c45f15e38661",
+            "ID": "3c0bac99-476f-4fc2-bacc-c20356d08c03",
             "Type": "Outfit",
             "Name": "Heavy Laser",
             "Category": "Guns",
@@ -243,7 +243,7 @@
             "Description": "The Heavy Laser is an upgraded Beam Laser with a significantly longer range and higher power. It is mostly intended for larger ships, where energy and space are plentiful, but some pilots consider a single Heavy Laser to be a worthwhile alternative to a pair of Beam Lasers, because the longer range makes up for the fact that it does not quite deal twice as much damage."
         },
         {
-            "ID": "4963b071-1c1b-41dc-b3dc-284a05769be4",
+            "ID": "22109cbe-69d9-4bcc-ab07-f5f162e28e61",
             "Type": "Outfit",
             "Name": "Heavy Laser Turret",
             "Category": "Turrets",
@@ -273,7 +273,7 @@
             "Description": "For ships with enough space to install one, the Heavy Laser Turret is a powerful weapon, equally useful for driving off fighters and for bombarding larger targets with continuous fire without having to worry about pointing your ship in the right direction."
         },
         {
-            "ID": "344afbfb-23ab-47c0-88c4-494a62d6c84d",
+            "ID": "70147a9c-8757-4022-8fec-f646086e521e",
             "Type": "Effect",
             "Name": "heavy laser impact",
             "Sprite": "effect/heavy laser impact",
@@ -286,7 +286,7 @@
             "VelocityScale": "-.007"
         },
         {
-            "ID": "bf2ca13a-2a57-4e5a-be53-9c9e9c3f180b",
+            "ID": "f1b8d054-3b16-42ef-bbd5-3685b5a4860c",
             "Type": "Outfit",
             "Name": "Electron Beam",
             "Category": "Guns",
@@ -312,7 +312,7 @@
             "Description": "The Electron Beam is a recent development by the Deep Sky labs, a more powerful weapon with a design similar to their perennially popular laser guns."
         },
         {
-            "ID": "00023201-4816-4d9b-bdb4-3f5ff2520d84",
+            "ID": "09e7fcdf-ffbd-40be-83f3-f3fa839e5883",
             "Type": "Outfit",
             "Name": "Electron Turret",
             "Category": "Turrets",
@@ -342,7 +342,7 @@
             "Description": "This turret places two of Deep Sky's recently developed electron beam weapons onto a rotating turret, providing unsurpassed accuracy and power for shooting down fast-moving targets."
         },
         {
-            "ID": "3afddf85-53a0-4056-b51e-3e59c4d07242",
+            "ID": "0dce500a-4dc0-40ce-8f0f-60487c5be996",
             "Type": "Effect",
             "Name": "electron impact",
             "Sprite": "effect/electron impact",
@@ -354,7 +354,7 @@
             "VelocityScale": "-.003"
         },
         {
-            "ID": "962ab1a7-e9a3-4e30-b6cb-892a81587870",
+            "ID": "314ea6ee-1de7-4a24-919c-de79f0ca7be5",
             "Type": "Outfit",
             "Name": "Anti-Missile Turret",
             "Category": "Turrets",
@@ -377,7 +377,7 @@
             "Description": "Centuries ago, space battles were fought mostly with missiles, with the outcome dependent only on which ship had more shielding or ammunition. Lovelace Labs was originally founded to remedy that situation by developing a protective system that could shoot missiles out of the air, defending freighter convoys from pirates who could otherwise simply bombard them into submission without ever venturing within range of their guns."
         },
         {
-            "ID": "f62d82f9-3601-452a-9152-88620198b09c",
+            "ID": "78ae4bf3-d4a0-416c-a25f-57e4830e0efc",
             "Type": "Effect",
             "Name": "small anti-missile",
             "Sprite": "effect/small anti missile",
@@ -388,7 +388,7 @@
             "VelocityScale": "1"
         },
         {
-            "ID": "a3e1fd43-1b62-49c4-9bf2-7b983b60d60a",
+            "ID": "f7deeddd-db0a-431a-a19a-56040da20ab3",
             "Type": "Outfit",
             "Name": "Heavy Anti-Missile Turret",
             "Category": "Turrets",
@@ -411,7 +411,7 @@
             "Description": "The Heavy Anti-Missile turret has a longer range, higher power, and shorter reload time than its smaller sibling. The only way to overcome it is by firing missiles in a cluster so that while one is being targeted, the others can get through, and as a result all missile systems on the market now default to firing in clusters if multiple copies of the same launcher are installed, rather than staggering their fire as ordinary guns do."
         },
         {
-            "ID": "ce592d6d-83dd-4604-a1a7-9ca29fab3cab",
+            "ID": "c7769c77-25ad-4131-89ad-914b72f23ad5",
             "Type": "Effect",
             "Name": "large anti-missile",
             "Sprite": "effect/large anti missile",
@@ -422,7 +422,7 @@
             "VelocityScale": "1"
         },
         {
-            "ID": "08935c48-ef19-403f-b1df-09a8280745bf",
+            "ID": "e85d6905-1c2a-4fee-8c21-7282405db2a6",
             "Type": "Outfit",
             "Name": "Particle Cannon",
             "Category": "Guns",
@@ -449,7 +449,7 @@
             "Description": "The Particle Cannon works by accelerating a short burst of particles to near-relativistic speeds. When mounted on a ship that can turn fast enough to keep it trained on approaching ships, it becomes a nearly unbeatable weapon, capable of destroying smaller ships before they can even approach close enough for their comparatively short-ranged weapons to be effective."
         },
         {
-            "ID": "14022009-80b2-4eab-93d8-f402cded517a",
+            "ID": "5d65ba4e-a4a5-4d14-ad06-b01286350494",
             "Type": "Effect",
             "Name": "particle impact",
             "Sprite": "effect/particle impact",
@@ -462,7 +462,7 @@
             "VelocityScale": "-.05"
         },
         {
-            "ID": "95dea072-79b9-44a0-b35b-a11229d499cf",
+            "ID": "9d772a3b-7015-4e79-bb14-877357875432",
             "Type": "Outfit",
             "Name": "Proton Gun",
             "Category": "Guns",
@@ -487,7 +487,7 @@
             "Description": "The Proton Gun started out as the Syndicate's attempt to reverse engineer and mass produce a cheap competitor for the Particle Cannon. Unfortunately, they were unable to find a reliable way to keep the beam coherent, but the resulting weapon is still popular with some captains, particularly as an anti-fighter gun."
         },
         {
-            "ID": "1ab9ed00-b665-47dd-a478-8935a381d3da",
+            "ID": "9c136d10-174d-46dd-b9d5-344c1cd79824",
             "Type": "Outfit",
             "Name": "Proton Fragment",
             "": "weapon",
@@ -502,7 +502,7 @@
             "HullDamage": "7"
         },
         {
-            "ID": "39d97ef5-93cf-43ea-8575-3b491c920154",
+            "ID": "53e2d4cb-184c-478c-8e36-4126cbc1ba11",
             "Type": "Effect",
             "Name": "proton impact",
             "Sprite": "effect/proton impact",
@@ -513,7 +513,7 @@
             "VelocityScale": "-.005"
         },
         {
-            "ID": "f24e65ff-974e-4453-828b-35d444376af9",
+            "ID": "0f7c9370-a502-4ac7-b9c3-7d6e35cc7942",
             "Type": "Outfit",
             "Name": "Proton Turret",
             "Category": "Turrets",
@@ -542,7 +542,7 @@
             "Description": "The Syndicate Proton Turret is a relatively new product designed to compete with Deep Sky's perennially popular laser turrets in the anti-fighter defense market. Though cruder than its competition, the Proton Turret maintains a loyal following among captains dissatisfied with laser weapons' short range."
         },
         {
-            "ID": "929d35b1-487e-46ef-a7b6-8d4b8c17f268",
+            "ID": "37d3a6f8-546d-444d-83d2-db6623a0d0bf",
             "Type": "Outfit",
             "Name": "Plasma Cannon",
             "Category": "Guns",
@@ -570,7 +570,7 @@
             "Description": "The Plasma Cannon fires bursts of superheated plasma. In addition to damaging your target, these plasma bursts impart a significant amount of heat, especially to a target whose shields are down."
         },
         {
-            "ID": "a16eef58-5dfd-421e-ba1c-ab5af1c4f973",
+            "ID": "a9dac9ad-f07b-4b41-a41c-55e22607dfc8",
             "Type": "Outfit",
             "Name": "Plasma Turret",
             "Category": "Turrets",
@@ -602,7 +602,7 @@
             "Description": "The Plasma Turret is a pair of plasma cannons mounted on a turret so that they can fire in any direction. It is a fearsome weapon, but only the largest of ships have the space and the energy that it requires."
         },
         {
-            "ID": "c937c351-1634-489f-b5ec-dfeb218d3200",
+            "ID": "0b10ac7c-5246-4996-b87b-7799a280cb5b",
             "Type": "Effect",
             "Name": "plasma explosion",
             "Sprite": "effect/plasma explosion",
@@ -616,7 +616,7 @@
             "VelocityScale": "-.05"
         },
         {
-            "ID": "20e1c768-97c6-4c28-a207-cc8542547898",
+            "ID": "2e0d7c71-ccaa-4e6c-9c22-9d8348bb7576",
             "Type": "Outfit",
             "Name": "Flamethrower",
             "Category": "Secondary Weapons",
@@ -643,7 +643,7 @@
             "Description": "A crude but impressive-looking weapon, the Flamethrower ignites your hyperspace fuel and directs a stream of it towards your adversaries. The damage it does is relatively minor, but it can be useful for causing a target that is already operating near its thermal capacity to overheat, temporarily taking it out of the fight."
         },
         {
-            "ID": "4a8c1a4f-45f6-4a3b-a8a4-2e36762d8984",
+            "ID": "10ad9c36-173e-46af-b4db-831268cf2763",
             "Type": "Outfit",
             "Name": "Flamethrower Projectile",
             "": "weapon",
@@ -659,7 +659,7 @@
             "HeatDamage": "200"
         },
         {
-            "ID": "44c386bc-442d-43c6-92b3-4f7132cdbcf1",
+            "ID": "74f1775f-522b-4404-a443-59b9153ec242",
             "Type": "Effect",
             "Name": "flamethrower die",
             "Sprite": "effect/explosion/small",
@@ -674,7 +674,7 @@
             "VelocityScale": ".4"
         },
         {
-            "ID": "a00d2003-8d2e-4918-bfde-59d7d8af9914",
+            "ID": "7bbb60fd-4e9d-4742-a90a-d86fea12c255",
             "Type": "Effect",
             "Name": "flamethrower hit",
             "Sprite": "effect/explosion/medium",
@@ -689,7 +689,7 @@
             "VelocityScale": ".4"
         },
         {
-            "ID": "cafd795c-507c-40fd-b7b8-b30b5bc74cd2",
+            "ID": "d7eb67eb-d130-46be-bf7d-ad7d7ac6425a",
             "Type": "Outfit",
             "Name": "Meteor Missile",
             "Category": "Ammunition",
@@ -700,7 +700,7 @@
             "Description": "A Meteor Missile serves as ammunition for the Meteor Missile Launcher. Each missile launcher has the capacity for 30 missiles; you cannot install missiles if you have not first purchased a launcher to store them in."
         },
         {
-            "ID": "318a8816-780a-422f-bd36-d860583eb326",
+            "ID": "f0b7fc0b-6f2d-41d8-bdec-1390b5625741",
             "Type": "Outfit",
             "Name": "Meteor Missile Box",
             "Plural": "Meteor Missile Boxes",
@@ -714,7 +714,7 @@
             "Description": "The Meteor Missile Box is used to store extra ammunition for Meteor Missile Launchers."
         },
         {
-            "ID": "62f37a08-e788-44f3-bd0d-db8d22c216e5",
+            "ID": "bc41e79f-7789-44fd-bf34-daf0ee23cc76",
             "Type": "Outfit",
             "Name": "Meteor Missile Launcher",
             "Category": "Secondary Weapons",
@@ -753,7 +753,7 @@
             "Description": "The Meteor Missile is the cheapest and simplest homing weapon available in human space. Meteors are quickly destroyed by anti-missile systems, and their infrared tracking systems have trouble homing in on targets with low heat levels. Nevertheless, their large warheads can spell doom for poorly-defended targets when the missiles are fired in great numbers."
         },
         {
-            "ID": "d91734cc-f700-48e3-88f5-ae25c3f3ebb0",
+            "ID": "c02ca523-68ab-49d9-b64f-c1b22dba84e9",
             "Type": "Effect",
             "Name": "meteor fire",
             "Sprite": "effect/meteor fire",
@@ -763,7 +763,7 @@
             "RandomVelocity": "10"
         },
         {
-            "ID": "72f426c1-9bcb-43a7-a141-c9fd201113e6",
+            "ID": "21e0ace3-c2dc-462f-b37c-61dcf0ae2132",
             "Type": "Outfit",
             "Name": "Sidewinder Missile",
             "Category": "Ammunition",
@@ -774,7 +774,7 @@
             "Description": "The Sidewinder Missile is ammunition for the Sidewinder Missile Launcher; each launcher that you have installed can be armed with up to 45 of them. You cannot install a missile without a launcher to fire it from."
         },
         {
-            "ID": "4fabf511-a0ea-4bac-b514-f6903f8f0f9d",
+            "ID": "c4928aa0-5134-46fe-8a79-823bda54ae11",
             "Type": "Outfit",
             "Name": "Sidewinder Missile Rack",
             "Category": "Ammunition",
@@ -787,7 +787,7 @@
             "Description": "The Sidewinder Missile Rack is used to store extra ammunition for Sidewinder Missile Launchers."
         },
         {
-            "ID": "47dca899-186d-4449-b011-60a89e8b824a",
+            "ID": "2d3bd3d1-751e-4c93-b10c-ec6851ba7e1d",
             "Type": "Outfit",
             "Name": "Sidewinder Missile Launcher",
             "Category": "Secondary Weapons",
@@ -826,7 +826,7 @@
             "Description": "The Sidewinder Missile is designed by Lovelace Labs, which is ironically also the designer of the Anti-Missile Turret. Rumors say that the two engineering teams at Lovelace who make the missiles and the anti-missiles are locked in furious competition with each other: the result has been generation after generation of smarter missiles and then smarter turrets to fend them off. Although not as powerful or cheap as the popular Meteor missiles, Sidewinders have several advantages, including their superior maneuverability, better tracking systems, and protective casings that make them much harder for anti-missile systems to destroy."
         },
         {
-            "ID": "c32b750e-b101-4e58-b7fa-e9afd3be5a8a",
+            "ID": "c3a7e37e-031a-4fbd-9c03-c744cf81c673",
             "Type": "Effect",
             "Name": "sidewinder fire",
             "Sprite": "effect/sidewinder fire",
@@ -836,7 +836,7 @@
             "RandomVelocity": "2"
         },
         {
-            "ID": "80e1ec7c-e225-4ca4-8fac-1a8d8c4bef9d",
+            "ID": "0cfb7d16-ce8b-49ef-975d-7770c4c43093",
             "Type": "Outfit",
             "Name": "Javelin",
             "Category": "Ammunition",
@@ -847,7 +847,7 @@
             "Description": "A Javelin missile is ammunition for the Javelin Pod; without a Pod to store them in you cannot purchase or use Javelins. Each pod stores up to 200 Javelins."
         },
         {
-            "ID": "a00152ee-ae0a-4ce8-899e-df551100550d",
+            "ID": "ca01e67f-9026-4253-a16a-07855f5b3dcd",
             "Type": "Outfit",
             "Name": "Javelin Storage Crate",
             "Category": "Ammunition",
@@ -860,7 +860,7 @@
             "Description": "The Javelin Storage Crate is used to store extra ammunition for Javelin Pods."
         },
         {
-            "ID": "2711cd77-a1c8-4e1b-8653-5e2c7fe5ee9d",
+            "ID": "9979fb21-95a9-4fa9-bb3a-353cf5285871",
             "Type": "Outfit",
             "Name": "Javelin Pod",
             "Category": "Secondary Weapons",
@@ -890,7 +890,7 @@
             "Description": "The Javelin Pod fires a rapid stream of unguided missiles. A Javelin Pod does far more damage than any gun of a comparable size, and has a longer range as well, but once a ship has expended all of its ammunition it must leave combat and find a planet where it can buy more, which makes Javelins less useful in protracted battles. The weapon's high rate of fire also makes it useful for saturating well-protected ships' anti-missile defenses so that more dangerous projectiles fired by allied ships can sneak through."
         },
         {
-            "ID": "e9db2adb-f8cd-40a8-9cd5-7121f4d7387d",
+            "ID": "c2e04086-21b3-44c9-a341-1f178df80d4d",
             "Type": "Outfit",
             "Name": "Torpedo",
             "Plural": "Torpedoes",
@@ -902,7 +902,7 @@
             "Description": "Torpedoes are ammunition for the Torpedo Launcher. Each Torpedo Launcher can hold 30 of them. You cannot install torpedoes unless you have also installed a launcher to fire them from."
         },
         {
-            "ID": "5e981aa6-047e-48f9-b7e9-b4ff00ab5375",
+            "ID": "9a007c0a-b84f-4d67-8c09-cae6e9b8fbc5",
             "Type": "Outfit",
             "Name": "Torpedo Storage Rack",
             "Category": "Ammunition",
@@ -915,7 +915,7 @@
             "Description": "The Torpedo Storage Rack is used to store extra ammunition for Torpedo Launchers."
         },
         {
-            "ID": "a8829fa4-6867-4c21-ab97-fb550bbd0e0e",
+            "ID": "68d6dbf5-d39e-44f7-8400-da57504abf16",
             "Type": "Outfit",
             "Name": "Torpedo Launcher",
             "Category": "Secondary Weapons",
@@ -954,7 +954,7 @@
             "Description": "Torpedoes are the most powerful homing weapon, but they move slowly enough that fast ships can simply outrun them, making them most useful against large targets or against small ships at times when they are too distracted to dodge. Torpedo launchers are also much larger than other missile systems, so they are most often found in capital ships."
         },
         {
-            "ID": "3159c2ee-0097-4895-ac3f-a0a43d020a50",
+            "ID": "a8520ca8-5605-4519-af08-55e9d4316856",
             "Type": "Effect",
             "Name": "torpedo fire",
             "Sprite": "effect/torpedo fire",
@@ -963,7 +963,7 @@
             "Lifetime": "15"
         },
         {
-            "ID": "3548e552-0483-4c56-8086-3aa3d1b7f156",
+            "ID": "4592267f-c498-4438-aea8-cb3e3106571e",
             "Type": "Outfit",
             "Name": "Typhoon Torpedo",
             "Plural": "Typhoon Torpedoes",
@@ -975,7 +975,7 @@
             "Description": "Typhoon Torpedoes are ammunition for the Typhoon Launcher. Each launcher can hold 30 of them. You cannot install Typhoon Torpedoes unless you have also installed a launcher to fire them from."
         },
         {
-            "ID": "afdddf90-d88e-47c8-b935-aa675aa1147a",
+            "ID": "f1d8a0d0-b553-4186-acd5-987827e73dfb",
             "Type": "Outfit",
             "Name": "Typhoon Storage Tube",
             "Category": "Ammunition",
@@ -988,7 +988,7 @@
             "Description": "The Typhoon Storage Tube is used to store extra ammunition for Typhoon Launchers."
         },
         {
-            "ID": "5e84ea5f-f55f-44a0-901a-3f7045bc93dc",
+            "ID": "05389835-34fa-4342-bc44-14b395675739",
             "Type": "Outfit",
             "Name": "Typhoon Launcher",
             "Category": "Secondary Weapons",
@@ -1027,7 +1027,7 @@
             "Description": "Typhoon Torpedoes are an improved torpedo technology; they do considerably more damage than ordinary torpedoes. However, they are also much slower, because they are intended mostly for use against large and slow-moving capital ships. As a result, sufficiently skilled pilots can often dodge around them."
         },
         {
-            "ID": "085a0f45-6d96-41be-aad6-bd55f2f1ff77",
+            "ID": "97b9c9ad-9b31-4e31-8e50-2ca7911bc8ad",
             "Type": "Effect",
             "Name": "typhoon fire",
             "Sprite": "effect/typhoon fire",
@@ -1036,7 +1036,7 @@
             "Lifetime": "15"
         },
         {
-            "ID": "e4b4f4f6-17e9-4bf7-8c52-6298e3b60f31",
+            "ID": "03ff331e-9a2b-4503-923d-0ffd9faaaad7",
             "Type": "Outfit",
             "Name": "Heavy Rocket",
             "Category": "Ammunition",
@@ -1047,7 +1047,7 @@
             "Description": "Heavy Rockets are ammunition for the Heavy Rocket Launcher. You cannot install one unless you have first installed a launcher to fire it from. Each launcher holds up to 20 rockets."
         },
         {
-            "ID": "9e502851-37ac-4899-9ccc-10cc652a6551",
+            "ID": "7e657de1-0479-4e30-b656-7e175426a396",
             "Type": "Outfit",
             "Name": "Heavy Rocket Rack",
             "Category": "Ammunition",
@@ -1060,7 +1060,7 @@
             "Description": "The Heavy Rocket Rack is used to store extra ammunition for Heavy Rocket Launchers."
         },
         {
-            "ID": "ff4574cd-f43a-4680-84e6-6f3a4f9cc7f3",
+            "ID": "1a889641-c97a-4ddf-89d3-77827e76a42b",
             "Type": "Outfit",
             "Name": "Heavy Rocket Launcher",
             "Category": "Secondary Weapons",
@@ -1096,7 +1096,7 @@
             "Description": "Heavy Rockets are the most powerful missile weapon available, but at a price: instead of having a homing system, they simply fire straight forward and rely on a proximity trigger to set them off. Once triggered, however, they damage all ships within their blast radius, making them highly effective against clusters of fighters."
         },
         {
-            "ID": "a79e8b09-576b-4447-a96f-a463b66e46da",
+            "ID": "534f8aa1-6e23-41ad-baf0-adfb4131e697",
             "Type": "Effect",
             "Name": "heavy rocket hit",
             "Sprite": "effect/explosion/huge",
@@ -1111,7 +1111,7 @@
             "VelocityScale": ".4"
         },
         {
-            "ID": "d34ed34f-7d4e-4256-a6dd-16f0c929c3af",
+            "ID": "56245b24-2f7a-4871-b1d4-6bc76960d6ea",
             "Type": "Outfit",
             "Name": "Nuclear Missile",
             "Category": "Secondary Weapons",
@@ -1151,7 +1151,7 @@
             "Description": "It has been centuries since the last nuclear war was fought, and until very recently, most people in the galaxy assumed that that era of chaos and destruction was forever behind us... [Nuclear missiles are a one-shot weapon: each missile occupies a gun slot, and after it is fired, the slot it was in is left empty.]"
         },
         {
-            "ID": "f673feee-d019-499c-8571-5a7d01ccae5b",
+            "ID": "fca3d578-025a-4d72-9189-feb51435b081",
             "Type": "Effect",
             "Name": "nuke explosion",
             "Sprite": "effect/explosion/nuke",
@@ -1165,7 +1165,7 @@
             "VelocityScale": ".4"
         },
         {
-            "ID": "621a48bd-55da-43f7-a0a0-655d6382e333",
+            "ID": "f7e4450b-4116-41f9-99b9-3c2daf803e0e",
             "Type": "Effect",
             "Name": "nuke residue fast",
             "Sprite": "effect/explosion/huge",
@@ -1178,7 +1178,7 @@
             "VelocityScale": "0.1"
         },
         {
-            "ID": "3d2f4c04-98c4-4c80-b70e-9368af205420",
+            "ID": "e4c513ea-38c0-406a-b2f3-53ecb1d067be",
             "Type": "Effect",
             "Name": "nuke residue slow",
             "Sprite": "effect/explosion/huge",
@@ -1191,7 +1191,7 @@
             "VelocityScale": "0.1"
         },
         {
-            "ID": "2e6f75d6-a219-4596-9f1e-14e0e9ed888f",
+            "ID": "0b68779c-f7ac-42d2-b045-ed1e6feef759",
             "Type": "Outfit",
             "Name": "Gatling Gun Ammo",
             "Plural": "Gatling Gun Ammo",
@@ -1203,7 +1203,7 @@
             "Description": "This simple cartridge is the ammunition for the Gatling Gun, with a projectile of depleted nuclear fuel or an illuminated tracer round. Since this ammunition is primarily manufactured on pirate worlds by slave children in poor working conditions, muzzle velocity can vary by up to 30%, and tracer distribution is seldom uniform."
         },
         {
-            "ID": "d5fbb480-7e0a-43f9-849b-2750d3c45f5e",
+            "ID": "715f2a75-eb9f-4ddf-972b-ca46fbfc69a9",
             "Type": "Outfit",
             "Name": "Bullet Boxes",
             "Plural": "Bullet Boxes",
@@ -1217,7 +1217,7 @@
             "Description": "Bullet Boxes are used to store extra ammunition for Gatling Guns."
         },
         {
-            "ID": "52fab99c-e4da-4063-800f-99126a9536f3",
+            "ID": "71c938cc-eeca-4794-9c84-bfc91e1feef7",
             "Type": "Outfit",
             "Name": "Gatling Gun",
             "Category": "Secondary Weapons",
@@ -1248,7 +1248,7 @@
             "Description": "`When Dr. Richard J. Gatling invented the rapid-fire gun bearing his name in the 19th century, he hoped that its destructiveness would lead to the end of war itself. Over a millennium later, this modern incarnation of the Gatling gun sees action in the stars, a testament to its fundamentally robust design - and Dr. Gatling's naivete. While capable of a high fire rate, this gun needs to cool down for twice as long as it fires, and can only sustain a maximum of three seconds of continuous fire.`"
         },
         {
-            "ID": "db8008ff-c209-40c0-a852-c839b19f38f2",
+            "ID": "1391f8d0-2cd2-4eb7-a51a-62c05cc27d26",
             "Type": "Outfit",
             "Name": "gbullet",
             "": "weapon",
