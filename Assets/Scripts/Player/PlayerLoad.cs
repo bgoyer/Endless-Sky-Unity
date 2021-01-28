@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerLoad : MonoBehaviour
 {
-    PlayerService _service = new PlayerService();
+    PlayerService _service = new PlayerService("en");
 
     // Start is called before the first frame update
     public void Load()
@@ -13,13 +13,16 @@ public class PlayerLoad : MonoBehaviour
         try
         {
             // Create a new player
-            PlayerModel player = new PlayerModel();
+            PlayerModel player = _service.NewModel();
             player.Name = "Brendan";
             player.Location.X = -216;
             player.Location.Y = -216;
-            player = _service.Insert(player);
 
-            PlayerModel brendan = _service.Get("Brendan");
+            if (!_service.Exists(player)) {
+                player = _service.Save(player);
+            }
+
+            PlayerModel brendan = _service.Get(player.Id);
             print(brendan.Name);
         }
         catch (Exception ex)

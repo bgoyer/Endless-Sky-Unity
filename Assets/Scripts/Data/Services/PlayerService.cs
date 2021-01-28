@@ -7,5 +7,9 @@ namespace ES.Data.Services
         public PlayerService() : base("player")
         {
         }
+
+        public PlayerService(string lang) : base("player", lang)
+        {
+        }
     }
 }

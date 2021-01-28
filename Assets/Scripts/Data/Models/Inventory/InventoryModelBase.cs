@@ -8,5 +8,6 @@
         public int Mass { get; set; }
         public bool Installable { get; set; }
         public string Description { get; set; }
+        public int OutfitSpace { get; set; }
     }
 }

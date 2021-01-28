@@ -1,21 +1,29 @@
 ﻿using ES.Data.Models;
 using JsonFlatFileDataStore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace ES.Data.Services
 {
     public class ServiceBase<TModel>
-        where TModel : ModelBase
+        where TModel : ModelBase, new()
     {
         DataStore store;
         string tableName;
 
-        public ServiceBase(string databaseFileName) 
+        public ServiceBase(string tableName)
         {
-            tableName = databaseFileName;
-            store = new DataStore($"Assets\\Scripts\\Data\\Db\\{databaseFileName}.json");
+            SetDatabase(tableName, "en");
+        }
+
+        public ServiceBase(string tableName, string lang) 
+        {
+            SetDatabase(tableName, lang);
+        }
+
+        public TModel NewModel() {
+            return new TModel(); 
         }
 
         public IDocumentCollection<TModel> Collection 
@@ -26,46 +34,58 @@ namespace ES.Data.Services
             }
         }
 
-        public TModel Get(string name) 
+        public virtual bool Exists(TModel model)
+        {
+            return Get(model.Id) != null;
+        }
+
+        public bool Exists(string name)
+        {
+            return GetByName(name) != null;
+        }
+
+        public TModel Get(string id)
         {
             return Collection.AsQueryable()
-                .Where(m => m.Name == name)
+                .Where(m => m.Id == id)
                 .FirstOrDefault();
         }
 
-        public TModel Insert(TModel item)
+        public TModel GetByName(string name)
         {
-            TModel _itm = Get(item.Name);
+            var collection = Collection.AsQueryable();
 
-            if (_itm == null)
+
+
+            return collection.Where(m => m.Name == name)
+                .FirstOrDefault();
+        }
+
+        public TModel Save(TModel item)
+        {
+            if (item.Id == null)
             {
-                Collection.InsertOne(item);
+                item.Id = Guid.NewGuid().ToString();
+            }
+            TModel _itm = Get(item.Id);
+
+            if (_itm != null)
+            {
+                Collection.UpdateOne(item.Id, item);
             }
             else
             {
-                throw new System.Exception($"{item.Name} already exists in the {tableName} table.");
+                Collection.InsertOne(item);
             }
 
             return item;
         }
 
-        public IEnumerable<TModel> InsertMany(IEnumerable<TModel> items)
-        {
-            Collection.InsertMany(items);
-            return items;
-        }
-
-        public TModel Update(TModel item)
-        {
-            Collection.UpdateOne(item.Name, item);
-            return item;
-        }
-
-        public IEnumerable<TModel> UpdateMany(IEnumerable<TModel> items)
+        public IEnumerable<TModel> SaveMany(IEnumerable<TModel> items)
         {
             foreach (var item in items) 
             {
-                Update(item);
+                Save(item);
             }
 
             return items;
@@ -74,6 +94,13 @@ namespace ES.Data.Services
         public bool Delete(TModel item)
         {
             return Collection.DeleteOne(item.Name);
+        }
+
+        private void SetDatabase(string tableName, string lang)
+        {
+            var fileName = $"{tableName}-{lang}.json";
+            this.tableName = tableName;
+            store = new DataStore($"Assets\\Scripts\\Data\\Db\\{fileName}");
         }
     }
 }

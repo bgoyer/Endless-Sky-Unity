@@ -2,17 +2,17 @@ namespace ES.Data.Models.Player
 {
     public class PlayerModel : ModelBase
     {
-        private Location location;
+        private LocationModel location;
 
         public int Credits { get; set; }
 
-        public Location Location
+        public LocationModel Location
         {
             get
             {
                 if (location is null)
                 {
-                    location = new Location();
+                    location = new LocationModel();
                 }
                 return location;
             }
@@ -22,9 +22,21 @@ namespace ES.Data.Models.Player
         //
     }
 
-    public class Location
+    public class LocationModel
     {
-        public CelestialBodyModel CelestialBody { get; set; }
+        private CelestialBodyModel celestialBody;
+
+        public CelestialBodyModel CelestialBody
+        {
+            get
+            {
+                if (celestialBody is null)
+                {
+                    celestialBody = new CelestialBodyModel();
+                }
+                return celestialBody;
+            }
+        }
         public int Y { get; set; }
         public int X { get; set; }
     }
