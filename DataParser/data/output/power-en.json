@@ -1,7 +1,7 @@
 {
     "powerModel": [
         {
-            "ID": "97da591f-3edc-400c-99c9-bcc33ad049df",
+            "ID": "c1f9fe27-911c-4533-91d0-27a8dc86ac13",
             "Type": "Outfit",
             "Name": "Supercapacitor",
             "Category": "Power",
@@ -13,7 +13,7 @@
             "Description": "With a powerful enough generator, many ships do not need batteries at all. The one exception is projectile weapons, which usually require a burst of energy far exceeding what the generator produces. Supercapacitors provide just enough energy storage for those weapons, without requiring you to install a bulky battery pack."
         },
         {
-            "ID": "b97277ef-7124-42e7-8a36-e0e25b5ef894",
+            "ID": "ec6ebbdd-1935-43c8-8334-df206c580b55",
             "Type": "Outfit",
             "Name": "LP036a Battery Pack",
             "Category": "Power",
@@ -25,7 +25,7 @@
             "Description": "A ship can run without batteries if its generator's instantaneous power output is higher than the total energy consumption of its systems, but batteries make it possible to store up energy when it is not needed and thus to use a much smaller and cheaper generator."
         },
         {
-            "ID": "e8a52960-8c69-4d7d-a7c3-987f2db0ce01",
+            "ID": "5d03b76f-c358-41ef-b875-68cd054e79ba",
             "Type": "Outfit",
             "Name": "LP072a Battery Pack",
             "Category": "Power",
@@ -37,7 +37,7 @@
             "Description": "This battery pack has more than twice the energy capacity of the most basic model, allowing your ship to engage in combat for longer periods of time before running out of energy. Some pilots have even been known to install these in lieu of any generator at all, trusting that they can reach their destination planet and recharge before running out of battery power, but that is a risky proposition."
         },
         {
-            "ID": "0a9d4535-f978-4444-8e79-e26790ff5a38",
+            "ID": "b583782e-eca6-42ce-81e1-998e8a912bc6",
             "Type": "Outfit",
             "Name": "LP144a Battery Pack",
             "Category": "Power",
@@ -49,7 +49,7 @@
             "Description": "This medium-sized battery pack is intended for ships that need to fire the occasional salvo of high-powered weaponry without running out of energy. As with all battery packs, relying on batteries is risky if combat lasts long enough for them to become depleted."
         },
         {
-            "ID": "aae3aa6e-54c7-43e5-9496-14305f9e4060",
+            "ID": "5e9931d2-cee8-4e23-85c0-f78c1fcf12ea",
             "Type": "Outfit",
             "Name": "LP288a Battery Pack",
             "Category": "Power",
@@ -61,7 +61,7 @@
             "Description": "This is a large battery pack designed for ships that may occasionally have high power needs but do not want the expense or the heat associated with a more powerful ship's generator."
         },
         {
-            "ID": "4ea0a5db-b79a-4eb1-8f88-6c8b38384002",
+            "ID": "e7f0828d-a8da-43c8-b143-bc4ec0832785",
             "Type": "Outfit",
             "Name": "LP576a Battery Pack",
             "Category": "Power",
@@ -73,7 +73,7 @@
             "Description": "For most ships that require this much power, a larger generator makes more sense than a battery this size. However, battery packs have the advantage that they generate no heat, so some captains use them instead of powerful generators if they do not expect to be in combat frequently or for extended periods of time."
         },
         {
-            "ID": "07b66cf2-e18b-40f7-8af6-bccb4dff4e68",
+            "ID": "16ff535b-d85b-4578-9782-dff4d0e094a2",
             "Type": "Outfit",
             "Name": "KP-6 Photovoltaic Panel",
             "Category": "Power",
@@ -85,7 +85,7 @@
             "Description": "This early commercial photovoltaic system was the driving force behind humanity's first interplanetary trade network. Rugged and modular, it can be bolted to the hull of any ship and has seen even the most remote parts of human space."
         },
         {
-            "ID": "f781b194-30a8-474c-b032-49a1040ef4be",
+            "ID": "3b3834fc-6983-4fad-a75a-1c20131c4540",
             "Type": "Outfit",
             "Name": "KP-6 Photovoltaic Array",
             "Category": "Power",
@@ -97,7 +97,7 @@
             "Description": "The compact modularity of the KP-6 lent itself well to the creation of larger solar collection arrays. This original Korunak Photovoltaics model is equipped with a solar tracker, allowing it to make better use of available light."
         },
         {
-            "ID": "2531d7ef-0249-44a4-bffd-20618c4406d5",
+            "ID": "3f70d424-5a3a-4aab-8a0f-e5f7cf0d2421",
             "Type": "Outfit",
             "Name": "nGVF-AA Fuel Cell",
             "Category": "Power",
@@ -110,7 +110,7 @@
             "Description": "Fuel cells have been the cheapest and most common starship power sources since the dawn of the space era. This model produces only enough power for very small or slow ships."
         },
         {
-            "ID": "9a8dacc3-582c-43d1-aecb-4d2d05640f4f",
+            "ID": "b435ef0e-49ef-476a-896d-d38f25f93ab4",
             "Type": "Outfit",
             "Name": "nGVF-BB Fuel Cell",
             "Category": "Power",
@@ -123,7 +123,7 @@
             "Description": "This is a step up from the smallest fuel cells, providing enough energy to power a few small guns in addition to your engines."
         },
         {
-            "ID": "cd15d2a4-3615-438d-9697-6db3bcdbe43b",
+            "ID": "e4cb3ca1-6274-40ea-8a7c-e5d5abd79254",
             "Type": "Outfit",
             "Name": "nGVF-CC Fuel Cell",
             "Category": "Power",
@@ -136,7 +136,7 @@
             "Description": "This is a medium-sized fuel cell, designed to be sufficient for larger civilian ships and small warships while still being more affordable than the more sophisticated generator options."
         },
         {
-            "ID": "5709ad9c-883d-4bb5-8926-a76c27811c03",
+            "ID": "f4f2717c-7cc0-4e97-afa9-15de247db087",
             "Type": "Outfit",
             "Name": "nGVF-DD Fuel Cell",
             "Category": "Power",
@@ -149,7 +149,7 @@
             "Description": "This is a relatively large fuel cell. Other generators are available that produce more energy and fit into a smaller space, but they are much more expensive. As a result, large civilian ships that will not be frequently in combat often come equipped with these fuel cells."
         },
         {
-            "ID": "f0a652b5-3ea3-44c7-802e-3ba9e3bc84bd",
+            "ID": "7b2c708e-ac74-4b23-89f2-c33715406e6d",
             "Type": "Outfit",
             "Name": "nGVF-EE Fuel Cell",
             "Category": "Power",
@@ -162,7 +162,7 @@
             "Description": "This is the largest fuel cell available, larger than some nuclear reactors but much, much more affordable. Many captains on a tight budget are willing to put up with one of these until they can raise the money for something more efficient."
         },
         {
-            "ID": "c351848b-dfec-496d-a5ab-130bf9f2eeb3",
+            "ID": "823621ff-1611-485d-8e63-37888b792c4d",
             "Type": "Outfit",
             "Name": "RT-I Radiothermal",
             "Category": "Power",
@@ -175,7 +175,7 @@
             "Description": "Radiothermal generators harvest heat from radioactive isotopes and convert it into electricity. They are more powerful than fuel cells, but also produce a relatively high amount of heat."
         },
         {
-            "ID": "9e92c851-d72f-4213-86af-a95c44de9f91",
+            "ID": "85f8c87e-d8cf-46c9-91ca-6fea6f2606a6",
             "Type": "Outfit",
             "Name": "S3 Thermionic",
             "Category": "Power",
@@ -188,7 +188,7 @@
             "Description": "Thermionic radioisotopic generators were designed as a cooler-running alternative to radiothermal generators."
         },
         {
-            "ID": "acc4d0ee-f4b7-4d42-af74-41d179cfb86e",
+            "ID": "cce2caf4-e644-4d3a-ae9b-0e6f6a2d640c",
             "Type": "Outfit",
             "Name": "NT-200 Nucleovoltaic",
             "Category": "Power",
@@ -201,7 +201,7 @@
             "Description": "Nucleovoltaic generators are a relatively recent generator technology that harvests energy from the decay of a radioisotope source and converts it directly into electricity. They are the most powerful generator that relies on nuclear decay instead of an active nuclear chain reaction."
         },
         {
-            "ID": "186f0e3c-0b90-4e41-9b5d-78df829bd771",
+            "ID": "a503347e-d7c2-4537-82d6-daa0277b3583",
             "Type": "Outfit",
             "Name": "Dwarf Core",
             "Category": "Power",
@@ -214,7 +214,7 @@
             "Description": "A Dwarf Core is a miniaturized nuclear reactor, small enough to be installed in any ship larger than a fighter. It was designed by Deep Sky to be paired with their power-hungry atomic engines."
         },
         {
-            "ID": "1636acdf-be33-42de-b349-0acc62544aa6",
+            "ID": "5052afd1-d583-4596-8682-1c26a8f61ef7",
             "Type": "Outfit",
             "Name": "Fission Reactor",
             "Category": "Power",
@@ -227,7 +227,7 @@
             "Description": "Fission reactors have been a mainstay of large military vessels since even before the dawn of the space era. Today's models are very safe and efficient, but some pilots still find them disconcerting."
         },
         {
-            "ID": "bdb2c80e-8252-4f35-a448-cb174c30c29b",
+            "ID": "cb09ba24-8e94-4bc3-b3c7-02edbc30674e",
             "Type": "Outfit",
             "Name": "Breeder Reactor",
             "Category": "Power",
@@ -240,7 +240,7 @@
             "Description": "A breeder reactor is a more efficient fission reactor that captures some of the neutron radiation produced by the reactor and uses it to enrich more fuel. They are also, of course, bigger and more expensive as a result."
         },
         {
-            "ID": "14395ca4-4cc4-4d6c-89ab-a9866d2b9fae",
+            "ID": "7b50ac32-faf4-4d66-9130-f14ff552b91a",
             "Type": "Outfit",
             "Name": "Fusion Reactor",
             "Category": "Power",
@@ -253,7 +253,7 @@
             "Description": "The invention of practical fusion power near the end of the twenty-first century spurred a new era of prosperity and plenty. Centuries later, the generators have been reduced in size, but are still generally only used in capital warships."
         },
         {
-            "ID": "5bb2020d-8689-460b-98c7-ffb9270e3497",
+            "ID": "ab0c7c27-d76a-46ed-824d-e15416aa8150",
             "Type": "Outfit",
             "Name": "Armageddon Core",
             "Category": "Power",
@@ -266,7 +266,7 @@
             "Description": "The Armageddon Core was designed to meet the extreme power needs of the largest warships of the Republic Navy. One of these generators costs more than an entire fleet of smaller ships."
         },
         {
-            "ID": "7979a668-a2e0-4dc5-974a-189ed5b4aa3d",
+            "ID": "61190e80-f625-4f5e-a5f5-3aedb8ce140c",
             "Type": "Outfit",
             "Name": "Stack Core",
             "Category": "Power",

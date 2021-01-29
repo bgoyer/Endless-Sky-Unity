@@ -10,7 +10,7 @@ public class PlayerHyperdriveController : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.Find("/Player");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
     
     public void PlayerAutoPilot(Transform target)

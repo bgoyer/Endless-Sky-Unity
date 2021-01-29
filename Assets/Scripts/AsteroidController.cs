@@ -4,6 +4,7 @@ public class AsteroidController : MonoBehaviour
 {
     public int health = 100;
     public int matAmountPer = 10;
+    public string asteriodType = "Alunimum";
     public GameObject flotsam;
     public GameObject garbageHolder;
 
@@ -27,7 +28,8 @@ public class AsteroidController : MonoBehaviour
         {
             GameObject _flotsam = Instantiate(flotsam, garbageHolder.transform);
             _flotsam.transform.position = this.transform.position;
-            //_flotsam.GetComponent<FlotsamController>().matAmount =+ matAmountPer;
+            _flotsam.GetComponent<FlotsamController>().matAmount = matAmountPer;
+            _flotsam.GetComponent<FlotsamController>().matType = asteriodType;
             Destroy(this.gameObject);
         }
     }

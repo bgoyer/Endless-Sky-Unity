@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class HyperDriveController : MonoBehaviour
 {
-    public int WarpSpeed;
-    public int WarpRotSpeed;
+    public int WarpThrust;
+    public float WarpRotSpeed;
 
     private bool canControl;
     private GameObject ship;
@@ -17,34 +17,37 @@ public class HyperDriveController : MonoBehaviour
     private int currentFuel;
     private void Start()
     {
-        shipVar = this.transform.parent.parent.GetComponent<ShipVariables>();
-        canControl = shipVar.CanControl;
-        currentFuel = shipVar.HyperdriveFuel;
-        ship = this.transform.parent.parent.gameObject;
-        r2D = ship.GetComponent<Rigidbody2D>();
-        AudioSource warpingSFX = this.transform.GetChild(1).gameObject.GetComponent<AudioSource>();
-        AudioSource inWarpSFX = this.transform.parent.GetChild(0).gameObject.GetComponent<AudioSource>();
+        warpingSFX = this.transform.GetChild(1).gameObject.GetComponent<AudioSource>();
+        inWarpSFX = this.transform.GetChild(0).gameObject.GetComponent<AudioSource>();
     }
     public void AutoPilot(Transform target)
     {
+        print("Command Recieved");
+            StartCoroutine(StartAutoPilot(target));
         if (/**currentFuel >= Mathf.CeilToInt((ship.transform.position - target.position).magnitude)**/ true)
         {
-            StartCoroutine(StartAutoPilot(target));
         }
         
     }
 
     private IEnumerator StartAutoPilot(Transform target)
     {
-        canControl = true;
+        ship = this.transform.parent.parent.gameObject;
+        shipVar = ship.GetComponent<ShipVariables>();
+        canControl = shipVar.CanControl;
+        currentFuel = shipVar.HyperdriveFuel;
+        r2D = ship.GetComponent<Rigidbody2D>();
+        AudioSource warpingSFX = this.transform.GetChild(1).gameObject.GetComponent<AudioSource>();
+        AudioSource inWarpSFX = this.transform.GetChild(0).gameObject.GetComponent<AudioSource>();
         float distance = Vector3.Distance(target.position, ship.transform.position);
-        if (distance >= 500)
+        if (distance >= 50)
         {
+
             canControl = false;
 
             r2D.drag = 10f;
 
-            yield return new WaitUntil(() => currentVelocity.x == 0 && currentVelocity.y == 0);
+            yield return new WaitUntil(() => r2D.velocity.magnitude == 0);
 
             r2D.drag = 0f;
 
@@ -53,20 +56,19 @@ public class HyperDriveController : MonoBehaviour
             float angle = (Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg) - 90;
 
             Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-
-            for (float i = 0; i <= 1; i += (WarpRotSpeed / 6000))
+            for (float step = 0; step <= 1; step += (WarpRotSpeed / 10000))
             {
-                ship.transform.rotation = Quaternion.Slerp(ship.transform.rotation, q, i);
+                ship.transform.rotation = Quaternion.Slerp(ship.transform.rotation, q, step);
                 yield return new WaitForSeconds(.01f);
             }
 
-            Warp();
+            soundWarp();
 
             yield return new WaitForSeconds(1.6f);
 
-            InWarp();
+            soundInWarp();
 
-            r2D.AddRelativeForce(Vector2.up * WarpSpeed * 10, ForceMode2D.Impulse);
+            r2D.AddRelativeForce(Vector2.up * WarpThrust, ForceMode2D.Impulse);
 
             while (distance > 200)
             {
@@ -77,20 +79,20 @@ public class HyperDriveController : MonoBehaviour
 
             stopSound();
 
-            yield return new WaitUntil(() => currentVelocity.x == 0 && currentVelocity.y == 0);
+            yield return new WaitUntil(() => r2D.velocity.magnitude == 0);
 
             canControl = true;
 
             r2D.drag = 0f;
         }
     }
-    private void Warp()
+    private void soundWarp()
     {
         warpingSFX.volume = 1;
         warpingSFX.Play();
     }
 
-    private void InWarp()
+    private void soundInWarp()
     {
         inWarpSFX.volume = 1;
         inWarpSFX.Play();

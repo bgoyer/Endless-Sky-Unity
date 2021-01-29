@@ -1,7 +1,7 @@
 {
     "outfitModel": [
         {
-            "ID": "9cc3b164-2967-432d-bac8-0cdc087758a6",
+            "ID": "539b026b-e511-4104-80ef-7a886debeea0",
             "Type": "Outfit",
             "Name": "Cooling Ducts",
             "Plural": "Cooling Ducts",
@@ -14,7 +14,7 @@
             "Description": "When trying to cram as many high-powered outfits as possible into a ship, occasionally you reach the point where it is sporadically overheating and shutting down. In that case, you may need to install one of these."
         },
         {
-            "ID": "f0807f8e-a84e-4f34-9d02-9a73b82d9156",
+            "ID": "0b75bd2a-0c4e-4c05-b624-20617e3596ae",
             "Type": "Outfit",
             "Name": "Water Coolant System",
             "Category": "Systems",
@@ -26,7 +26,7 @@
             "Description": "This system is a step up from ordinary cooling ducts; it circulates water in between an external radiator and your ship's hottest internal components to keep them from overheating."
         },
         {
-            "ID": "c42ae28d-81af-4b62-8db8-916c9c7c478b",
+            "ID": "3f95c540-e6fb-4268-953d-ae816dc3209d",
             "Type": "Outfit",
             "Name": "Liquid Nitrogen Cooler",
             "Category": "Systems",
@@ -38,7 +38,7 @@
             "Description": "For ships with extreme cooling needs, liquid nitrogen is the answer. One of these coolers will dissipate the heat produced by anything but the heaviest of armaments."
         },
         {
-            "ID": "a83edff3-453c-4492-a8f6-1a5980cbb120",
+            "ID": "7ea8ee19-bdc7-4c6f-836a-adf525e86912",
             "Type": "Outfit",
             "Name": "Liquid Helium Cooler",
             "Category": "Systems",
@@ -50,7 +50,7 @@
             "Description": "Liquid helium is the ultimate in cooling technology. Given how much space this cooling system takes up, you may be better off just installing more efficient, low-heat components instead, but where that is not an option, this cooler can handle almost anything you throw at it."
         },
         {
-            "ID": "af518041-a6cc-4e19-99b7-9c5c21eef591",
+            "ID": "ed580ab8-b630-4ffa-8c57-8f9a2828f3b6",
             "Type": "Outfit",
             "Name": "D14-RN Shield Generator",
             "Category": "Systems",
@@ -63,7 +63,7 @@
             "Description": "This is the standard shield generator for fighters and interceptors, as well as for many non-combat starships. Although it is possible for a ship to have no shield generator at all, recharging its shield matrix only when landed in a hospitable spaceport, life in deep space is unpredictable enough that most pilots find shield generators to be well worth the space they take up."
         },
         {
-            "ID": "f94e9618-b255-4f6c-b29f-b41f15d035b1",
+            "ID": "745fd5ee-6c40-44e8-aed0-78fea43c02c0",
             "Type": "Outfit",
             "Name": "D23-QP Shield Generator",
             "Category": "Systems",
@@ -76,7 +76,7 @@
             "Description": "This is a slightly more powerful shield generator than the standard model installed in most small ships. If combat lasts long enough, the increased recharge rate is enough to give you an edge, but recharging your shields completely will still take a long time."
         },
         {
-            "ID": "0726838f-71a2-4a05-b2df-d31537f96552",
+            "ID": "ecd51736-1d9e-47a5-b360-107f70e55eb8",
             "Type": "Outfit",
             "Name": "D41-HY Shield Generator",
             "Category": "Systems",
@@ -89,7 +89,7 @@
             "Description": "This is a more powerful shield generator designed for ships that are likely to see frequent combat, or that have such a large shield capacity that recharging them would take a long time with a smaller generator."
         },
         {
-            "ID": "b12930e4-7459-445c-9918-f8986d815983",
+            "ID": "f206bfa6-af37-493c-b08e-a343c9adb96e",
             "Type": "Outfit",
             "Name": "D67-TM Shield Generator",
             "Category": "Systems",
@@ -102,7 +102,7 @@
             "Description": "This shield generator is powerful enough that in combat against some particularly weak ships, they may not even be capable of depleting your shields as fast as they recharge."
         },
         {
-            "ID": "3b3f74c7-08ef-465b-8c44-570cb19522b3",
+            "ID": "f97d658b-7ddc-476f-94e1-02889ea2936f",
             "Type": "Outfit",
             "Name": "D94-YV Shield Generator",
             "Category": "Systems",
@@ -115,7 +115,7 @@
             "Description": "This is the most powerful shield generator available in human space. Because of their large size, D94-YV shield generators are mostly used in large warships, but you can fit one in a smaller ship if you are willing to sacrifice engine power or weaponry to make space for it."
         },
         {
-            "ID": "5a9c5c45-679b-45a9-843f-91a1c4f54a0b",
+            "ID": "d67b36de-a553-42b1-8695-6865a8e89f9e",
             "Type": "Outfit",
             "Name": "S-270 Regenerator",
             "Category": "Systems",
@@ -130,7 +130,7 @@
             "Description": "A shield regenerator works by subtly modifying the geometry of your shield matrix in order to make your shields more malleable and therefore much easier to recharge. Unfortunately, this causes your shields to also become less efficient, which draws energy away from your other systems, even when not charging shields, and creates heat."
         },
         {
-            "ID": "77b2bb00-6e19-49ea-ab06-9ec83d882f93",
+            "ID": "ecbae1cd-67a2-4b03-af0c-d6ec27be52ad",
             "Type": "Outfit",
             "Name": "S-970 Regenerator",
             "Category": "Systems",
@@ -145,7 +145,7 @@
             "Description": "The S-970 Shield Regenerator is an advanced type of shield recharging technology. Unfortunately, its power needs are rather high, and the shifts it makes in your shield configuration also result in some feedback that causes heat to build up in the regenerator, even when your shields are at full strength."
         },
         {
-            "ID": "ecb1edf8-ce2b-48c8-b510-e96823b7cd3f",
+            "ID": "36c24278-b6ab-468a-923c-fda24693d716",
             "Type": "Outfit",
             "Name": "Small Radar Jammer",
             "Category": "Systems",
@@ -157,7 +157,7 @@
             "Description": "This radar jammer is designed to interfere with Sidewinders and any other missiles that rely on radar for tracking their targets. Jamming will occasionally cause missiles to lose their target locks."
         },
         {
-            "ID": "2357bcea-d237-4bb6-b6ec-6809ffe3ef2d",
+            "ID": "ff3f0048-03a3-446e-b8ec-4729f4ed30c0",
             "Type": "Outfit",
             "Name": "Large Radar Jammer",
             "Category": "Systems",
@@ -169,7 +169,7 @@
             "Description": "This high-power radar jammer will make it much more difficult for missiles that rely on radar to track you. It will not affect missiles that track you optically or that look for your ship's heat signature."
         },
         {
-            "ID": "c2b2e694-2f65-4781-aae9-6f25e98fb418",
+            "ID": "276e5da1-2d23-44b1-b649-6132668343c2",
             "Type": "Outfit",
             "Name": "Ramscoop",
             "Category": "Systems",
@@ -181,7 +181,7 @@
             "Description": "In the early days of space exploration, when ships could travel through half a dozen systems before encountering an established colony where they could refuel, ramscoops were an essential piece of equipment, harvesting plasma from the solar wind to refill your hyperspace fuel tanks. Although you can install more than one ramscoop, additional ramscoops on a single ship are not as effective as the first. (As a safety measure, all ships are able to harvest tiny amounts of fuel by flying close to a star, but this outfit allows you to accumulate fuel much more quickly. The closer you are to the star, the faster fuel will accumulate.)"
         },
         {
-            "ID": "70974212-f235-4334-a329-75d9d85c2f87",
+            "ID": "2fe86ccf-7e01-4c84-a9ce-b4217b072372",
             "Type": "Outfit",
             "Name": "Catalytic Ramscoop",
             "Category": "Systems",
@@ -193,7 +193,7 @@
             "Description": "Ramscoop technology has been almost unchanged for centuries, because with nearly every system in human space settled there has not been a pressing need for ships to generate their own fuel. But with the Free Worlds war making travel once again more difficult, some engineers in the Deep recently invented a much-improved ramscoop for use in their merchant fleets."
         },
         {
-            "ID": "6abd83bd-5ae4-442a-89ad-170278b05198",
+            "ID": "66db8399-255a-413f-902e-1b1224bd51ec",
             "Type": "Outfit",
             "Name": "Hyperdrive",
             "Category": "Systems",
@@ -207,7 +207,7 @@
             "Description": "This mysterious box sits quietly at the heart of your ship, thinking its own inscrutable thoughts. When it comes time to travel between the stars it sets off a nuclear fusion reaction powerful enough to level an entire city, and then somehow tucks the resulting explosion in between the folds of regular space-time like a wasp stinging an oak leaf to lay her eggs inside. Your ship rides the resulting ripple in the fabric of space. They say that fewer than a dozen human beings alive today understand the inner workings of the hyperdrive."
         },
         {
-            "ID": "d29e8124-d92a-4f3a-8523-cbfcabd4de0c",
+            "ID": "ee8f6c01-bfd0-40ce-b0a3-721ce686e265",
             "Type": "Outfit",
             "Name": "Scram Drive",
             "Category": "Systems",
@@ -221,7 +221,7 @@
             "Description": "A Scram Drive is a specially designed hyperdrive that works even if your ship is traveling at a much higher speed, at the expense of using more fuel. If you are being pursued by pirates (or just want to get somewhere in a hurry) that extra bit of speed can make a big difference."
         },
         {
-            "ID": "b63498d7-2713-4b39-b1aa-6b89ec6c6b60",
+            "ID": "32300509-14a8-4ad5-bca6-1252d6aab689",
             "Type": "Outfit",
             "Name": "Jump Drive",
             "Category": "Systems",
@@ -235,7 +235,7 @@
             "Description": "The workings of the jump drive are a total mystery. The best that human scientists have been able to find out is that this device is a containment field for matter in a state that cannot normally exist in this universe; if the drive is opened up, the field collapses and its contents disappear. Therefore, even though a few jump drives have been captured over the years, it has so far proved impossible to reverse engineer them."
         },
         {
-            "ID": "1698edf4-935c-4f95-a431-c1e33657f123",
+            "ID": "dc5b2dfc-11b9-4f4e-98e4-b2c22d0ff314",
             "Type": "Outfit",
             "Name": "Jump Drive (Broken)",
             "Category": "Systems",
@@ -246,7 +246,7 @@
             "Description": "The workings of the jump drive are a total mystery, especially now that this drive seems completely mangled. It is no longer functional in any way. It may, however, still hold some research potential."
         },
         {
-            "ID": "38b637d8-8a77-4fe7-b05c-0d72e1963d3c",
+            "ID": "9d6014b9-1195-4a22-824e-1e9d3f7c87b4",
             "Type": "Outfit",
             "Name": "Cargo Scanner",
             "Category": "Systems",
@@ -259,7 +259,7 @@
             "Description": "This scanner allows you to scan the cargo holds of the ship you are currently targeting, as long as you are flying close enough to it. Patrol craft use cargo scanners to detect illegal contraband. Installing more than one increases the scan range and speed."
         },
         {
-            "ID": "5c70496b-4e88-45be-90e3-39fd26915935",
+            "ID": "d41cc5be-7b99-4ebb-94d4-2bc7e7235837",
             "Type": "Outfit",
             "Name": "Outfit Scanner",
             "Category": "Systems",
@@ -272,7 +272,7 @@
             "Description": "This scanner allows you to determine what outfits are installed in the ship you are currently targeting, if you are willing to risk flying close enough to it to get a reading! The Republic Navy uses these scanners to detect when ships are equipped with illegal weaponry. Installing more than one increases the scan range and speed."
         },
         {
-            "ID": "4d387f04-9726-4a61-9c7d-8b6e2fa9f782",
+            "ID": "33712556-9e86-4668-9023-65f33d067e59",
             "Type": "Outfit",
             "Name": "Asteroid Scanner",
             "Category": "Systems",
@@ -284,7 +284,7 @@
             "Description": "This highly specialized scanning system can analyze the mineral composition of nearby asteroids and identify the ones that contain valuable materials."
         },
         {
-            "ID": "d87ee3a4-1877-4e70-948b-bf0810df148c",
+            "ID": "9ac66364-5ef6-41b7-934e-0c136728928b",
             "Type": "Outfit",
             "Name": "Tactical Scanner",
             "Category": "Systems",
@@ -296,7 +296,7 @@
             "Description": "A tactical scanner allows your ship to determine the fuel, energy, heat, and crew complement of nearby targets. For centuries tactical scanners were only employed by the Navy, but recently Kraz Cybernetics has begun manufacturing them for use by militia ships."
         },
         {
-            "ID": "e0215c2f-02e2-4322-b459-db440cebdf76",
+            "ID": "29dc2656-3d8e-4888-93ee-f2723386ee87",
             "Type": "Outfit",
             "Name": "Surveillance Pod",
             "Category": "Systems",
@@ -313,7 +313,7 @@
             "Description": "This is Navy technology, a collection of scanners designed to fit perfectly inside one of their surveillance drones. Since the outputs are fairly standard, you could connect it to your own ship's systems if you want. Installing more than one increases the scan range and speed."
         },
         {
-            "ID": "3e8c8376-dfb1-44e4-9041-338a69758aad",
+            "ID": "a2ddd11b-31b3-42a1-b269-2546f4bab481",
             "Type": "Outfit",
             "Name": "Cloaking Device",
             "Category": "Systems",
@@ -327,7 +327,7 @@
             "Description": "You're sure the cloaking device is here somewhere, but you can't see it."
         },
         {
-            "ID": "e469a14f-0a31-44d9-b447-74c437a1b10f",
+            "ID": "8b6e568b-219c-4958-9146-8176313a0994",
             "Type": "Outfit",
             "Name": "Outfits Expansion",
             "Category": "Systems",
@@ -342,7 +342,7 @@
             "Description": "This expansion allows you to sacrifice some cargo space in order to make room for more outfits, in situations where you need just a bit more space to install a particular system. It does not increase your weapon or engine space. Unfortunately, rearranging the interior of your ship in such a fundamental way tends to interfere with its cooling systems."
         },
         {
-            "ID": "03205300-6fdb-44f1-a909-f9fd5e6c9e39",
+            "ID": "2dc60a33-d23c-46cb-b8d2-4f510cb8e004",
             "Type": "Outfit",
             "Name": "Cargo Expansion",
             "Category": "Systems",
@@ -355,7 +355,7 @@
             "Description": "If being able to carry more cargo is more important to you than having advanced weapons or other systems, a cargo expansion will significantly increase the size of your cargo hold."
         },
         {
-            "ID": "b3693b59-2283-4e7b-8a73-c93a5f6ba8ff",
+            "ID": "67a9b559-574b-49d3-8e6a-f565d5ec28b5",
             "Type": "Outfit",
             "Name": "Bunk Room",
             "Category": "Systems",
@@ -368,7 +368,7 @@
             "Description": "If you really want to make space for a few more passengers (or crew members, if you're trying to capture other ships), you can expand the living space of your ship into the area usually reserved for outfits."
         },
         {
-            "ID": "75ea9730-5db8-4d3d-bcfa-b0039714bf6b",
+            "ID": "2700d462-df17-460a-b050-01ef578361cc",
             "Type": "Outfit",
             "Name": "Small Bunk Room",
             "Category": "Systems",
@@ -381,7 +381,7 @@
             "Description": "Captains who do not care particularly much about the comfort of their passengers or crew can usually find a way to shove a bunk bed in behind the power generator or to hang a few hammocks from the engines as a makeshift way to make space for more people."
         },
         {
-            "ID": "7b68fe7c-6c95-4df0-81d9-5ebd1c04eaf9",
+            "ID": "0da4b5cd-bf91-49e1-b710-2e332a3473a5",
             "Type": "Outfit",
             "Name": "Brig",
             "Category": "Systems",
@@ -393,7 +393,7 @@
             "Description": "With the addition of some reinforced doors, locks, and security systems, any ship's passenger compartment can be turned into a brig. This makes it suitable for transporting criminals and prisoners, or participating in the highly illegal galactic slave trade. These cells are often found on ships owned by bounty hunters, pirates, and of course, the Republic's interstellar law enforcement."
         },
         {
-            "ID": "9d1b8c2e-0ac2-4ee5-9d9a-a96329df47da",
+            "ID": "4b6720bb-29a4-4c25-bfce-abe150e9e57d",
             "Type": "Outfit",
             "Name": "Luxury Accommodations",
             "Category": "Systems",
@@ -406,7 +406,7 @@
             "Description": "Most deep space voyages involve a certain amount of passenger discomfort. With the addition of a few extra fresh water tanks, private bathrooms, wooden fixtures, and some hospitality staff, any ship can be made attractive to a significantly higher - and better paying - class of passenger."
         },
         {
-            "ID": "7ac19596-0f59-4d8d-98c9-1d0e0af64d54",
+            "ID": "ea2eb6ee-bdd6-42bf-b83d-2f8d6f254034",
             "Type": "Outfit",
             "Name": "Fuel Pod",
             "Category": "Systems",
@@ -418,7 +418,7 @@
             "Description": "A fuel pod increases your fuel capacity, allowing your ship to make one additional hyperspace jump before it needs to land and refuel."
         },
         {
-            "ID": "a221a8e7-577d-4a5f-8fb1-dd2cede44ae1",
+            "ID": "7875b5f8-28b5-4f14-b6f8-87f824e37100",
             "Type": "Outfit",
             "Name": "Interference Plating",
             "Category": "Systems",
@@ -430,7 +430,7 @@
             "Description": "If you're in the habit of carrying illegal cargo or outfits, this plating increases the odds that a scan of your ship will fail to detect it. The more of these you install, the better your chances of evading detection. They won't keep anyone from noticing if you're flying an unlicensed ship, however."
         },
         {
-            "ID": "7a4ccb50-5940-46ed-af25-1c6b94c2e8e4",
+            "ID": "a42af663-c889-4c7e-9ad6-3c1b59d8d8ce",
             "Type": "Outfit",
             "Name": "Laser Rifle",
             "Category": "Hand to Hand",
@@ -442,7 +442,7 @@
             "Description": "A laser rifle is a step up from the sidearms that crew members typically carry for defense against pirates: more powerful, and more accurate as well. For each of these rifles that one of your crew is wielding, your odds of capturing another ship or defending your own ship from boarders are increased substantially."
         },
         {
-            "ID": "f3c05e58-e4eb-4227-b84e-1ac23c75fac4",
+            "ID": "0ce68f25-305c-49eb-a076-38b02748381b",
             "Type": "Outfit",
             "Name": "Fragmentation Grenades",
             "Plural": "Fragmentation Grenades",
@@ -455,7 +455,7 @@
             "Description": "Fragmentation grenades are an only marginally legal weapon for hand-to-hand combat when boarding a ship, useful for flushing out defenders who are hunkered down in defensible choke points inside their own ship. They are much less useful as a defensive weapon, but still better than nothing."
         },
         {
-            "ID": "6193d25a-45d6-48d3-b240-277f560f1003",
+            "ID": "6f526643-7b8e-4faa-b992-1c42436dbc49",
             "Type": "Outfit",
             "Name": "Security Station",
             "Category": "Hand to Hand",
@@ -468,7 +468,7 @@
             "Description": "This is a specially designed barricade, which can be installed in the hallways of your ship as a powerful defense against anyone who boards you in an attempt to take over your ship."
         },
         {
-            "ID": "e7f7d8ed-cf09-4204-8b03-a898d9ac2a33",
+            "ID": "53977d2c-0cae-40b4-9544-f859ae230ba9",
             "Type": "Outfit",
             "Name": "Nerve Gas",
             "Plural": "Nerve Gas",
@@ -482,7 +482,7 @@
             "Description": "This is a highly illegal weapon for hand to hand combat when boarding an enemy ship. Because chemical weapons are banned by interstellar law, you can be severely fined for getting caught in possession of nerve gas canisters. But, they do clear out an enemy ship quicker than just about anything else..."
         },
         {
-            "ID": "90c877d2-4159-48de-a9f8-40c98cc6d3e7",
+            "ID": "514e01cc-1e86-4c99-a567-25f384d36648",
             "Type": "Outfit",
             "Name": "Local Map",
             "Category": "Special",
@@ -492,7 +492,7 @@
             "Description": "This data chip contains complete information on the twelve star systems closest to this one: planets, ports, governments, trade prices, available services, etc. You can get all the same information just by exploring those systems yourself, but having a map can save you from making wrong turns if you are trying to travel through new territory to reach a certain system quickly."
         },
         {
-            "ID": "310f2734-2454-42af-b54c-ced9359b187c",
+            "ID": "04a6e12a-60db-49cd-a05b-8f3d51688ebd",
             "Type": "Outfit",
             "Name": "Pilot's License",
             "Category": "Special",
@@ -501,7 +501,7 @@
             "Description": "Without a pilot's license, you cannot purchase a ship on a Republic planet. And if you buy an unlicensed ship on another planet and then bring it into Republic space, you can be fined until you cough up the money for a license. Needless to say, this policy is not terribly popular with freelance merchant captains."
         },
         {
-            "ID": "197cc5d1-8a7d-4b11-9c6b-4149bbdd8705",
+            "ID": "96859dea-a51f-4a62-bdf1-c8585f075773",
             "Type": "Outfit",
             "Name": "Navy License",
             "Category": "Special",
@@ -509,7 +509,7 @@
             "Description": "It is unusual, but not unheard of, for private citizens to be given the right to purchase Navy ships for their own private use. Recently, certain rich worlds have also begun petitioning Parliament for special permission to purchase Navy warships for their private security forces."
         },
         {
-            "ID": "9d782f57-092e-4b17-9b00-a56ba644d044",
+            "ID": "1c4f9f45-97b4-481a-a616-4a02231a7ab8",
             "Type": "Outfit",
             "Name": "Navy Cruiser License",
             "Category": "Special",
@@ -517,7 +517,7 @@
             "Description": "It is a very rare privilege to be permitted to purchase a Navy capital ship for private use - not just because of a Cruiser's firepower, but because it is a potent symbol of the Republic's strength."
         },
         {
-            "ID": "b9aeab55-a4b8-4d50-b78c-2db594bad62e",
+            "ID": "a040f047-cc5b-4854-a25c-8ef045bcba08",
             "Type": "Outfit",
             "Name": "Navy Carrier License",
             "Category": "Special",
@@ -525,7 +525,7 @@
             "Description": "Only a handful of people in the past century have been given permission to purchase a Navy Carrier, even a decommissioned one, for private use."
         },
         {
-            "ID": "bf178b32-a83d-4442-8459-fb2acfea96ae",
+            "ID": "d995a338-b6f5-459d-bb4b-642f17e2e688",
             "Type": "Outfit",
             "Name": "Militia License",
             "Category": "Special",
@@ -533,7 +533,7 @@
             "Description": "Officially joined the Free Worlds. Received permission to purchase their Militia-only ships."
         },
         {
-            "ID": "2acc2c0e-22f7-457f-b9e5-178714cbbe81",
+            "ID": "84eab95a-23ee-4516-a22a-a5bb2c22b961",
             "Type": "Outfit",
             "Name": "City-Ship License",
             "Category": "Special",

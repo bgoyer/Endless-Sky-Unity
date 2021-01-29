@@ -1,7 +1,7 @@
 {
     "engineModel": [
         {
-            "ID": "1b7afcd4-ecad-4c88-b0c5-36c1ae384545",
+            "ID": "d4c0a088-6ebf-4439-b176-1cc5e36fbb70",
             "Type": "Outfit",
             "Name": "Afterburner",
             "Category": "Engines",
@@ -17,7 +17,7 @@
             "Description": "An afterburner works by dumping hyperspace fuel into your engines and igniting it, producing a large amount of thrust. This can be very useful for dodging missiles or briefly escaping from faster opponents, but you must be careful to avoid using up so much fuel that you do not have enough left for hyperspace travel."
         },
         {
-            "ID": "dd94ff66-b021-4489-a8cb-adbdf18d21d1",
+            "ID": "17d2b8b5-5d08-4e1c-b3a6-dd7bcaba10ff",
             "Type": "Effect",
             "Name": "afterburner",
             "Sprite": "effect/afterburner",
@@ -31,7 +31,7 @@
             "VelocityScale": "1."
         },
         {
-            "ID": "daa2f070-72e9-472d-aa63-62ed68c9c93d",
+            "ID": "1a455ae2-251c-4b73-8056-973516594901",
             "Type": "Outfit",
             "Name": "Ionic Afterburner",
             "Category": "Engines",
@@ -48,7 +48,7 @@
             "Description": "The ionic afterburner was designed by the Syndicate to compensate for the primary weakness of an ordinary afterburner: namely, that it consumes hyperspace fuel at a prodigious rate. Ionic afterburners instead use a small amount of fuel combined with a large burst of energy from your ship's batteries to achieve the same effect."
         },
         {
-            "ID": "f4690154-05c9-43dd-846a-2a12b47ba0fa",
+            "ID": "5117556b-c858-4d98-8a6c-c727652a56c5",
             "Type": "Effect",
             "Name": "ionic afterburner",
             "Sprite": "effect/ionic afterburner",
@@ -62,7 +62,7 @@
             "VelocityScale": "1."
         },
         {
-            "ID": "a8610cdb-fea6-4ad0-a352-2f37e27ca9ce",
+            "ID": "a1494cb5-7ba0-4ec7-847c-7fccb8538c6b",
             "Type": "Outfit",
             "Name": "X1050 Ion Engines",
             "Category": "Engines",
@@ -83,7 +83,7 @@
             "Description": "`When designing the Barb, the Syndicate took the opportunity to integrate their smallest thruster models to create a more compact steering and thrusting engine. The result is not very useful on anything but a fighter, and is only adequate in that role. Still, if engine space is at a premium, this is the smallest set of engines that will still get you there (eventually).`"
         },
         {
-            "ID": "44e24e25-fc99-4356-a650-e9c2b9f893d9",
+            "ID": "8602004b-de02-4416-afc2-9bc784adeacf",
             "Type": "Outfit",
             "Name": "X1700 Ion Thruster",
             "Category": "Engines",
@@ -101,7 +101,7 @@
             "Description": "This is the smallest thruster that you can buy, so weak that anything larger than a drone will accelerate quite slowly when using this engine. On the other hand, it is also very energy-efficient. Ion engines consume less energy than plasma engines and produce less heat, but they also take up more space."
         },
         {
-            "ID": "b2c53d3a-b3a1-412a-b42c-63a4dcdf5c8f",
+            "ID": "f426e749-e109-48e3-9e08-158660d60c06",
             "Type": "Outfit",
             "Name": "X2700 Ion Thruster",
             "Category": "Engines",
@@ -119,7 +119,7 @@
             "Description": "The X2700 ion thruster is intended mostly for use in small, single-person or two-person ships, as well as in fighters. It is also used in larger ships, such as freighters, that have very little space for propulsion systems or energy to drive them. But these larger ships move unbearably slowly as a result. Ion engines consume less energy than plasma engines and produce less heat, but they also take up more space."
         },
         {
-            "ID": "2fe4b5c1-0f5f-492c-a10b-9ecddc5e630c",
+            "ID": "35a1fa88-1b08-4f17-a5a9-80519c65f479",
             "Type": "Outfit",
             "Name": "X3700 Ion Thruster",
             "Category": "Engines",
@@ -137,7 +137,7 @@
             "Description": "The X3700 ion thruster is designed for heavy freighters and small capital ships. In theory, it could be installed in smaller ships too, if they have enough engine space, to attain almost ridiculous speeds. Ion engines consume less energy than plasma engines and produce less heat, but they also take up more space."
         },
         {
-            "ID": "b8b09c8e-da30-4cad-98a5-e014cf209dc8",
+            "ID": "ccbce2b4-1467-4a19-853d-5ef854d79469",
             "Type": "Outfit",
             "Name": "X4700 Ion Thruster",
             "Category": "Engines",
@@ -155,7 +155,7 @@
             "Description": "The X4700 ion thruster was developed when the Republic Navy began building warships so large that the X3700 was not sufficient for them. It allows even a capital ship to move at a respectable speed. Ion engines consume less energy than plasma engines and produce less heat, but they also take up more space."
         },
         {
-            "ID": "de326725-b2b1-4e06-ad77-64e4dca1d72f",
+            "ID": "f41718ac-879e-4425-a668-3f063b8ae2c5",
             "Type": "Outfit",
             "Name": "X5700 Ion Thruster",
             "Category": "Engines",
@@ -173,7 +173,7 @@
             "Description": "The X5700 thruster is intended for only the largest of capital ships. When the Syndicate first began producing them, these engines were considered little more than a publicity stunt, because no ship at the time was large enough to hold one. Ion engines consume less energy than plasma engines and produce less heat, but they also take up more space."
         },
         {
-            "ID": "aa9da12c-4b48-4f86-9e28-0d1a64233e55",
+            "ID": "3c256a6c-37bb-417b-a10a-8e114054dd39",
             "Type": "Outfit",
             "Name": "X1200 Ion Steering",
             "Category": "Engines",
@@ -188,7 +188,7 @@
             "Description": "This is the smallest set of steering thrusters that you can buy, generally considered suitable only for tiny, pilotless drones. Occasionally pilots looking for some extra outfit space will try swapping out their larger steering systems for one of these, but the results are invariably disappointing. Ion engines consume less energy than plasma engines and produce less heat, but they also take up more space."
         },
         {
-            "ID": "67716a4b-1936-40ab-9af4-1877638eb1a8",
+            "ID": "e05d95cd-064b-416f-b8e4-e6e4a1ee5191",
             "Type": "Outfit",
             "Name": "X2200 Ion Steering",
             "Category": "Engines",
@@ -203,7 +203,7 @@
             "Description": "The X2200 steering system is designed for fighters and other small spacecraft, as well as for use in larger ships when maneuverability is not needed. Ion engines consume less energy than plasma engines and produce less heat, but they also take up more space."
         },
         {
-            "ID": "f38d526e-efcb-4770-bedd-53a8197c0418",
+            "ID": "fb815f77-2dc6-429d-9de5-334da566396c",
             "Type": "Outfit",
             "Name": "X3200 Ion Steering",
             "Category": "Engines",
@@ -218,7 +218,7 @@
             "Description": "The X3200 steering system is intended for small warships and freighters. It produces enough turning force to lend agility to all but the largest of human ships, and it is considerably more energy-efficient than the plasma-drive alternatives. Ion engines consume less energy than plasma engines and produce less heat, but they also take up more space."
         },
         {
-            "ID": "7c6b29ae-03a9-4896-b9db-40501a840d3b",
+            "ID": "8375eb79-7a7e-4d10-b670-24820197e1b5",
             "Type": "Outfit",
             "Name": "X4200 Ion Steering",
             "Category": "Engines",
@@ -233,7 +233,7 @@
             "Description": "The X4200 is a powerful steering system, designed mostly for warships because quick steering is seldom a requirement in freighter design. Ion engines consume less energy than plasma engines and produce less heat, but they also take up more space."
         },
         {
-            "ID": "66ff0327-c300-4de7-8b9b-03f22924566f",
+            "ID": "47ba8c51-1e4c-41d7-950c-58d20bdaed98",
             "Type": "Outfit",
             "Name": "X5200 Ion Steering",
             "Category": "Engines",
@@ -248,7 +248,7 @@
             "Description": "The X5200 is a steering system so large and powerful that only a handful of ships can install it. Due to its limited market, it is produced in small numbers. Ion engines consume less energy than plasma engines and produce less heat, but they also take up more space."
         },
         {
-            "ID": "f03e1fb7-1777-4fd6-8598-e42ea74a5a14",
+            "ID": "466102da-1f78-45bb-b3f2-66663dbe456f",
             "Type": "Outfit",
             "Name": "Chipmunk Plasma Thruster",
             "Category": "Engines",
@@ -266,7 +266,7 @@
             "Description": "This is the smallest of the plasma propulsion systems produced by Delta V Corporation, suitable for very light fighters and interceptors. Plasma engines are a bit more powerful than ion engines of the same size, but they are less energy efficient and produce more heat."
         },
         {
-            "ID": "18be365d-ff38-4574-9944-cf9579ab696f",
+            "ID": "aa883b94-b43b-44df-b88d-8a58ac504f20",
             "Type": "Outfit",
             "Name": "Greyhound Plasma Thruster",
             "Category": "Engines",
@@ -284,7 +284,7 @@
             "Description": "This thruster is intended for small ships and for freighters. It comes in a crate decorated with a stylized cartoon of a running greyhound. Plasma engines are a bit more powerful than ion engines of the same size, but they are less energy efficient and produce more heat."
         },
         {
-            "ID": "9ca15b34-5de2-4534-8125-dd5fdc57db9c",
+            "ID": "8d3436bc-869d-47f1-b017-c398a714d233",
             "Type": "Outfit",
             "Name": "Impala Plasma Thruster",
             "Category": "Engines",
@@ -302,7 +302,7 @@
             "Description": "Impala class thrusters produce a significant amount of force, and are suitable for smaller capital ships. But, your ship may need extra cooling systems in order to handle them. Plasma engines are a bit more powerful than ion engines of the same size, but they are less energy efficient and produce more heat."
         },
         {
-            "ID": "7bbfdc6a-08b4-49c2-bd64-ce3f5c5e6b55",
+            "ID": "28d69c6f-ff54-455e-8b52-8013c5355932",
             "Type": "Outfit",
             "Name": "Orca Plasma Thruster",
             "Category": "Engines",
@@ -320,7 +320,7 @@
             "Description": "This engine draws enough power that a ship with anything short of a full-fledged nuclear reactor is unlikely to be able to use it, but the thrust it generates is impressive. Plasma engines are a bit more powerful than ion engines of the same size, but they are less energy efficient and produce more heat."
         },
         {
-            "ID": "676ee6cb-3c77-4d8d-b19b-eb03c8566885",
+            "ID": "afda249d-7d3c-4bbf-89f3-6bea8f60826b",
             "Type": "Outfit",
             "Name": "Tyrant Plasma Thruster",
             "Category": "Engines",
@@ -338,7 +338,7 @@
             "Description": "The enormous crate that this thruster is sold in comes decorated with a picture of a grinning Tyrannosaurus Rex with an improbable number of teeth. Only a handful of ships are large enough to require an engine of this size... or to have the capacity for one. Plasma engines are a bit more powerful than ion engines of the same size, but they are less energy efficient and produce more heat."
         },
         {
-            "ID": "e3b05138-d9ba-4a2f-bf38-4bd6df9e655e",
+            "ID": "d1e535cf-4bde-4902-adc3-f2014b2e9668",
             "Type": "Outfit",
             "Name": "Chipmunk Plasma Steering",
             "Category": "Engines",
@@ -353,7 +353,7 @@
             "Description": "This is the smallest plasma steering system that Delta V produces. The packaging features a cartoon of what appears to be a very highly caffeinated rodent. Plasma engines are a bit more powerful than ion engines of the same size, but they are less energy efficient and produce more heat."
         },
         {
-            "ID": "336f59f8-97c7-4a51-9452-65495841b7d1",
+            "ID": "8dcf23c7-2186-4d2f-bed9-c23fd8be59fd",
             "Type": "Outfit",
             "Name": "Greyhound Plasma Steering",
             "Category": "Engines",
@@ -368,7 +368,7 @@
             "Description": "The Greyhound class plasma propulsion systems are Delta V's most popular product, suitable for a wide range of small starships. Plasma engines are a bit more powerful than ion engines of the same size, but they are less energy efficient and produce more heat."
         },
         {
-            "ID": "0cf5bbd5-d77c-427a-b7de-7f922ebd8df2",
+            "ID": "fe79bdf6-6eba-4ed3-bc11-0c12339579fd",
             "Type": "Outfit",
             "Name": "Impala Plasma Steering",
             "Category": "Engines",
@@ -383,7 +383,7 @@
             "Description": "Impala class plasma steering systems are suitable for most freighters and all but the largest warships, and are also considerably more compact than the ion propulsion systems produced by the Syndicate. Plasma engines are a bit more powerful than ion engines of the same size, but they are less energy efficient and produce more heat."
         },
         {
-            "ID": "10bd54ad-9389-4b0a-89f3-8b64e0e24cbf",
+            "ID": "b796ccdd-98dc-432a-8fe7-d92d9bee1160",
             "Type": "Outfit",
             "Name": "Orca Plasma Steering",
             "Category": "Engines",
@@ -398,7 +398,7 @@
             "Description": "An Orca class steering system will allow any mid-sized ship to turn as quickly as a fighter, and is powerful enough to serve even the largest of warships. Plasma engines are a bit more powerful than ion engines of the same size, but they are less energy efficient and produce more heat."
         },
         {
-            "ID": "6ca59c40-7ccf-44c4-8f70-d454c8060297",
+            "ID": "80acb5f4-f3b9-4915-a273-e2e2df9da62d",
             "Type": "Outfit",
             "Name": "Tyrant Plasma Steering",
             "Category": "Engines",
@@ -413,7 +413,7 @@
             "Description": "As with the corresponding thruster, the Tyrant class steering system is so large and powerful that very few ships can make use of it. Plasma engines are a bit more powerful than ion engines of the same size, but they are less energy efficient and produce more heat."
         },
         {
-            "ID": "66ae6425-1837-43a5-99d6-225c7850594f",
+            "ID": "a39defef-be5f-47c8-afa9-f03d2635f887",
             "Type": "Outfit",
             "Name": "A120 Atomic Thruster",
             "Category": "Engines",
@@ -431,7 +431,7 @@
             "Description": "If you're looking for the most powerful engine that will fit into your ship, and have plenty of money to burn, Deep Sky's atomic thrusters are your answer. Of course, the extra energy and cooling they require can easily offset the benefit of their small size."
         },
         {
-            "ID": "b11f8a26-d78d-43f5-9db3-f9e95f16cb93",
+            "ID": "a97287c9-d69b-4459-869c-69da90345fd0",
             "Type": "Outfit",
             "Name": "A250 Atomic Thruster",
             "Category": "Engines",
@@ -449,7 +449,7 @@
             "Description": "Deep Sky's atomic thrusters have been in production for centuries, but remain a niche product due to their high prices and high energy requirements."
         },
         {
-            "ID": "2220e0dc-c645-4f7a-be45-9410a29bae83",
+            "ID": "8d99ae7b-c566-4981-878c-ce3c490d34d8",
             "Type": "Outfit",
             "Name": "A370 Atomic Thruster",
             "Category": "Engines",
@@ -467,7 +467,7 @@
             "Description": "This thruster is small enough to fit in a light warship or freighter, but powerful enough to move any but the largest of ships. Naturally, such performance comes at an exorbitant price."
         },
         {
-            "ID": "687b8519-2da6-4ea8-95d7-d9a653bde7d6",
+            "ID": "1c19135e-6e50-4f00-bd1a-e58eea6fb125",
             "Type": "Outfit",
             "Name": "A520 Atomic Thruster",
             "Category": "Engines",
@@ -485,7 +485,7 @@
             "Description": "If your ship is sporting a set of Deep Sky's atomic engines, you will be the envy of every pilot in the galaxy. No other form of propulsion that humanity has discovered produces so much thrust from such a small engine."
         },
         {
-            "ID": "2969d53c-0ac6-4d5f-85af-c3778038a1c3",
+            "ID": "dd489de6-eb0b-4cdd-8806-81bcc4549633",
             "Type": "Outfit",
             "Name": "A860 Atomic Thruster",
             "Category": "Engines",
@@ -503,7 +503,7 @@
             "Description": "The A860 atomic thruster is the most powerful engine sold in human space, and is much more compact than any of the alternatives. But, you may need to upgrade your ship's power and cooling systems to handle it."
         },
         {
-            "ID": "4dbc29bb-cf28-4b25-ac89-410786971860",
+            "ID": "a7325472-2f30-4806-8767-28c13e427aed",
             "Type": "Outfit",
             "Name": "A125 Atomic Steering",
             "Category": "Engines",
@@ -518,7 +518,7 @@
             "Description": "Deep Sky's atomic thrusters are a popular choice for high-end starships. It is not uncommon for a set of atomic engines to cost more than the ship they are installed in."
         },
         {
-            "ID": "f9e47e22-44bc-4981-a65e-30c39ddadbdf",
+            "ID": "42b76832-f1c9-427d-a34c-a5b7278fb283",
             "Type": "Outfit",
             "Name": "A255 Atomic Steering",
             "Category": "Engines",
@@ -533,7 +533,7 @@
             "Description": "If you have exhausted all your other options for making your ship more maneuverable, it may be time to invest in a set of atomic engines."
         },
         {
-            "ID": "fe264e0f-e6bc-4fe4-ac35-92bbbcb3d75c",
+            "ID": "7f36828b-9a46-490b-b10b-17271229ea7d",
             "Type": "Outfit",
             "Name": "A375 Atomic Steering",
             "Category": "Engines",
@@ -548,7 +548,7 @@
             "Description": "Bounty hunters and other captains who need to gain a speed advantage over the ships they are pursuing often dream of being able to save up enough money for a set of atomic engines."
         },
         {
-            "ID": "6553e814-4141-4701-9c7a-c0c5b5ddea9c",
+            "ID": "85f5c094-392a-4d26-8bd8-a5fc8e4620de",
             "Type": "Outfit",
             "Name": "A525 Atomic Steering",
             "Category": "Engines",
@@ -563,7 +563,7 @@
             "Description": "This set of maneuvering thrusters from Deep Sky will allow small warships to turn as fast as a fighter. For larger ships, swapping the existing engines with a set of atomics can free up a considerable amount of space for other outfits or weapons."
         },
         {
-            "ID": "d5ffe9ec-34f0-4605-b371-ba55616400f1",
+            "ID": "96d10da9-7b8e-4b3d-b547-27516fb9f056",
             "Type": "Outfit",
             "Name": "A865 Atomic Steering",
             "Category": "Engines",
@@ -578,7 +578,7 @@
             "Description": "Atomic engines are considered by many to be Deep Sky's crowning achievement. Although they are so expensive that relatively few of them are in use, there are few captains who do not dream of one day installing a set of them."
         },
         {
-            "ID": "9a0038fa-7c7d-49f3-84cd-6d85e353530e",
+            "ID": "45e983ac-226f-4c62-b195-c8f9a34ef018",
             "Type": "Outfit",
             "Name": "AR120 Reverse Thruster",
             "Category": "Engines",

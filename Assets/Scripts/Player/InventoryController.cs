@@ -8,9 +8,12 @@ public class InventoryController : MonoBehaviour
 
     public Inventory PlayerInventory = new Inventory();
 
-    private void Update()
+    public void Add(String Item, int Amount)
     {
-
+        if (Item == "Alunimum")
+        {
+            PlayerInventory.Aluminum += Amount;
+        }
     }
 }
 public class Inventory

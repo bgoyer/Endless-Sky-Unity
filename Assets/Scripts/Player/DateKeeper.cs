@@ -12,7 +12,7 @@ public class DateKeeper : MonoBehaviour
     private string[] months = new string[] { "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
     void Start()
     {
-        CurrentDate = new DateTime(2095,01,01);
+        CurrentDate = new DateTime(2095, 1, 1);
         StartCoroutine("StartTimeLoop");
     }
 
