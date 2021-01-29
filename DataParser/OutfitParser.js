@@ -9,12 +9,8 @@ function parser(fileName) {
     const data = fs.readFileSync(`./data/${fileName}.txt`, "UTF-8");
 
     data.split(/\r?\n/)
-        .filter((line) => {
-            return !line.startsWith("#") && line.trimLeft().length > 0;
-        })
-        .map((line) => {
-            return line.trim();
-        })
+        .filter((line) => !line.startsWith("#") && line.trimLeft().length > 0)
+        .map((line) => line.trim())
         .forEach((line) => {
             var match = line.match(/"([^"]+)"/);
             var hasQuotedName = match != null && match.index === 0;
