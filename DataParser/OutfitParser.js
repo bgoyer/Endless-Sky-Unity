@@ -38,7 +38,6 @@ function parser(fileName) {
 
             if (name == "Outfit" || name == "Effect") {
                 itemIdx++;
-                items[itemIdx] = {};
                 items[itemIdx] = {
                     ...items[itemIdx],
                     ID: uuid.v4(),
