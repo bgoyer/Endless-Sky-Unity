@@ -51,6 +51,7 @@ function parser(fileName) {
                 ...items[itemIdx],
                 [name]: finalValue.replace(/"/g, "").replace(/\t/g, " "),
             };
+            console.log(data);
         });
 
     fs.writeFileSync(

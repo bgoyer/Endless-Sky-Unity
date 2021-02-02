@@ -1,34 +1,37 @@
-using System.Collections;
 using System;
-using UnityEngine.UI;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class DateKeeper : MonoBehaviour
+namespace Assets.Scripts.Player
 {
-    public Text SystemTextUI;
-    public DateTime CurrentDate { get; set; }
-
-    private bool running = false;
-    private string[] months = new string[] { "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
-    void Start()
+    public class DateKeeper : MonoBehaviour
     {
-        CurrentDate = new DateTime(2095, 1, 1);
-        StartCoroutine("StartTimeLoop");
-    }
+        public Text SystemTextUI;
+        public DateTime CurrentDate { get; set; }
 
-
-    public IEnumerator StartTimeLoop()
-    {
-        running = true;
-        while (running)
+        private bool running = false;
+        private string[] months = new string[] { "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+        void Start()
         {
-            CurrentDate = CurrentDate.AddDays(1);
-            SystemTextUI.text = $"{CurrentDate.Day} {months[CurrentDate.Month]} {CurrentDate.Year}";
-            yield return new WaitForSeconds(1f);
+            CurrentDate = new DateTime(2095, 1, 1);
+            StartCoroutine("StartTimeLoop");
         }
-    }
-    public void StopTimeLoop()
-    {
-        running = false;
+
+
+        public IEnumerator StartTimeLoop()
+        {
+            running = true;
+            while (running)
+            {
+                CurrentDate = CurrentDate.AddDays(1);
+                SystemTextUI.text = $"{CurrentDate.Day} {months[CurrentDate.Month]} {CurrentDate.Year}";
+                yield return new WaitForSeconds(1f);
+            }
+        }
+        public void StopTimeLoop()
+        {
+            running = false;
+        }
     }
 }

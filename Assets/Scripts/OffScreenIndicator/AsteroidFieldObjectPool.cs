@@ -1,71 +1,74 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-internal class AsteroidFieldObjectPool : MonoBehaviour
+namespace Assets.Scripts.OffScreenIndicator
 {
-    public static AsteroidFieldObjectPool current;
-
-    [Tooltip("Assign the asteriod field prefab.")]
-    public Indicator pooledObject;
-
-    [Tooltip("Initial pooled amount.")]
-    public int pooledAmount = 1;
-
-    [Tooltip("Should the pooled amount increase.")]
-    public bool willGrow = true;
-
-    private List<Indicator> pooledObjects;
-
-    private void Awake()
+    internal class AsteroidFieldObjectPool : MonoBehaviour
     {
-        current = this;
-    }
+        public static AsteroidFieldObjectPool current;
 
-    private void Start()
-    {
-        pooledObjects = new List<Indicator>();
+        [Tooltip("Assign the asteriod field prefab.")]
+        public Indicator pooledObject;
 
-        for (int i = 0; i < pooledAmount; i++)
+        [Tooltip("Initial pooled amount.")]
+        public int pooledAmount = 1;
+
+        [Tooltip("Should the pooled amount increase.")]
+        public bool willGrow = true;
+
+        private List<Indicator> pooledObjects;
+
+        private void Awake()
         {
-            Indicator asteroidField = Instantiate(pooledObject);
-            asteroidField.transform.SetParent(transform, false);
-            asteroidField.Activate(false);
-            pooledObjects.Add(asteroidField);
+            current = this;
         }
-    }
 
-    /// <summary>
-    /// Gets pooled objects from the pool.
-    /// </summary>
-    /// <returns></returns>
-    public Indicator GetPooledObject()
-    {
-        for (int i = 0; i < pooledObjects.Count; i++)
+        private void Start()
         {
-            if (!pooledObjects[i].Active)
+            pooledObjects = new List<Indicator>();
+
+            for (int i = 0; i < pooledAmount; i++)
             {
-                return pooledObjects[i];
+                Indicator asteroidField = Instantiate(pooledObject);
+                asteroidField.transform.SetParent(transform, false);
+                asteroidField.Activate(false);
+                pooledObjects.Add(asteroidField);
             }
         }
-        if (willGrow)
-        {
-            Indicator asteroidField = Instantiate(pooledObject);
-            asteroidField.transform.SetParent(transform, false);
-            asteroidField.Activate(false);
-            pooledObjects.Add(asteroidField);
-            return asteroidField;
-        }
-        return null;
-    }
 
-    /// <summary>
-    /// Deactive all the objects in the pool.
-    /// </summary>
-    public void DeactivateAllPooledObjects()
-    {
-        foreach (Indicator asteroidField in pooledObjects)
+        /// <summary>
+        /// Gets pooled objects from the pool.
+        /// </summary>
+        /// <returns></returns>
+        public Indicator GetPooledObject()
         {
-            asteroidField.Activate(false);
+            for (int i = 0; i < pooledObjects.Count; i++)
+            {
+                if (!pooledObjects[i].Active)
+                {
+                    return pooledObjects[i];
+                }
+            }
+            if (willGrow)
+            {
+                Indicator asteroidField = Instantiate(pooledObject);
+                asteroidField.transform.SetParent(transform, false);
+                asteroidField.Activate(false);
+                pooledObjects.Add(asteroidField);
+                return asteroidField;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Deactive all the objects in the pool.
+        /// </summary>
+        public void DeactivateAllPooledObjects()
+        {
+            foreach (Indicator asteroidField in pooledObjects)
+            {
+                asteroidField.Activate(false);
+            }
         }
     }
 }

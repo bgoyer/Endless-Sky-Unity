@@ -1,71 +1,74 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-internal class EnemyOutpostObjectPool : MonoBehaviour
+namespace Assets.Scripts.OffScreenIndicator
 {
-    public static EnemyOutpostObjectPool current;
-
-    [Tooltip("Assign the enemy outpost prefab.")]
-    public Indicator pooledObject;
-
-    [Tooltip("Initial pooled amount.")]
-    public int pooledAmount = 1;
-
-    [Tooltip("Should the pooled amount increase.")]
-    public bool willGrow = true;
-
-    private List<Indicator> pooledObjects;
-
-    private void Awake()
+    internal class EnemyOutpostObjectPool : MonoBehaviour
     {
-        current = this;
-    }
+        public static EnemyOutpostObjectPool current;
 
-    private void Start()
-    {
-        pooledObjects = new List<Indicator>();
+        [Tooltip("Assign the enemy outpost prefab.")]
+        public Indicator pooledObject;
 
-        for (int i = 0; i < pooledAmount; i++)
+        [Tooltip("Initial pooled amount.")]
+        public int pooledAmount = 1;
+
+        [Tooltip("Should the pooled amount increase.")]
+        public bool willGrow = true;
+
+        private List<Indicator> pooledObjects;
+
+        private void Awake()
         {
-            Indicator enemyOutpost = Instantiate(pooledObject);
-            enemyOutpost.transform.SetParent(transform, false);
-            enemyOutpost.Activate(false);
-            pooledObjects.Add(enemyOutpost);
+            current = this;
         }
-    }
 
-    /// <summary>
-    /// Gets pooled objects from the pool.
-    /// </summary>
-    /// <returns></returns>
-    public Indicator GetPooledObject()
-    {
-        for (int i = 0; i < pooledObjects.Count; i++)
+        private void Start()
         {
-            if (!pooledObjects[i].Active)
+            pooledObjects = new List<Indicator>();
+
+            for (int i = 0; i < pooledAmount; i++)
             {
-                return pooledObjects[i];
+                Indicator enemyOutpost = Instantiate(pooledObject);
+                enemyOutpost.transform.SetParent(transform, false);
+                enemyOutpost.Activate(false);
+                pooledObjects.Add(enemyOutpost);
             }
         }
-        if (willGrow)
-        {
-            Indicator enemyOutpost = Instantiate(pooledObject);
-            enemyOutpost.transform.SetParent(transform, false);
-            enemyOutpost.Activate(false);
-            pooledObjects.Add(enemyOutpost);
-            return enemyOutpost;
-        }
-        return null;
-    }
 
-    /// <summary>
-    /// Deactive all the objects in the pool.
-    /// </summary>
-    public void DeactivateAllPooledObjects()
-    {
-        foreach (Indicator enemyOutpost in pooledObjects)
+        /// <summary>
+        /// Gets pooled objects from the pool.
+        /// </summary>
+        /// <returns></returns>
+        public Indicator GetPooledObject()
         {
-            enemyOutpost.Activate(false);
+            for (int i = 0; i < pooledObjects.Count; i++)
+            {
+                if (!pooledObjects[i].Active)
+                {
+                    return pooledObjects[i];
+                }
+            }
+            if (willGrow)
+            {
+                Indicator enemyOutpost = Instantiate(pooledObject);
+                enemyOutpost.transform.SetParent(transform, false);
+                enemyOutpost.Activate(false);
+                pooledObjects.Add(enemyOutpost);
+                return enemyOutpost;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Deactive all the objects in the pool.
+        /// </summary>
+        public void DeactivateAllPooledObjects()
+        {
+            foreach (Indicator enemyOutpost in pooledObjects)
+            {
+                enemyOutpost.Activate(false);
+            }
         }
     }
 }

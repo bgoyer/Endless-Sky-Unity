@@ -1,6 +1,6 @@
-﻿using ES.Data.Models.Inventory;
+﻿using Assets.Scripts.Data.Models.Inventory.Mineral;
 
-namespace ES.Data.Services
+namespace Assets.Scripts.Data.Services
 {
     public class MineralService: ServiceBase<MineralModel>
     {

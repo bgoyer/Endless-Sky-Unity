@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8414503934219402418}
   - component: {fileID: -8557713694589992217}
-  - component: {fileID: 888222683873151478}
+  - component: {fileID: 3655336387580681547}
   m_Layer: 0
   m_Name: Stearing
   m_TagString: Untagged
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &888222683873151478
+--- !u!114 &3655336387580681547
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,11 +93,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 13217547437483690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c902bfca937f6104585725d4dbb56dae, type: 3}
+  m_Script: {fileID: 11500000, guid: 429657fe278843c47aba1835602142f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotSpeed: 1
-  WarpRotSpeed: 10
 --- !u!1 &1208300800177943428
 GameObject:
   m_ObjectHideFlags: 0

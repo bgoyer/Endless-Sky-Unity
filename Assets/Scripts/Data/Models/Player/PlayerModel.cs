@@ -1,4 +1,4 @@
-namespace ES.Data.Models.Player
+namespace Assets.Scripts.Data.Models.Player
 {
     public class PlayerModel : ModelBase
     {

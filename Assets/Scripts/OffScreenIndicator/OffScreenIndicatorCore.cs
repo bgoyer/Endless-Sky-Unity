@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace PixelPlay.OffScreenIndicator
+namespace Assets.Scripts.OffScreenIndicator
 {
     public class OffScreenIndicatorCore
     {

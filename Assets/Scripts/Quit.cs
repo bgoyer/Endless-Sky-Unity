@@ -1,9 +1,12 @@
 using UnityEngine;
 
-public class Quit : MonoBehaviour
+namespace Assets.Scripts
 {
-    public void quit()
+    public class Quit : MonoBehaviour
     {
-        Application.Quit();
+        public void quit()
+        {
+            Application.Quit();
+        }
     }
 }

@@ -1,6 +1,4 @@
-﻿using ES.Data.Models.Inventory;
-
-namespace Assets.Scripts.Data.Models.Inventory.Engines
+﻿namespace Assets.Scripts.Data.Models.Inventory.Engines
 {
     public class EngineModel : InventoryModelBase
     {

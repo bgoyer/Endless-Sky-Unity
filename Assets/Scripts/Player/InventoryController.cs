@@ -3,21 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryController : MonoBehaviour
+namespace Assets.Scripts.Player
 {
-
-    public Inventory PlayerInventory = new Inventory();
-
-    public void Add(String Item, int Amount)
+    public class InventoryController : MonoBehaviour
     {
-        if (Item == "Alunimum")
+
+        public Inventory PlayerInventory = new Inventory();
+
+        public void Add(String Item, int Amount)
         {
-            PlayerInventory.Aluminum += Amount;
+            if (Item == "Alunimum")
+            {
+                PlayerInventory.Aluminum += Amount;
+            }
         }
     }
-}
-public class Inventory
-{
-    public int Aluminum;
-    public List<string> SectorMaps = new List<string> { };
+    public class Inventory
+    {
+        public int Aluminum;
+        public List<string> SectorMaps = new List<string> { };
+    }
 }

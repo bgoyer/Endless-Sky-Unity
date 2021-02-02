@@ -1,19 +1,22 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UpdatePlayerStats : MonoBehaviour
+namespace Assets.Scripts.Player
 {
-    public GameObject Player;
-    public Text Credits;
-    private Player Stats;
-
-    private void Start()
+    public class UpdatePlayerStats : MonoBehaviour
     {
+        public GameObject Player;
+        public Text Credits;
+        private Player Stats;
+
+        private void Start()
+        {
        
-    }
+        }
 
-    private void Update()
-    {
-        Credits.text = Player.GetComponent<Player>().Credits +" credits";
+        private void Update()
+        {
+            Credits.text = Player.GetComponent<Player>().Credits +" credits";
+        }
     }
 }

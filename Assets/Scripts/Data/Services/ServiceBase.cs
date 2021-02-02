@@ -1,10 +1,10 @@
-﻿using ES.Data.Models;
-using JsonFlatFileDataStore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Assets.Scripts.Data.Models;
+using JsonFlatFileDataStore;
 
-namespace ES.Data.Services
+namespace Assets.Scripts.Data.Services
 {
     public class ServiceBase<TModel>
         where TModel : ModelBase, new()

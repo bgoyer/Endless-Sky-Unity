@@ -1,6 +1,6 @@
-﻿using ES.Data.Models.Player;
+﻿using Assets.Scripts.Data.Models.Player;
 
-namespace ES.Data.Services
+namespace Assets.Scripts.Data.Services
 {
     public class PlayerService : ServiceBase<PlayerModel>
     {

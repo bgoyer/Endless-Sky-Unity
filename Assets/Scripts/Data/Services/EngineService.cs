@@ -1,7 +1,6 @@
 ﻿using Assets.Scripts.Data.Models.Inventory.Engines;
-using ES.Data.Services;
 
-namespace Assets.Scripts.Data.Services.Engines
+namespace Assets.Scripts.Data.Services
 {
     public class EnginesService : ServiceBase<EngineModel>
     {

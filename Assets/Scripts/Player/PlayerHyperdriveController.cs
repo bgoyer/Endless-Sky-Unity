@@ -1,26 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
+using Assets.Scripts.Ship;
 using UnityEngine;
 
-public class PlayerHyperdriveController : MonoBehaviour
+namespace Assets.Scripts.Player
 {
+    public class PlayerHyperdriveController : MonoBehaviour
+    {
     
-    private GameObject player;
-    private GameObject ship;
+        private GameObject player;
+        private GameObject ship;
 
-    private void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-    }
-    
-    public void PlayerAutoPilot(Transform target)
-    {
-        if (player.transform.childCount > 0)
+        private void Start()
         {
-            ship = player.transform.GetChild(0).gameObject;
-            if (ship.GetComponent<ShipVariables>().HasHyperDrive == true)
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
+    
+        public void PlayerAutoPilot(Transform target)
+        {
+            if (player.transform.childCount > 0)
             {
-                ship.transform.GetChild(3).GetChild(0).GetComponent<HyperDriveController>().AutoPilot(target);
+                ship = player.transform.GetChild(0).gameObject;
+                if (ship.GetComponent<ShipVariables>().HasHyperDrive == true)
+                {
+                    GameObject.Find("/SceneScripts").GetComponent<HyperDriveController>().AutoPilot(target, ship);
+                }
             }
         }
     }

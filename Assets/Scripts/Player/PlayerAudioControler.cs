@@ -1,10 +1,12 @@
-using System.Collections;
 using UnityEngine;
 
-public class PlayerAudioControler : MonoBehaviour
+namespace Assets.Scripts.Player
 {
-    public GameObject SoundHolder;
-    public AudioSource HyperDrive;
-    public AudioSource WarpHum;
+    public class PlayerAudioControler : MonoBehaviour
+    {
+        public GameObject SoundHolder;
+        public AudioSource HyperDrive;
+        public AudioSource WarpHum;
 
+    }
 }

@@ -1,21 +1,39 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Ship;
+using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+namespace Assets.Scripts.Player
 {
-    public Transform firePoint;
-    public GameObject bullet;
-    public GameObject bulletPlaceHolder;
-
-    private void Update()
+    public class PlayerAttack : MonoBehaviour
     {
-        if (Input.GetButtonDown("Fire1"))
+        private GameObject ship;
+        private Transform weaponClasses;
+
+        private void Start()
         {
-            Shoot();
+            ship = this.transform.GetChild(0).gameObject;
+            weaponClasses = ship.transform.GetChild(0).gameObject.transform;
         }
-    }
 
-    private void Shoot()
-    {
-        Instantiate(bullet, firePoint.position, firePoint.rotation, bulletPlaceHolder.transform);
+        private void Update()
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Shoot();
+            }
+        }
+
+        private void Shoot()
+        {
+            foreach (Transform weapons in weaponClasses)
+            {
+                foreach (GameObject weapon in weapons)
+                {
+                    if (weapon.transform.GetChild(0).childCount > 1)
+                    {
+                        weapon.transform.GetChild(0).GetChild(0).GetComponent<WeaponController>().Shoot(ship.GetComponent<Rigidbody2D>().velocity.magnitude);
+                    }
+                }
+            }
+        }
     }
 }

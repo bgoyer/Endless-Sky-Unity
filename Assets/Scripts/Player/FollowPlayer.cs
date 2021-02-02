@@ -1,20 +1,22 @@
 ﻿using UnityEngine;
 
-public class FollowPlayer : MonoBehaviour
+namespace Assets.Scripts.Player
 {
-    public Transform ship;
-    private GameObject player;
-    private void Start()
+    public class FollowPlayer : MonoBehaviour
     {
-        player = GameObject.Find("/Player").gameObject;
-    }
-
-    private void Update()
-    {
-        if (player.transform.childCount > 0)
+        private Transform ship;
+        public GameObject player;
+        private void Start()
         {
-            ship = player.transform.GetChild(0).transform;
-            this.transform.position = new Vector3(ship.position.x, ship.position.y, -10);
+        }
+
+        private void Update()
+        {
+            if (player.transform.childCount > 0)
+            {
+                ship = player.transform.GetChild(0).transform;
+                this.transform.position = new Vector3(ship.position.x, ship.position.y, -10);
+            }
         }
     }
 }

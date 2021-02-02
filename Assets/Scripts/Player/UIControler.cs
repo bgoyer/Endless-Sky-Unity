@@ -1,49 +1,53 @@
+using Assets.Scripts.Ship;
 using UnityEngine;
 
-public class UIControler : MonoBehaviour
+namespace Assets.Scripts.Player
 {
-    public GameObject map;
-    public GameObject player;
-    public GameObject menu;
-    public GameObject HideHud;
-
-    private GameObject sceneScripts;
-    private KeyMap keyMap;
-
-    private void Start()
+    public class UIControler : MonoBehaviour
     {
-        sceneScripts = GameObject.Find("/SceneScripts");
-        keyMap = GameObject.Find("/SceneScripts").GetComponent<KeyMap>();
-    }
+        public GameObject map;
+        public GameObject player;
+        public GameObject menu;
+        public GameObject HideHud;
 
-    private void Update()
-    {
-        if (player.transform.GetChild(0).GetComponent<ShipVariables>().CanControl == true && player.activeInHierarchy == true && Input.GetKeyDown(keyMap.OpenMap))
+        private GameObject sceneScripts;
+        private KeyMap keyMap;
+
+        private void Start()
         {
-            if (map.activeSelf == true)
-            {
-                map.SetActive(false);
-                HideHud.SetActive(true);
-            }
-            else
-            {
-                map.SetActive(true);
-                HideHud.SetActive(false);
-            }
+            sceneScripts = GameObject.Find("/SceneScripts");
+            keyMap = GameObject.Find("/SceneScripts").GetComponent<KeyMap>();
         }
-        if (Input.GetKeyDown(KeyCode.Escape) && player.activeInHierarchy == true)
+
+        private void Update()
         {
-            if (menu.activeSelf == true)
+            if (player.transform.GetChild(0).GetComponent<ShipVariables>().CanControl == true && player.activeInHierarchy == true && Input.GetKeyDown(keyMap.OpenMap))
             {
-                menu.SetActive(false);
-                HideHud.SetActive(true);
-                sceneScripts.GetComponent<GameController>().Play();
+                if (map.activeSelf == true)
+                {
+                    map.SetActive(false);
+                    HideHud.SetActive(true);
+                }
+                else
+                {
+                    map.SetActive(true);
+                    HideHud.SetActive(false);
+                }
             }
-            else
+            if (Input.GetKeyDown(KeyCode.Escape) && player.activeInHierarchy == true)
             {
-                menu.SetActive(true);
-                HideHud.SetActive(false);
-                sceneScripts.GetComponent<GameController>().Pause();
+                if (menu.activeSelf == true)
+                {
+                    menu.SetActive(false);
+                    HideHud.SetActive(true);
+                    sceneScripts.GetComponent<GameController>().Play();
+                }
+                else
+                {
+                    menu.SetActive(true);
+                    HideHud.SetActive(false);
+                    sceneScripts.GetComponent<GameController>().Pause();
+                }
             }
         }
     }

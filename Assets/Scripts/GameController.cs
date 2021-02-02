@@ -1,18 +1,21 @@
 using UnityEngine;
 
-public class GameController : MonoBehaviour
+namespace Assets.Scripts
 {
-      private void Awake()
-       {
+    public class GameController : MonoBehaviour
+    {
+        private void Awake()
+        {
             Time.timeScale = 0f;
-       }
-    public void Pause()
-    {
-        Time.timeScale = 0f;
-    }
+        }
+        public void Pause()
+        {
+            Time.timeScale = 0f;
+        }
 
-    public void Play()
-    {
-        Time.timeScale = 1f;
+        public void Play()
+        {
+            Time.timeScale = 1f;
+        }
     }
 }

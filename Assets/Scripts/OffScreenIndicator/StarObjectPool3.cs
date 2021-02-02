@@ -1,71 +1,74 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-internal class StarObjectPool : MonoBehaviour
+namespace Assets.Scripts.OffScreenIndicator
 {
-    public static StarObjectPool current;
-
-    [Tooltip("Assign the star prefab.")]
-    public Indicator pooledObject;
-
-    [Tooltip("Initial pooled amount.")]
-    public int pooledAmount = 1;
-
-    [Tooltip("Should the pooled amount increase.")]
-    public bool willGrow = true;
-
-    private List<Indicator> pooledObjects;
-
-    private void Awake()
+    internal class StarObjectPool : MonoBehaviour
     {
-        current = this;
-    }
+        public static StarObjectPool current;
 
-    private void Start()
-    {
-        pooledObjects = new List<Indicator>();
+        [Tooltip("Assign the star prefab.")]
+        public Indicator pooledObject;
 
-        for (int i = 0; i < pooledAmount; i++)
+        [Tooltip("Initial pooled amount.")]
+        public int pooledAmount = 1;
+
+        [Tooltip("Should the pooled amount increase.")]
+        public bool willGrow = true;
+
+        private List<Indicator> pooledObjects;
+
+        private void Awake()
         {
-            Indicator star = Instantiate(pooledObject);
-            star.transform.SetParent(transform, false);
-            star.Activate(false);
-            pooledObjects.Add(star);
+            current = this;
         }
-    }
 
-    /// <summary>
-    /// Gets pooled objects from the pool.
-    /// </summary>
-    /// <returns></returns>
-    public Indicator GetPooledObject()
-    {
-        for (int i = 0; i < pooledObjects.Count; i++)
+        private void Start()
         {
-            if (!pooledObjects[i].Active)
+            pooledObjects = new List<Indicator>();
+
+            for (int i = 0; i < pooledAmount; i++)
             {
-                return pooledObjects[i];
+                Indicator star = Instantiate(pooledObject);
+                star.transform.SetParent(transform, false);
+                star.Activate(false);
+                pooledObjects.Add(star);
             }
         }
-        if (willGrow)
-        {
-            Indicator star = Instantiate(pooledObject);
-            star.transform.SetParent(transform, false);
-            star.Activate(false);
-            pooledObjects.Add(star);
-            return star;
-        }
-        return null;
-    }
 
-    /// <summary>
-    /// Deactive all the objects in the pool.
-    /// </summary>
-    public void DeactivateAllPooledObjects()
-    {
-        foreach (Indicator star in pooledObjects)
+        /// <summary>
+        /// Gets pooled objects from the pool.
+        /// </summary>
+        /// <returns></returns>
+        public Indicator GetPooledObject()
         {
-            star.Activate(false);
+            for (int i = 0; i < pooledObjects.Count; i++)
+            {
+                if (!pooledObjects[i].Active)
+                {
+                    return pooledObjects[i];
+                }
+            }
+            if (willGrow)
+            {
+                Indicator star = Instantiate(pooledObject);
+                star.transform.SetParent(transform, false);
+                star.Activate(false);
+                pooledObjects.Add(star);
+                return star;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Deactive all the objects in the pool.
+        /// </summary>
+        public void DeactivateAllPooledObjects()
+        {
+            foreach (Indicator star in pooledObjects)
+            {
+                star.Activate(false);
+            }
         }
     }
 }

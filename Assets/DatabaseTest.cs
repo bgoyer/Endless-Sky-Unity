@@ -1,31 +1,21 @@
-using Assets.Scripts.Data.Imports.Engines;
-using Assets.Scripts.Data.Services.Engines;
+using Assets.Scripts.Data.Services;
 using UnityEngine;
 
-public class DatabaseTest : MonoBehaviour
+namespace Assets
 {
-    // Start is called before the first frame update
-    void Start()
+    public class DatabaseTest : MonoBehaviour
     {
-        
-    }
+        public void OnClick()
+        {
+            Import();
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        private void Import()
+        {
+            var service = new EnginesService();
+            var ab = service.GetByName("Afterburner");
 
-    public void OnClick()
-    {
-        Import();
-    }
-
-    private void Import()
-    {
-        var service = new EnginesService();
-        var ab = service.GetByName("Afterburner");
-
-        print(ab.Name);
+            print(ab.Name);
+        }
     }
 }

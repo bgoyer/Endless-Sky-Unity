@@ -1,4 +1,4 @@
-﻿namespace ES.Data.Models
+﻿namespace Assets.Scripts.Data.Models
 {
     public class CelestialBodyModel : ModelBase
     {

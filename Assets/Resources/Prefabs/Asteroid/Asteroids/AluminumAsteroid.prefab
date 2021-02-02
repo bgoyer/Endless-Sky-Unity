@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: 956265fff6f72614983b3f65143fb653, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   matAmountPer: 10
+  asteriodType: Alunimum
   flotsam: {fileID: 2504680460866397445, guid: c852b2e7ac47034429b198fcc032e6af, type: 3}
   garbageHolder: {fileID: 0}
 --- !u!58 &3189288631658496623

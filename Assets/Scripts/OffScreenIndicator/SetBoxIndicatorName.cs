@@ -1,12 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SetBoxIndicatorName : MonoBehaviour
+namespace Assets.Scripts.OffScreenIndicator
 {
-    public Text Text;
-
-    public void SetName(string name)
+    public class SetBoxIndicatorName : MonoBehaviour
     {
-        Text.text = name;
+        public Text Text;
+
+        public void SetName(string name)
+        {
+            Text.text = name;
+        }
     }
 }

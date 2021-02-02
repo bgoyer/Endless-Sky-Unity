@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ES.Data.Models.Inventory
+namespace Assets.Scripts.Data.Models.Inventory.Mineral
 {
     public class MineralModel : InventoryModelBase
     {

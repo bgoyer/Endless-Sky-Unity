@@ -1,7 +1,10 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour
+namespace Assets.Scripts.Player
 {
-    public int Credits { get; set; }
-    public int Level { get; set; }
+    public class Player : MonoBehaviour
+    {
+        public int Credits { get; set; }
+        public int Level { get; set; }
+    }
 }
