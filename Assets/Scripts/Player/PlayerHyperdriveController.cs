@@ -8,9 +8,11 @@ namespace Assets.Scripts.Player
     
         private GameObject player;
         private GameObject ship;
+        private GameObject sceneScripts;
 
         private void Start()
         {
+            sceneScripts = GameObject.Find("/SceneScripts");
             player = GameObject.FindGameObjectWithTag("Player");
         }
     
@@ -21,7 +23,7 @@ namespace Assets.Scripts.Player
                 ship = player.transform.GetChild(0).gameObject;
                 if (ship.GetComponent<ShipVariables>().HasHyperDrive == true)
                 {
-                    GameObject.Find("/SceneScripts").GetComponent<HyperDriveController>().AutoPilot(target, ship);
+                    sceneScripts.GetComponent<HyperDriveController>().AutoPilot(target, ship);
                 }
             }
         }

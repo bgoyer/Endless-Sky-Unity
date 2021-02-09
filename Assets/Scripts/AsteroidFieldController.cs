@@ -11,8 +11,8 @@ namespace Assets.Scripts
         private void Start()
         {
             coll2d = this.gameObject.GetComponent<CircleCollider2D>();
-            range = coll2d.radius * .9f;
-            maxObjects = Random.Range(10, 20);
+            range = coll2d.radius * .5f;
+            maxObjects = Random.Range(10, 30);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

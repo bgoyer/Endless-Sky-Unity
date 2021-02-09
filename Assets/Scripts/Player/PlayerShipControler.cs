@@ -12,7 +12,7 @@ namespace Assets.Scripts.Player
         private GameObject thrusterA;
         private GameObject thrusterB;
         private GameObject weapon;
-        private StearingController stearing;
+        private SteeringController stearing;
         private bool canControl;
 
         void Start()
@@ -23,8 +23,8 @@ namespace Assets.Scripts.Player
             setupShip = sceneScripts.GetComponent<SetUpAndSwitchShip>();
             thrusterA = ship.transform.GetChild(1).GetChild(0).GetChild(0).gameObject;
             thrusterB = ship.transform.GetChild(1).GetChild(1).GetChild(0).gameObject;
+            stearing = sceneScripts.GetComponent<SteeringController>();
             canControl = ship.GetComponent<ShipVariables>().CanControl;
-            stearing = ship.transform.GetChild(2).GetChild(0).GetComponent<StearingController>();
             setupShip.CreateWeapon(ship);
             setupShip.CreateWeapon(ship);
         }
@@ -43,14 +43,16 @@ namespace Assets.Scripts.Player
                     stearing.TurnRight(ship);
                 }
 
-                if (Input.GetKeyDown(keyMap.TurnAround))
+                if (Input.GetKey(keyMap.TurnAround))
                 {
-                    stearing.StartCoroutine("RotateNegVel", ship);
+                    stearing.RotateTowards(ship, -ship.GetComponent<Rigidbody2D>().velocity);
                 }
 
                 if (Input.GetKey(keyMap.Foreward))
                 {
                     sceneScripts.GetComponent<ThrusterController>().Accelerate(ship);
+                    thrusterA.transform.GetChild(0).gameObject.SetActive(true);
+                    thrusterB.transform.GetChild(0).gameObject.SetActive(true);
                 }
 
                 if (Input.GetKeyUp(keyMap.Foreward))
@@ -66,8 +68,7 @@ namespace Assets.Scripts.Player
                     {
                         if (weapon.childCount > 0)
                         {
-                            weapon.GetChild(0).GetComponent<WeaponController>()
-                                .Shoot(ship.GetComponent<Rigidbody2D>().velocity.magnitude);
+                            weapon.GetChild(0).GetComponent<WeaponController>().Shoot(ship.GetComponent<Rigidbody2D>().velocity.magnitude);
                         }
                     }
                 }

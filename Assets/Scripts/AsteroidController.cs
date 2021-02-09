@@ -1,29 +1,30 @@
-using System.Collections;
 using Assets.Scripts.Ship;
+using System.Collections;
 using UnityEngine;
 
 namespace Assets.Scripts
 {
     public class AsteroidController : MonoBehaviour
     {
-        public int health = 100;
-        public int matAmountPer = 10;
-        public string asteriodType = "Alunimum";
-        public GameObject flotsam;
-        public GameObject garbageHolder;
+        public int Health = 100;
+        public int MatAmountPer = 10;
+        public string AsteriodType = "Alunimum";
+        public GameObject Flotsam;
+        public GameObject GarbageHolder;
+        private double rotateSpeed;
 
         private void Start()
         {
-            garbageHolder = GameObject.Find("/GarbageHolder");
-            flotsam = Resources.Load<GameObject>("Prefabs/Asteroid/Flotsams/Aluminumflotasam");
+            GarbageHolder = GameObject.Find("/GarbageHolder");
+            Flotsam = Resources.Load<GameObject>("Prefabs/Asteroid/Flotsams/Aluminumflotasam");
+            rotateSpeed = UnityEngine.Random.Range(1, 3);
         }
 
-
-        private void OnTriggerEnter2D(Collider2D collision)
+        private void OnTriggerEnter2D(Component collision)
         {
             if (collision.gameObject.CompareTag("PlayerBullet"))
             {
-                health -= collision.gameObject.GetComponent<BulletController>().damage;
+                Health -= collision.gameObject.GetComponent<BulletController>().damage;
                 collision.gameObject.GetComponent<BulletController>().OnHit();
             }
         }
@@ -31,23 +32,22 @@ namespace Assets.Scripts
         private void Update()
         {
             StartCoroutine("Rotate");
-            if (health <= 0)
+            if (Health <= 0)
             {
-                GameObject _flotsam = Instantiate(flotsam, garbageHolder.transform);
+                GameObject _flotsam = Instantiate(Flotsam, GarbageHolder.transform);
                 _flotsam.transform.position = this.transform.position;
-                _flotsam.GetComponent<FlotsamController>().matAmount = matAmountPer;
-                _flotsam.GetComponent<FlotsamController>().matType = asteriodType;
+                _flotsam.GetComponent<FlotsamController>().matAmount = MatAmountPer;
+                _flotsam.GetComponent<FlotsamController>().matType = AsteriodType;
                 Destroy(this.gameObject);
             }
         }
 
         private IEnumerator Rotate()
         {
-            if (this.GetComponent<SpriteRenderer>().isVisible)
-            {
-                transform.Rotate(0, 0, (50) * Time.deltaTime, Space.Self);
-                yield return new WaitForSeconds(.01f);
-            }
+            
+            if (!this.GetComponent<SpriteRenderer>().isVisible) yield break;
+            transform.Rotate(0, 0, 50 * Time.deltaTime * (float)rotateSpeed, Space.Self);
+            yield return new WaitForSeconds(.01f);
         }
     }
 }

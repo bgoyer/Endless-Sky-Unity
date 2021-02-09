@@ -8,13 +8,13 @@ namespace Assets.Scripts.Player
     public class InventoryController : MonoBehaviour
     {
 
-        public Inventory PlayerInventory = new Inventory();
+        public Inventory ShipInventory = new Inventory();
 
         public void Add(String Item, int Amount)
         {
             if (Item == "Alunimum")
             {
-                PlayerInventory.Aluminum += Amount;
+                ShipInventory.Aluminum += Amount;
             }
         }
     }

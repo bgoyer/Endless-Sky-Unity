@@ -40,7 +40,9 @@ namespace Assets.Scripts.Ship
                 ammoClone.transform.rotation = this.transform.rotation;
                 ammoClone.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>($"Sprites/{ProjectileSprite}");
                 ammoClone.tag = "PlayerBullet";
-                ammoClone.GetComponent<Rigidbody2D>().AddForce(transform.up * ((shipVelocity * 100) + (float)Velocity + ship.GetComponent<Rigidbody2D>().velocity.sqrMagnitude));
+                ammoClone.GetComponent<Rigidbody2D>().velocity = ship.GetComponent<Rigidbody2D>().velocity;
+                ammoClone.GetComponent<Rigidbody2D>().AddForce(transform.up * (float)Velocity);
+
                 StartCoroutine("ReloadGun");
             }
         }

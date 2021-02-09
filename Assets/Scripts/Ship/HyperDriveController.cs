@@ -16,6 +16,7 @@ namespace Assets.Scripts.Ship
         //private int currentFuel;
         public void AutoPilot(Transform target, GameObject ship)
         {
+            //currentFuel = shipVar.HyperdriveFuel;
             StartCoroutine(StartAutoPilot(target, ship));
         }
 
@@ -23,7 +24,6 @@ namespace Assets.Scripts.Ship
         { 
             shipVar = ship.GetComponent<ShipVariables>();
             canControl = shipVar.CanControl;
-            //currentFuel = shipVar.HyperdriveFuel;
             r2D = ship.GetComponent<Rigidbody2D>();
             WarpdriveVariables warpVar = ship.transform.GetChild(3).GetChild(0).GetComponent<WarpdriveVariables>();
             warpThrust = warpVar.WarpThrust;
@@ -91,7 +91,7 @@ namespace Assets.Scripts.Ship
 
         private void StopSound()
         {
-            StartCoroutine("stopSounds");
+            StartCoroutine("StopSounds");
         }
 
         private IEnumerator StopSounds()

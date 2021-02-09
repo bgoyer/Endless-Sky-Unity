@@ -27,8 +27,9 @@ namespace Assets.Scripts.Player
         {
             if (collision.gameObject.CompareTag("LandableBody"))
             {
+                print("collided with planet");
                 LandingTip.GetComponent<Text>().text = $"Press {keyMap.Land} to land";
-                LandingTip.SetActive(true);
+                
                 if (Input.GetKeyDown(keyMap.Land))
                 {
                     currentFuel = maxFuel;
@@ -44,7 +45,7 @@ namespace Assets.Scripts.Player
         {
             if (collision.gameObject.CompareTag("LandableBody"))
             {
-                LandingTip.SetActive(false);
+                LandingTip.GetComponent<Text>().text = "";
             }
         }
     }

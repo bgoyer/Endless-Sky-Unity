@@ -23,8 +23,7 @@ namespace Assets.Scripts.Ship
         }
 
         public void OnHit()
-        {
-            this.GetComponent<SpriteRenderer>().sprite = null;
+        { 
             this.GetComponent<Animator>().SetBool("Destroy", true);
             this.R2D.velocity = new Vector2(0, 0);
             Destroy(this.gameObject, .5f);
