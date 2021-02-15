@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.Mime;
 using Assets.Resources.Data.ModelData.Models;
 using JsonFlatFileDataStore;
+using UnityEngine;
 
 namespace Assets.Resources.Data.ModelData.Services
 {
@@ -100,7 +103,7 @@ namespace Assets.Resources.Data.ModelData.Services
         {
             var fileName = $"{tableName}-{lang}.json";
             this.tableName = tableName;
-            store = new DataStore(UnityEngine.Resources.Load("Data/Db"));
+            store = new DataStore(Path.Combine(Application.streamingAssetsPath, fileName));
         }
     }
 }

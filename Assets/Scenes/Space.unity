@@ -550,8 +550,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ccf3f1af212f846901649776698009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LandingTip: {fileID: 159835604}
-  LandingScreen: {fileID: 1068979921}
+  LandingTip: {fileID: 0}
+  LandingScreen: {fileID: 0}
 --- !u!1 &111789762
 GameObject:
   m_ObjectHideFlags: 0
@@ -954,15 +954,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 411060de4483b5e4c9847cd3cbc18554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
-  needBoxIndicator: 1
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  needBoxIndicator: 0
   needStarIndicator: 0
   needPlanetIndicator: 0
   needEnemyOutpostIndicator: 0
   needAsteroidFieldIndicator: 0
   needOutpostIndicator: 0
-  needArrowIndicator: 1
-  needDistanceText: 1
+  needArrowIndicator: 0
+  needDistanceText: 0
   indicator: {fileID: 0}
 --- !u!212 &163138993
 SpriteRenderer:
@@ -1761,6 +1761,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship
       objectReference: {fileID: 0}
+    - target: {fileID: 8662157411698328705, guid: 2ca9fe34dbb7494498832a6d4344b7af,
+        type: 3}
+      propertyPath: m_TagString
+      value: AIShip
+      objectReference: {fileID: 0}
     - target: {fileID: 8662157411698328733, guid: 2ca9fe34dbb7494498832a6d4344b7af,
         type: 3}
       propertyPath: m_RootOrder
@@ -1843,7 +1848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 429657fe278843c47aba1835602142f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 7.5
+  RotationSpeed: 10
 --- !u!1 &282463299
 GameObject:
   m_ObjectHideFlags: 0
@@ -2319,15 +2324,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 411060de4483b5e4c9847cd3cbc18554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: {r: 1, g: 0.81850994, b: 0.3915094, a: 1}
-  needBoxIndicator: 1
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  needBoxIndicator: 0
   needStarIndicator: 0
   needPlanetIndicator: 0
   needEnemyOutpostIndicator: 0
   needAsteroidFieldIndicator: 0
   needOutpostIndicator: 0
-  needArrowIndicator: 1
-  needDistanceText: 1
+  needArrowIndicator: 0
+  needDistanceText: 0
   indicator: {fileID: 0}
 --- !u!58 &380692458
 CircleCollider2D:
@@ -2357,8 +2362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6415c03f04adad45a36c678bb6be4b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroidToInstantiate: {fileID: 7662975498330777765, guid: ff8a7da59263bed4a8677b9984210487,
-    type: 3}
+  asteroidToInstantiate: {fileID: 0}
 --- !u!1 &401333743
 GameObject:
   m_ObjectHideFlags: 0
@@ -2405,15 +2409,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 411060de4483b5e4c9847cd3cbc18554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: {r: 0.48584908, g: 0.7773689, b: 1, a: 1}
-  needBoxIndicator: 1
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  needBoxIndicator: 0
   needStarIndicator: 0
   needPlanetIndicator: 0
   needEnemyOutpostIndicator: 0
   needAsteroidFieldIndicator: 0
   needOutpostIndicator: 0
-  needArrowIndicator: 1
-  needDistanceText: 1
+  needArrowIndicator: 0
+  needDistanceText: 0
   indicator: {fileID: 0}
 --- !u!114 &401333746
 MonoBehaviour:
@@ -2427,7 +2431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e83ec64a3283c479ea7a4fdb47450b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotate_time: 1.86
+  rotate_time: 5
 --- !u!58 &401333747
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2589,8 +2593,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26fbdfeec2e92b54b8992d23338d749c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parralax: 20
-  player: {fileID: 657496215}
+  parralax: 2
+  player: {fileID: 0}
 --- !u!1 &448806038
 GameObject:
   m_ObjectHideFlags: 0
@@ -2683,7 +2687,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &476605362
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2956,7 +2960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f7c19d8311511f469bb6a350a572f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SystemTextUI: {fileID: 1757320859}
+  SystemTextUI: {fileID: 0}
 --- !u!114 &482752811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3013,7 +3017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 630efdd85514c5848ac306958739eabb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Acceleration: 500
+  Acceleration: 100
   MaxSpeed: 10
 --- !u!114 &482752815
 MonoBehaviour:
@@ -4052,9 +4056,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7bc0570e80f044b8ca4a58c6ee5a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 114629346974849376, guid: 6bed51853bbf86646878b09fae5a3b4c,
-    type: 3}
-  pooledAmount: 0
+  pooledObject: {fileID: 0}
+  pooledAmount: 1
   willGrow: 1
 --- !u!114 &696450197
 MonoBehaviour:
@@ -4068,9 +4071,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e17d99117b96b4a83c4de029a16f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 114629346974849376, guid: 0aee671874b4b854f86b8d79d424b9d8,
-    type: 3}
-  pooledAmount: 3
+  pooledObject: {fileID: 0}
+  pooledAmount: 1
   willGrow: 1
 --- !u!114 &696450198
 MonoBehaviour:
@@ -4084,7 +4086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f609f7b5335654696f805a84f4c189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenBoundOffset: 0.802
+  screenBoundOffset: 0.9
   isTargetVisible: 0
 --- !u!114 &696450199
 MonoBehaviour:
@@ -4494,15 +4496,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 411060de4483b5e4c9847cd3cbc18554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
-  needBoxIndicator: 1
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  needBoxIndicator: 0
   needStarIndicator: 0
   needPlanetIndicator: 0
   needEnemyOutpostIndicator: 0
   needAsteroidFieldIndicator: 0
   needOutpostIndicator: 0
-  needArrowIndicator: 1
-  needDistanceText: 1
+  needArrowIndicator: 0
+  needDistanceText: 0
   indicator: {fileID: 0}
 --- !u!114 &728330797
 MonoBehaviour:
@@ -5290,7 +5292,7 @@ MonoBehaviour:
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
   m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
+  m_InputActionsPerSecond: 10.18
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
 --- !u!114 &927285808
@@ -5602,8 +5604,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26fbdfeec2e92b54b8992d23338d749c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parralax: 350
-  player: {fileID: 657496215}
+  parralax: 2
+  player: {fileID: 0}
 --- !u!23 &1098306292
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5942,7 +5944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a990bdc8691ddb4eaf8285837bb45b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ship: {fileID: 92861926}
+  ship: {fileID: 0}
 --- !u!114 &1197421188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6139,7 +6141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e83ec64a3283c479ea7a4fdb47450b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotate_time: 1.86
+  rotate_time: 5
 --- !u!114 &1260520550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6152,15 +6154,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 411060de4483b5e4c9847cd3cbc18554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: {r: 0.48584908, g: 0.7773689, b: 1, a: 1}
-  needBoxIndicator: 1
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  needBoxIndicator: 0
   needStarIndicator: 0
   needPlanetIndicator: 0
   needEnemyOutpostIndicator: 0
   needAsteroidFieldIndicator: 0
   needOutpostIndicator: 0
-  needArrowIndicator: 1
-  needDistanceText: 1
+  needArrowIndicator: 0
+  needDistanceText: 0
   indicator: {fileID: 0}
 --- !u!50 &1260520551
 Rigidbody2D:
@@ -6712,6 +6714,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362323510}
   m_CullTransparentMesh: 1
+--- !u!1 &1368531370 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 13217547870964337, guid: 2ca9fe34dbb7494498832a6d4344b7af,
+    type: 3}
+  m_PrefabInstance: {fileID: 1557482830}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1368531371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368531370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 630efdd85514c5848ac306958739eabb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Acceleration: 500
+  MaxSpeed: 10
 --- !u!1 &1379041711 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 13217547561380625, guid: 2ca9fe34dbb7494498832a6d4344b7af,
@@ -6893,7 +6915,7 @@ GameObject:
   - component: {fileID: 1421377681}
   m_Layer: 0
   m_Name: NPC
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7561,7 +7583,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1650083097
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7770,8 +7792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6415c03f04adad45a36c678bb6be4b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroidToInstantiate: {fileID: 7662975498330777765, guid: ff8a7da59263bed4a8677b9984210487,
-    type: 3}
+  asteroidToInstantiate: {fileID: 0}
 --- !u!58 &1711873800
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7800,15 +7821,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 411060de4483b5e4c9847cd3cbc18554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: {r: 1, g: 0.81850994, b: 0.3915094, a: 1}
-  needBoxIndicator: 1
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  needBoxIndicator: 0
   needStarIndicator: 0
   needPlanetIndicator: 0
   needEnemyOutpostIndicator: 0
   needAsteroidFieldIndicator: 0
   needOutpostIndicator: 0
-  needArrowIndicator: 1
-  needDistanceText: 1
+  needArrowIndicator: 0
+  needDistanceText: 0
   indicator: {fileID: 0}
 --- !u!1 &1757320857
 GameObject:
@@ -7934,8 +7955,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26fbdfeec2e92b54b8992d23338d749c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parralax: 150
-  player: {fileID: 657496215}
+  parralax: 2
+  player: {fileID: 0}
 --- !u!23 &1778543027
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8803,7 +8824,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
