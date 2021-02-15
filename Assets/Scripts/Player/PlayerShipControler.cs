@@ -1,3 +1,4 @@
+using Assets.Resources.Data.ModelData;
 using Assets.Scripts.Ship;
 using UnityEngine;
 
@@ -29,7 +30,7 @@ namespace Assets.Scripts.Player
             setupShip.CreateWeapon(ship);
         }
 
-        void Update()
+        void FixedUpdate()
         {
             if (canControl == true)
             {
@@ -51,8 +52,6 @@ namespace Assets.Scripts.Player
                 if (Input.GetKey(keyMap.Foreward))
                 {
                     sceneScripts.GetComponent<ThrusterController>().Accelerate(ship);
-                    thrusterA.transform.GetChild(0).gameObject.SetActive(true);
-                    thrusterB.transform.GetChild(0).gameObject.SetActive(true);
                 }
 
                 if (Input.GetKeyUp(keyMap.Foreward))
@@ -68,7 +67,7 @@ namespace Assets.Scripts.Player
                     {
                         if (weapon.childCount > 0)
                         {
-                            weapon.GetChild(0).GetComponent<WeaponController>().Shoot(ship.GetComponent<Rigidbody2D>().velocity.magnitude);
+                            sceneScripts.GetComponent<WeaponController>().Shoot(ship, weapon.GetChild(0).gameObject);
                         }
                     }
                 }

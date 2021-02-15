@@ -20,18 +20,18 @@ namespace Assets.Scripts.Player
             sceneScripts = GameObject.Find("/SceneScripts");
             Player = this.gameObject;
             keyMap = sceneScripts.GetComponent<KeyMap>();
-            currentFuel = transform.GetChild(0).GetComponent<ShipVariables>().HyperdriveFuel;
-            maxFuel = transform.GetChild(0).GetComponent<ShipVariables>().MaxHyperdriveFuel;
+            currentFuel = this.transform.GetComponent<ShipVariables>().HyperdriveFuel;
+            maxFuel = this.transform.GetComponent<ShipVariables>().MaxHyperdriveFuel;
         }
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.CompareTag("LandableBody"))
+            if (collision.gameObject.CompareTag("HabitableBody"))
             {
-                print("collided with planet");
                 LandingTip.GetComponent<Text>().text = $"Press {keyMap.Land} to land";
                 
                 if (Input.GetKeyDown(keyMap.Land))
                 {
+                    print("land");
                     currentFuel = maxFuel;
                     this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
                     Player.GetComponent<ShipVariables>().CanControl = false;
@@ -43,7 +43,7 @@ namespace Assets.Scripts.Player
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.gameObject.CompareTag("LandableBody"))
+            if (collision.gameObject.CompareTag("HabitableBody"))
             {
                 LandingTip.GetComponent<Text>().text = "";
             }

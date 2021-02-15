@@ -16,8 +16,8 @@ namespace Assets.Scripts
         private void Start()
         {
             GarbageHolder = GameObject.Find("/GarbageHolder");
-            Flotsam = Resources.Load<GameObject>("Prefabs/Asteroid/Flotsams/Aluminumflotasam");
-            rotateSpeed = UnityEngine.Random.Range(1, 3);
+            Flotsam = UnityEngine.Resources.Load<GameObject>("Prefabs/Asteroid/Flotsams/Aluminumflotasam");
+            rotateSpeed = Random.Range(1, 3);
         }
 
         private void OnTriggerEnter2D(Component collision)

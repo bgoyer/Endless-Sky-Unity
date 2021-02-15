@@ -9,43 +9,39 @@ namespace Assets.Scripts
     {
         public GameObject LocationText;
         public GameObject systemUI;
-
-        private string _locName;
+        private string locName;
 
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.CompareTag("System"))
-            {
-                _locName = collision.gameObject.name.ToUpper();
-                StartCoroutine(OnTrigger(collision));
-                systemUI.GetComponent<Text>().text = collision.transform.name;
-            }
+            if (!collision.gameObject.CompareTag("System")) return;
+            locName = collision.gameObject.name.ToUpper();
+            StartCoroutine(onTrigger(collision));
+            systemUI.GetComponent<Text>().text = collision.transform.name;
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.gameObject.CompareTag("System"))
+            if (!collision.gameObject.CompareTag("System")) return;
+            locName = collision.transform.parent.gameObject.name.ToUpper();
+            StartCoroutine(onTrigger(collision));
+            systemUI.GetComponent<Text>().text = collision.transform.parent.gameObject.name;
+            for (var body = 0; body < collision.transform.childCount; body++)
             {
-                _locName = collision.transform.parent.gameObject.name.ToUpper();
-                StartCoroutine(OnTrigger(collision));
-                systemUI.GetComponent<Text>().text = collision.transform.parent.gameObject.name;
-                for (int body = 0; body < collision.transform.childCount; body++)
+                if (collision.transform.GetChild(body).GetComponent<Target>() == null)
                 {
-                    if (collision.transform.GetChild(body).GetComponent<Target>() != null)
-                    {
-                        collision.transform.GetChild(body).GetComponent<Target>().enabled = false;
-                    }
                 }
-            }
 
+                collision.transform.GetChild(body).GetComponent<Target>().enabled = false;
+
+            }
         }
 
-        private IEnumerator OnTrigger(Collider2D collision)
+        IEnumerator onTrigger(Collider2D collision)
         {
-            LocationText.GetComponent<Text>().text = _locName;
+            LocationText.GetComponent<Text>().text = locName;
 
-            for (int body = 0; body < collision.transform.childCount; body++)
+            for (var body = 0; body < collision.transform.childCount; body++)
             {
                 if (collision.transform.GetChild(body).GetComponent<Target>() != null)
                 {

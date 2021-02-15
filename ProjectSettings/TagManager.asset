@@ -6,11 +6,14 @@ TagManager:
   tags:
   - HabitalPlanet
   - Body
-  - LandableBody
   - Bullet
   - PlayerShip
   - PlayerBullet
   - System
+  - HabitableBody
+  - AI
+  - AIShip
+  - AIBullet
   layers:
   - Default
   - TransparentFX

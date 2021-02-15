@@ -1,56 +1,36 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Ship
 {
     public class WeaponController : MonoBehaviour
     {
-        public string Sprite;
-        public string Sound;
-        public string ProjectileSprite;
-        //public string HitEffect;
-        public double Inaccuracy;
-        public double Velocity;
-        public double Lifetime;
-        public double Reload;
-        public double FiringEnergy;
-        public double FiringHeat;
-        public double ShieldDamage;
-        public double HullDamage;
 
-        private bool isReloaded;
-        private GameObject bulletHolder;
-        private GameObject ammo;
-        private GameObject ship;
-
-        private void Start()
+        public void Shoot(GameObject ship, GameObject weaponGO)
         {
-            isReloaded = true;
-            bulletHolder = GameObject.Find("/GarbageHolder");
-            ship = this.transform.parent.parent.parent.parent.gameObject;
-        }
-        public void Shoot(float shipVelocity)
-        {
-            if (Lifetime > 1 && isReloaded == true)
-            {
-                isReloaded = false;
-                ammo = Resources.Load<GameObject>($"Prefabs/Projectiles/Cannon");
-                GameObject ammoClone = Instantiate(ammo, bulletHolder.transform, true);
-                ammoClone.transform.position = this.transform.position;
-                ammoClone.transform.rotation = this.transform.rotation;
-                ammoClone.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>($"Sprites/{ProjectileSprite}");
-                ammoClone.tag = "PlayerBullet";
-                ammoClone.GetComponent<Rigidbody2D>().velocity = ship.GetComponent<Rigidbody2D>().velocity;
-                ammoClone.GetComponent<Rigidbody2D>().AddForce(transform.up * (float)Velocity);
+            WeaponVariables weapon;
+            weapon = weaponGO.GetComponent<WeaponVariables>();
+            if (!(weapon.Lifetime > 1) || weapon.IsReloaded != true) return;
+            weapon.IsReloaded = false;
+            weapon.Ammo = Resources.Load<GameObject>(path: $"Prefabs/Projectiles/Cannon");
+            var ammoClone = Instantiate(original: weapon.Ammo, GameObject.Find("/GarbageHolder").transform,
+                worldPositionStays: true);
+            ammoClone.transform.position = weapon.transform.position;
+            ammoClone.transform.rotation = ship.transform.rotation;
+            ammoClone.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(path: $"Sprites/{weapon.ProjectileSprite}");
+            ammoClone.tag = $"{ship.transform.parent.tag}Bullet";
+            ammoClone.GetComponent<Rigidbody2D>().velocity = ship.GetComponent<Rigidbody2D>().velocity;
+            ammoClone.GetComponent<Rigidbody2D>().AddForce(force: ship.transform.up * (float) weapon.Velocity);
 
-                StartCoroutine("ReloadGun");
-            }
+            StartCoroutine(reloadGun(weapon));
         }
 
-        private IEnumerator ReloadGun()
+
+        private IEnumerator reloadGun(WeaponVariables weapon)
         {
-            yield return new WaitForSeconds((float)(Reload / (double)30));
-            isReloaded = true;
+            yield return new WaitForSeconds((float)(weapon.Reload / (double)30));
+            weapon.IsReloaded = true;
         }
     }
 }

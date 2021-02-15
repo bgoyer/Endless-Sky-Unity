@@ -1,6 +1,6 @@
 using System;
-using Assets.Scripts.Data.Models.Player;
-using Assets.Scripts.Data.Services;
+using Assets.Resources.Data.ModelData.Models.Player;
+using Assets.Resources.Data.ModelData.Services;
 using UnityEngine;
 
 namespace Assets.Scripts.Player

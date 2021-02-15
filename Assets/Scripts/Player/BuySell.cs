@@ -8,7 +8,7 @@ namespace Assets.Scripts.Player
         private Player player;
         private void Start()
         {
-            playerInventory = GameObject.Find("/Player/Inventory").GetComponent<InventoryController>().ShipInventory;
+            playerInventory = GameObject.Find("/Player").transform.GetChild(0).GetComponent<InventoryController>().ShipInventory;
             player = GameObject.Find("/Player").GetComponent<Player>();
         }
         public void Sell()

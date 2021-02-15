@@ -13,7 +13,13 @@ namespace Assets.Scripts.Ship
         private Rigidbody2D r2D;
         private Vector2 currentVelocity;
         private ShipVariables shipVar;
+
+        private SteeringController steering;
         //private int currentFuel;
+        private void Start()
+        {
+            steering = GameObject.Find("/SceneScripts").GetComponent<SteeringController>();
+        }
         public void AutoPilot(Transform target, GameObject ship)
         {
             //currentFuel = shipVar.HyperdriveFuel;
@@ -21,7 +27,7 @@ namespace Assets.Scripts.Ship
         }
 
         private IEnumerator StartAutoPilot(Transform target, GameObject ship)
-        { 
+        {
             shipVar = ship.GetComponent<ShipVariables>();
             canControl = shipVar.CanControl;
             r2D = ship.GetComponent<Rigidbody2D>();
@@ -42,15 +48,12 @@ namespace Assets.Scripts.Ship
 
                 r2D.drag = 0f;
 
-                Vector3 vectorToTarget = target.position - ship.transform.position;
-
-                float angle = (Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg) - 90;
-
-                Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-                for (float step = 0; step <= 1; step += (warpRotSpeed / 10000))
+                Vector3 vectorToTarget = -(ship.transform.position - target.position).normalized;
+                while (Vector3.Angle(ship.transform.up, vectorToTarget) > 0)
                 {
-                    ship.transform.rotation = Quaternion.Slerp(ship.transform.rotation, q, step);
-                    yield return new WaitForSeconds(.01f);
+                    steering.RotateTowards(ship, vectorToTarget, 3);
+                    yield return new WaitForSeconds(0.01f);
+
                 }
 
                 SoundWarp();
