@@ -31,6 +31,7 @@ namespace Assets.Scripts.Ship
             shipVar = ship.GetComponent<ShipVariables>();
             canControl = shipVar.CanControl;
             r2D = ship.GetComponent<Rigidbody2D>();
+            Debug.Log(ship.transform.GetChild(3).name);
             WarpdriveVariables warpVar = ship.transform.GetChild(3).GetChild(0).GetComponent<WarpdriveVariables>();
             warpThrust = warpVar.WarpThrust;
             warpRotSpeed = warpVar.RotSpeed;
