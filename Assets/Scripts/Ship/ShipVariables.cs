@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Assets.Scripts.Ship
@@ -7,6 +8,8 @@ namespace Assets.Scripts.Ship
         public bool CanControl = false;
         public int HyperdriveFuel = 0;
         public int MaxHyperdriveFuel = 0;
+        public int MaxHullHP = 100;
+        public int HullHP;
         public bool HasHyperDrive = false;
         public bool HasThrusters = false;
         public bool HasStearing = false;
@@ -17,6 +20,7 @@ namespace Assets.Scripts.Ship
 
         private void Start()
         {
+            HullHP = MaxHullHP;
             UpdateShip();
         }
         public void UpdateShip()
@@ -28,16 +32,15 @@ namespace Assets.Scripts.Ship
             HasBattery = false;
             HasGenerator = false;
             HasCooling = false;
-            int thrustercount = 0;
-
-            for (int child = 0; child < this.transform.GetChild(1).childCount; child++)
+            var thrusterCount = 0; 
+            for (var child = 0; child < this.transform.GetChild(1).childCount; child++)
             {
                 if (this.transform.GetChild(1).GetChild(child).childCount > 0)
                 {
-                    thrustercount += 1;
+                    thrusterCount += 1;
                 }
             }
-            if (thrustercount == 2)
+            if (thrusterCount == 2)
             {
                 HasThrusters = true;
             }

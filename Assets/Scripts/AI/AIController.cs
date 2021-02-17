@@ -7,74 +7,59 @@ namespace Assets.Scripts.AI
 {
     public class AIController : MonoBehaviour
     {
-        private bool doingSomething = false;
-        private static GameObject SceneScripts;
+
+        public GameObject target;
+        private SetUpAndSwitchShip setupShip;
+        private GameObject sceneScripts;
+        private GameObject ship;
         private static GameObject Systems;
         private string currentSystem;
-        private SetUpAndSwitchShip setupShip;
-        private GameObject target;
-        private GameObject sceneScripts;
 
         void Start()
         {
-            target = GameObject.Find("/Player");
-            SceneScripts = GameObject.Find("/SceneScripts");
             Systems = GameObject.Find("/Systems");
-            currentSystem = "";
             sceneScripts = GameObject.Find("/SceneScripts");
             setupShip = sceneScripts.GetComponent<SetUpAndSwitchShip>();
-            setupShip.CreateWeapon(this.transform.GetChild(0).gameObject);
-            setupShip.CreateWeapon(this.transform.GetChild(0).gameObject);
+            ship = this.transform.GetChild(0).gameObject;
+            setupShip.CreateWeapon(ship);
+            setupShip.CreateWeapon(ship);
         }
-        void Update()
+        public void Hit(Collider2D col)
         {
-            followTarget();
-        }
-
-        private void followTarget()
-        {
-            GameObject ship = this.transform.GetChild(0).gameObject;
-            if (Vector3.Distance(ship.transform.position , target.transform.GetChild(0).position) < 5 && this.transform.GetChild(0).GetComponent<Rigidbody2D>().velocity.magnitude > 5)
+            if (col.transform.GetComponent<BulletController>())
             {
-                SceneScripts.GetComponent<SteeringController>().RotateTowards(this.transform.GetChild(0).gameObject, (this.transform.GetChild(0).position - target.transform.GetChild(0).position).normalized);
-                SceneScripts.GetComponent<ThrusterController>().Accelerate(this.transform.GetChild(0).gameObject);
-            }
-            else
-            {
-                SceneScripts.GetComponent<ThrusterController>().Accelerate(this.transform.GetChild(0).gameObject);
-                SceneScripts.GetComponent<SteeringController>().RotateTowards(this.transform.GetChild(0).gameObject, -(this.transform.GetChild(0).position - target.transform.GetChild(0).position).normalized);
-            }
-            var weaponSlots = ship.transform.GetChild(0).GetChild(0);
-            foreach (Transform weapon in weaponSlots)
-            {
-                if (weapon.childCount > 0)
+                if (col.transform.GetComponent<BulletController>().parentShip != ship)
                 {
-                    sceneScripts.GetComponent<WeaponController>().Shoot(ship, weapon.transform.GetChild(0).gameObject);
+                    this.GetComponent<Animator>().SetInteger("State",3);
                 }
             }
         }
-        private IEnumerator warp()
+        public IEnumerator Warp()
         {
+            currentSystem = ship.transform.parent.parent.parent.name;
             GameObject chosenSystem = chooseSystem();
-            currentSystem = chosenSystem.name;
-            if (chosenSystem.name != currentSystem)
+            Debug.Log(chosenSystem.name);
+            while (chosenSystem.name == currentSystem)
             {
-                print(chosenSystem.name +", "+ currentSystem);
-                SceneScripts.GetComponent<HyperDriveController>().AutoPilot(chosenSystem.transform, this.transform.GetChild(0).gameObject);
-                yield return new WaitUntil(() => this.transform.GetChild(0).GetComponent<Rigidbody2D>().velocity.magnitude > 20);
-                yield return new WaitUntil(() => this.transform.GetChild(0).GetComponent<Rigidbody2D>().velocity.magnitude == 0);
-                doingSomething = false;
+                chosenSystem = chooseSystem();
+                Debug.Log(chosenSystem.name);
+                yield return new WaitForSeconds(.1f);
             }
-            else
-            {
-            
-            }
+
+
+            sceneScripts.GetComponent<HyperDriveController>().AutoPilot(chosenSystem.transform, ship);
+            yield return new WaitUntil(() => ship.GetComponent<Rigidbody2D>().velocity.magnitude > 20);
+            yield return new WaitUntil(() => ship.GetComponent<Rigidbody2D>().velocity.magnitude == 0);
+            transform.parent.GetComponent<Animator>().SetInteger("State", 0);
+            currentSystem = ship.transform.parent.parent.parent.name;
         }
 
         private GameObject chooseSystem()
         {
-            int cluster = UnityEngine.Random.Range(0, Systems.transform.childCount);
-            int system = UnityEngine.Random.Range(0, Systems.transform.GetChild(cluster).childCount);
+            int cluster = new int();
+            int system = new int();
+            cluster = Random.Range(1, Systems.transform.childCount);
+            system = Random.Range(1, Systems.transform.GetChild(cluster).childCount);
             return Systems.transform.GetChild(cluster).GetChild(system).gameObject;
         }
     }

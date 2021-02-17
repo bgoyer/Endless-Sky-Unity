@@ -4,7 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - HabitalPlanet
   - Body
   - Bullet
   - PlayerShip
@@ -14,6 +13,8 @@ TagManager:
   - AI
   - AIShip
   - AIBullet
+  - AsteriodField
+  - Asteroid
   layers:
   - Default
   - TransparentFX

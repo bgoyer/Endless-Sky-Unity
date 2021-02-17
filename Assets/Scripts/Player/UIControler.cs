@@ -17,11 +17,22 @@ namespace Assets.Scripts.Player
         {
             sceneScripts = GameObject.Find("/SceneScripts");
             keyMap = GameObject.Find("/SceneScripts").GetComponent<KeyMap>();
+            foreach (Transform uiElement in this.transform)
+            {
+                if (uiElement.gameObject.name == "MainMenu" ||uiElement.name == "Tip")
+                {
+                    uiElement.gameObject.SetActive(true);
+                }
+                else
+                {
+                    uiElement.gameObject.SetActive(false);
+                }
+            }
         }
 
         private void Update()
         {
-            if (player.transform.GetChild(0).GetComponent<ShipVariables>().CanControl == true && player.activeInHierarchy == true && Input.GetKeyDown(keyMap.OpenMap))
+            if (player.activeInHierarchy == true && Input.GetKeyDown(keyMap.OpenMap))
             {
                 if (map.activeSelf == true)
                 {

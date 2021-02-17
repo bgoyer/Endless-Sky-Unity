@@ -7,7 +7,6 @@ namespace Assets.Scripts.Ship
     public class SteeringController : MonoBehaviour
     {
         private float rotSpeed;
-        private float lastAngle = 0;
         private Rigidbody2D r2D;
 
         public void TurnLeft(GameObject ship)

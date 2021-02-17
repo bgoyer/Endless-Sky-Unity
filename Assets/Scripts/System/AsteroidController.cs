@@ -1,8 +1,8 @@
-using Assets.Scripts.Ship;
 using System.Collections;
+using Assets.Scripts.Ship;
 using UnityEngine;
 
-namespace Assets.Scripts
+namespace Assets.Scripts.System
 {
     public class AsteroidController : MonoBehaviour
     {

@@ -14,6 +14,8 @@ namespace Assets.Scripts.Player
         private GameObject thrusterB;
         private GameObject weapon;
         private SteeringController stearing;
+        private ThrusterController thruster;
+        private WeaponController weapons;
         private bool canControl;
 
         void Start()
@@ -25,6 +27,8 @@ namespace Assets.Scripts.Player
             thrusterA = ship.transform.GetChild(1).GetChild(0).GetChild(0).gameObject;
             thrusterB = ship.transform.GetChild(1).GetChild(1).GetChild(0).gameObject;
             stearing = sceneScripts.GetComponent<SteeringController>();
+            weapons = sceneScripts.GetComponent<WeaponController>();
+            thruster = sceneScripts.GetComponent<ThrusterController>();
             canControl = ship.GetComponent<ShipVariables>().CanControl;
             setupShip.CreateWeapon(ship);
             setupShip.CreateWeapon(ship);
@@ -51,13 +55,12 @@ namespace Assets.Scripts.Player
 
                 if (Input.GetKey(keyMap.Foreward))
                 {
-                    sceneScripts.GetComponent<ThrusterController>().Accelerate(ship);
+                    thruster.Accelerate(ship);
                 }
 
                 if (Input.GetKeyUp(keyMap.Foreward))
                 {
-                    thrusterA.transform.GetChild(0).gameObject.SetActive(false);
-                    thrusterB.transform.GetChild(0).gameObject.SetActive(false);
+                    thruster.StopThruster(ship);
                 }
 
                 if (Input.GetKey(keyMap.Fire))
@@ -67,7 +70,7 @@ namespace Assets.Scripts.Player
                     {
                         if (weapon.childCount > 0)
                         {
-                            sceneScripts.GetComponent<WeaponController>().Shoot(ship, weapon.GetChild(0).gameObject);
+                            weapons.Shoot(ship, weapon.GetChild(0).gameObject);
                         }
                     }
                 }

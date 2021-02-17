@@ -40,7 +40,7 @@ namespace Assets.Resources.Data.ModelData
             weaponCloneVar.Lifetime = blaster.Lifetime;
             weaponCloneVar.ShieldDamage = blaster.ShieldDamage;
             weaponCloneVar.HullDamage = blaster.HullDamage;
-            weaponCloneVar.Velocity = blaster.Velocity * 10;
+            weaponCloneVar.Velocity = blaster.Velocity * 50;
             weaponClone.SetActive(true);
         }
     }

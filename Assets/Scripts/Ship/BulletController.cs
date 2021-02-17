@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using UnityEditor;
 using UnityEngine;
 
 namespace Assets.Scripts.Ship
@@ -8,6 +9,7 @@ namespace Assets.Scripts.Ship
         public float range = 3f;
         public Rigidbody2D R2D;
         public int damage = 10;
+        public GameObject parentShip;
 
         private void Start()
         {
@@ -27,6 +29,22 @@ namespace Assets.Scripts.Ship
             this.GetComponent<Animator>().SetBool("Destroy", true);
             this.R2D.velocity = new Vector2(0, 0);
             Destroy(this.gameObject, .5f);
-        } 
+        }
+
+        private void OnTriggerEnter2D(Collider2D col)
+        {
+            if (col.gameObject.tag == "PlayerShip" && this.tag.Equals("AIBullet"))
+            {
+                col.GetComponent<ShipVariables>().HullHP -= damage;
+                OnHit();
+            }
+            if (col.gameObject.tag == "AIShip" && this.tag.Equals("PlayerBullet"))
+            {
+                col.GetComponent<ShipVariables>().HullHP -= damage;
+                OnHit();
+
+            }
+
+        }
     }
 }

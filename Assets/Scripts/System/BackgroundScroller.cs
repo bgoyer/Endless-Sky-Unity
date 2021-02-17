@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts
+namespace Assets.Scripts.System
 {
     public class BackgroundScroller : MonoBehaviour
     {
