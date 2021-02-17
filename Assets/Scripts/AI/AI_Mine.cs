@@ -1,3 +1,5 @@
+using Assets.Scripts.Player;
+using Assets.Scripts.Ship;
 using UnityEngine;
 
 namespace Assets.Scripts.AI
@@ -5,6 +7,11 @@ namespace Assets.Scripts.AI
     public class AI_Mine : StateMachineBehaviour
     {
         private GameObject currentSystem;
+        private GameObject ship;
+        private Inventory shipInv;
+        private SteeringController steer;
+        private WeaponController weapons;
+        private ThrusterController thruster; 
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
 

@@ -101,6 +101,7 @@
     <Compile Include="Assets\Scripts\OffScreenIndicator\StarObjectPool4.cs" />
     <Compile Include="Assets\Resources\Data\ModelData\Services\MineralService.cs" />
     <Compile Include="Assets\Resources\Data\ModelData\Models\CelestialBodyModel.cs" />
+    <Compile Include="Assets\Scripts\AI\AI_Mine.cs" />
     <Compile Include="Assets\Scripts\Ship\Laser.cs" />
     <Compile Include="Assets\Scripts\System\AsteroidController.cs" />
     <Compile Include="Assets\Resources\Data\ModelData\Services\EngineService.cs" />
@@ -127,7 +128,9 @@
     <Compile Include="Assets\Scripts\FPS.cs" />
     <Compile Include="Assets\PlayerWeaponVariables.cs" />
     <Compile Include="Assets\Scripts\Player\FollowPlayer.cs" />
-    <Compile Include="Assets\Scripts\AI\AI_Mine.cs" />
+    <Compile Include="Assets\AI_Disabled.cs" />
+    <Compile Include="Assets\HealthBar.cs" />
+    <Compile Include="Assets\AI_Explode.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />

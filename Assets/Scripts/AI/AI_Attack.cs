@@ -1,4 +1,5 @@
 using Assets.Scripts.Ship;
+using Assets.Scripts.System;
 using UnityEngine;
 
 namespace Assets.Scripts.AI
@@ -31,6 +32,10 @@ namespace Assets.Scripts.AI
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
+            if (ship.GetComponent<ShipVariables>().HullHP < ship.GetComponent<ShipVariables>().MaxHullHP * .1f)
+            {
+                animator.SetInteger("State", 8);
+            }
             if (Vector3.Distance(ship.transform.position, target.transform.position) < 5 && target.GetComponent<Rigidbody2D>().velocity.magnitude < 3)
             {
                 steering.RotateTowards(ship, -(ship.transform.position - target.transform.position).normalized);
@@ -52,10 +57,31 @@ namespace Assets.Scripts.AI
                 }
             }
 
-            if (Vector3.Distance(ship.transform.position, target.transform.position) > 250)
+            if (target.tag == "AIShip" || target.tag == "PlayerShip")
             {
-                animator.SetInteger("State", 0);
+                if (target.GetComponent<ShipVariables>().HullHP < target.GetComponent<ShipVariables>().MaxHullHP * .1f)
+                {
+                    animator.SetInteger("State", 0);
+                }
             }
+
+            if (target.tag == "Asteroid")
+            {
+                if (target.GetComponent<AsteroidController>().Health <= 0)
+                {
+                    animator.SetInteger("State", 7);
+                }
+            }
+            
+
+
+
+
+
+
+
+
+
 
         }
 

@@ -28,7 +28,7 @@ namespace Assets.Scripts.AI
         {
             if (col.transform.GetComponent<BulletController>())
             {
-                if (col.transform.GetComponent<BulletController>().parentShip != ship)
+                if (col.transform.GetComponent<BulletController>().parentShip != ship && ship.GetComponent<ShipVariables>().HullHP > 0)
                 {
                     this.GetComponent<Animator>().SetInteger("State",3);
                 }

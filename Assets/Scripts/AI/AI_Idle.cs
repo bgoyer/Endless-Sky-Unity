@@ -14,7 +14,7 @@ namespace Assets.Scripts.AI
             ai = animator.gameObject;
             ship = ai.transform.GetChild(0).gameObject;
             rd2 = ship.GetComponent<Rigidbody2D>();
-            animator.SetInteger("State", 4);
+            //animator.SetInteger("State", 4);
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

@@ -39,7 +39,6 @@ namespace Assets.Scripts.Player
                 {
                     if (collision.transform.GetChild(body).GetComponent<Target>() != null)
                     {
-                        print(collision.transform.name);
                         collision.transform.GetChild(body).GetComponent<Target>().enabled = false;
                     }
                 }
