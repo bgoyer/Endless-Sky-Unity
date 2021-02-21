@@ -70,9 +70,9 @@ namespace Assets.Resources.Data.ModelData.Services
             {
                 item.Id = Guid.NewGuid().ToString();
             }
-            TModel _itm = Get(item.Id);
+            TModel itm = Get(item.Id);
 
-            if (_itm != null)
+            if (itm != null)
             {
                 Collection.UpdateOne(item.Id, item);
             }

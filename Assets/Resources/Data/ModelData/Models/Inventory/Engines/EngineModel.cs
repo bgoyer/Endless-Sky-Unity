@@ -17,12 +17,12 @@
         public double AfterburnerHeat { get; set; }
         public string AfterburnerEffect { get; set; }
 
-        public double? Thrust { get; set; }
-        public double? ThrustingEnergy { get; set; }
-        public double? ThrustingHeat { get; set; }
+        public double Thrust { get; set; }
+        public double ThrustingEnergy { get; set; }
+        public double  ThrustingHeat { get; set; }
 
-        public int? Turn { get; set; }
-        public double? TurningEnergy { get; set; }
-        public double? TurningHeat { get; set; }
+        public int  Turn { get; set; }
+        public double  TurningEnergy { get; set; }
+        public double  TurningHeat { get; set; }
     }
 }

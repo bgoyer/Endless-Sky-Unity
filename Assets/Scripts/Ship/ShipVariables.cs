@@ -8,8 +8,8 @@ namespace Assets.Scripts.Ship
         public bool CanControl = false;
         public int HyperdriveFuel = 0;
         public int MaxHyperdriveFuel = 0;
-        public int MaxHullHP = 100;
-        public int HullHP;
+        public int MaxHullHp = 100;
+        public int HullHp;
         public bool HasHyperDrive = false;
         public bool HasThrusters = false;
         public bool HasStearing = false;
@@ -17,14 +17,16 @@ namespace Assets.Scripts.Ship
         public bool HasBattery = false;
         public bool HasGenerator = false;
         public bool HasCooling = false;
+        public GameObject CurrentSystem;
 
         private void Start()
         {
-            HullHP = MaxHullHP;
+            HullHp = MaxHullHp;
             UpdateShip();
         }
         public void UpdateShip()
         {
+            CurrentSystem = this.transform.parent.parent.parent.gameObject;
             HasHyperDrive = false;
             HasThrusters = false;
             HasStearing = false;

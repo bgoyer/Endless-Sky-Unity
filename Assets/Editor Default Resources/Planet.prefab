@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7963314007698246556}
   - component: {fileID: 7963314007698246559}
   m_Layer: 0
-  m_Name: Haven
+  m_Name: Planet
   m_TagString: HabitableBody
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 15a02f3f853f84847a79325ee4ea7f9a, type: 2}
+  - {fileID: 2100000, guid: 02351fa0136ddac4b85bcb55ab5097db, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e83ec64a3283c479ea7a4fdb47450b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotate_time: 5
+  RotateTime: 5
 --- !u!114 &7963314007698246559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,4 +135,4 @@ MonoBehaviour:
   needOutpostIndicator: 0
   needArrowIndicator: 0
   needDistanceText: 0
-  indicator: {fileID: 0}
+  Indicator: {fileID: 0}

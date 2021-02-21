@@ -6,6 +6,7 @@ namespace Assets.Scripts.AI
 {
     public class AI_Mine : StateMachineBehaviour
     {
+        private GameObject ai;
         private GameObject currentSystem;
         private GameObject ship;
         private Inventory shipInv;
@@ -14,7 +15,7 @@ namespace Assets.Scripts.AI
         private ThrusterController thruster; 
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-
+            
         }
 
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

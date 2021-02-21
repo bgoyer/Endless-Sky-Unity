@@ -40,7 +40,7 @@ namespace Assets.Scripts.OffScreenIndicator
         /// A reference to the target's indicator,
         /// its value is assigned at runtime by the offscreen indicator script.
         /// </summary>
-        [HideInInspector] public Indicator indicator;
+        [HideInInspector] public Indicator Indicator;
 
         /// <summary>
         /// Gets the color for the target indicator.
@@ -155,7 +155,7 @@ namespace Assets.Scripts.OffScreenIndicator
         /// <returns></returns>
         public float GetDistanceFromCamera(Vector3 cameraPosition)
         {
-            float distanceFromCamera = Vector3.Distance(cameraPosition, transform.position) * 200;
+            float distanceFromCamera = Vector3.Distance(cameraPosition, transform.position) * 600;
             return distanceFromCamera;
         }
     }

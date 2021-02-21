@@ -9,7 +9,7 @@ namespace Assets.Scripts.Player
         public GameObject LandingTip;
         public GameObject LandingScreen;
     
-        private GameObject Player;
+        private GameObject player;
         private KeyMap keyMap;
         private int currentFuel;
         private int maxFuel;
@@ -18,7 +18,7 @@ namespace Assets.Scripts.Player
         private void Start()
         {
             sceneScripts = GameObject.Find("/SceneScripts");
-            Player = this.gameObject;
+            player = this.gameObject;
             keyMap = sceneScripts.GetComponent<KeyMap>();
             currentFuel = this.transform.GetComponent<ShipVariables>().HyperdriveFuel;
             maxFuel = this.transform.GetComponent<ShipVariables>().MaxHyperdriveFuel;
@@ -34,7 +34,7 @@ namespace Assets.Scripts.Player
                     print("land");
                     currentFuel = maxFuel;
                     this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-                    Player.GetComponent<ShipVariables>().CanControl = false;
+                    player.GetComponent<ShipVariables>().CanControl = false;
                     LandingScreen.SetActive(true);
                     sceneScripts.GetComponent<GameController>().Pause();
                 }

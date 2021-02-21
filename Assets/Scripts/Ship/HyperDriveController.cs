@@ -1,4 +1,5 @@
 using System.Collections;
+using System.ComponentModel;
 using UnityEngine;
 
 namespace Assets.Scripts.Ship
@@ -13,7 +14,8 @@ namespace Assets.Scripts.Ship
         private Rigidbody2D r2D;
         private Vector2 currentVelocity;
         private ShipVariables shipVar;
-
+        private TrailRenderer trail;
+        private bool cancelWarp = false;
         private SteeringController steering;
         //private int currentFuel;
         private void Start()
@@ -31,17 +33,19 @@ namespace Assets.Scripts.Ship
             shipVar = ship.GetComponent<ShipVariables>();
             canControl = shipVar.CanControl;
             r2D = ship.GetComponent<Rigidbody2D>();
-            Debug.Log(ship.transform.GetChild(3).name);
             WarpdriveVariables warpVar = ship.transform.GetChild(3).GetChild(0).GetComponent<WarpdriveVariables>();
             warpThrust = warpVar.WarpThrust;
             warpRotSpeed = warpVar.RotSpeed;
             warpingSfx = ship.transform.GetChild(3).GetChild(0).GetChild(1).gameObject.GetComponent<AudioSource>();
             inWarpSfx = ship.transform.GetChild(3).GetChild(0).GetChild(0).gameObject.GetComponent<AudioSource>();
+            trail = ship.transform.GetChild(3).GetChild(0).gameObject.GetComponent<TrailRenderer>();
             float distance = Vector3.Distance(target.position, ship.transform.position);
             if (distance >= 50 && canControl == true)
             {
-
-                canControl = false;
+                float startTime = Time.realtimeSinceStartup;
+                float endTime;
+                float totalTime;
+                    canControl = false;
 
                 r2D.drag = 10f;
 
@@ -62,12 +66,30 @@ namespace Assets.Scripts.Ship
                 yield return new WaitForSeconds(1.6f);
 
                 SoundInWarp();
-
+                trail.emitting = true;
                 r2D.AddRelativeForce(Vector2.up * warpThrust, ForceMode2D.Impulse);
 
                 while (distance > 200)
                 {
                     distance = Vector3.Distance(target.position, ship.transform.position);
+                    if (cancelWarp == true)
+                    {
+                        cancelWarp = false;
+                        r2D.drag = 2.5f;
+
+                        StopSound();
+
+                        yield return new WaitUntil(() => r2D.velocity.magnitude == 0);
+
+                        canControl = true;
+                        trail.emitting = false;
+                        r2D.drag = 0f;
+                        endTime = Time.timeSinceLevelLoad;
+                        totalTime = endTime - startTime;
+
+                        print($"You started the warp at {startTime} and finished at {endTime}! Total time {Mathf.Floor(totalTime / 60)} minutes {totalTime % 60} seconds");
+                        yield break;
+                    }
                     yield return null;
                 }
                 r2D.drag = 2.5f;
@@ -77,8 +99,12 @@ namespace Assets.Scripts.Ship
                 yield return new WaitUntil(() => r2D.velocity.magnitude == 0);
 
                 canControl = true;
-
+                trail.emitting = false;
                 r2D.drag = 0f;
+                endTime = Time.timeSinceLevelLoad;
+                totalTime = endTime - startTime;
+
+                print($"You started the warp at {startTime} and finished at {endTime}! Total time {Mathf.Floor(totalTime / 60)} minutes {totalTime % 60} seconds");
             }
         }
         private void SoundWarp()

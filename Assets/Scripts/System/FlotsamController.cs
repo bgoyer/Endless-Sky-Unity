@@ -7,32 +7,32 @@ namespace Assets.Scripts.System
 {
     public class FlotsamController : MonoBehaviour
     {
-        public int matAmount;
-        public string matType;
-        private GameObject LootTip;
+        public int MatAmount;
+        public string MatType;
+        private GameObject lootTip;
         private void Start()
         {
-            LootTip = GameObject.Find("/HUD/Tip");
+            lootTip = GameObject.Find("/HUD/HideWhenMapIsOpen/Tip");
             Destroy(this.gameObject, 30f);
-            matAmount = 10;
-            matType = "Aluminium";
+            MatAmount = 10;
+            MatType = "Aluminium";
         }
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.CompareTag("PlayerShip"))
+            if (collision.CompareTag("PlayerShip")|| collision.CompareTag("AIShip"))
             {
-                StartCoroutine("OnTrigger");
+                StartCoroutine("OnTrigger", collision);
             }
 
         }
 
-        IEnumerator OnTrigger()
+        IEnumerator OnTrigger(Collider2D col)
         {
-            GameObject.Find("/Player").transform.GetChild(0).GetComponent<InventoryController>().Add(matType, matAmount);
+            col.GetComponent<InventoryController>().Add(MatType, MatAmount);
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            LootTip.GetComponent<Text>().text = $"You looted {matAmount} {matType}";
+            lootTip.GetComponent<Text>().text = $"You looted {MatAmount} {MatType}";
             yield return new WaitForSeconds(3);
-            LootTip.GetComponent<Text>().text = "";
+            lootTip.GetComponent<Text>().text = "";
             Destroy(this.gameObject);
 
 

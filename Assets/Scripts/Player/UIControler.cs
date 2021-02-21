@@ -5,9 +5,9 @@ namespace Assets.Scripts.Player
 {
     public class UIControler : MonoBehaviour
     {
-        public GameObject map;
-        public GameObject player;
-        public GameObject menu;
+        public GameObject Map;
+        public GameObject Player;
+        public GameObject Menu;
         public GameObject HideHud;
 
         private GameObject sceneScripts;
@@ -32,30 +32,30 @@ namespace Assets.Scripts.Player
 
         private void Update()
         {
-            if (player.activeInHierarchy == true && Input.GetKeyDown(keyMap.OpenMap))
+            if (Player.activeInHierarchy == true && Input.GetKeyDown(keyMap.OpenMap))
             {
-                if (map.activeSelf == true)
+                if (Map.activeSelf == true)
                 {
-                    map.SetActive(false);
+                    Map.SetActive(false);
                     HideHud.SetActive(true);
                 }
                 else
                 {
-                    map.SetActive(true);
+                    Map.SetActive(true);
                     HideHud.SetActive(false);
                 }
             }
-            if (Input.GetKeyDown(KeyCode.Escape) && player.activeInHierarchy == true)
+            if (Input.GetKeyDown(KeyCode.Escape) && Player.activeInHierarchy == true)
             {
-                if (menu.activeSelf == true)
+                if (Menu.activeSelf == true)
                 {
-                    menu.SetActive(false);
+                    Menu.SetActive(false);
                     HideHud.SetActive(true);
                     sceneScripts.GetComponent<GameController>().Play();
                 }
                 else
                 {
-                    menu.SetActive(true);
+                    Menu.SetActive(true);
                     HideHud.SetActive(false);
                     sceneScripts.GetComponent<GameController>().Pause();
                 }

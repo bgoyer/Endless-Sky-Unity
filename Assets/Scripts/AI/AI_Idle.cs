@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.AI
 {
-    public class AI_Idle : StateMachineBehaviour
+    public class Ai_Idle : StateMachineBehaviour
     {
         private GameObject ai;
         private GameObject ship;

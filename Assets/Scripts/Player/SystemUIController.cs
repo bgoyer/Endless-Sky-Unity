@@ -1,5 +1,6 @@
 using System.Collections;
 using Assets.Scripts.OffScreenIndicator;
+using Assets.Scripts.Ship;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,13 +9,26 @@ namespace Assets.Scripts.Player
     public class SystemUIController : MonoBehaviour
     {
         public GameObject LocationText;
-        public GameObject systemUI;
+        public GameObject SystemUi;
         private string locName;
+        private GameObject player;
+
+        private void Start()
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.CompareTag("System") || collision.gameObject.CompareTag("AsteriodField"))
             {
+                if (collision.gameObject.CompareTag("AsteriodField"))
+                {
+                    if (!player.transform.transform.GetChild(0).GetComponent<ShipVariables>().CanControl)
+                    {
+                        return;
+                    }
+                }
                 locName = collision.gameObject.name.ToUpper();
                 for (var body = 0; body < collision.transform.childCount; body++)
                 {
@@ -23,8 +37,9 @@ namespace Assets.Scripts.Player
                         collision.transform.GetChild(body).GetComponent<Target>().enabled = true;
                     }
                 }
-                StartCoroutine(onTrigger(collision));
-                systemUI.GetComponent<Text>().text = collision.transform.name;
+                transform.GetComponent<ShipVariables>().UpdateShip();
+                StartCoroutine(OnTrigger(collision));
+                SystemUi.GetComponent<Text>().text = collision.transform.name;
             }
         }
 
@@ -33,8 +48,8 @@ namespace Assets.Scripts.Player
             if (collision.gameObject.CompareTag("System") || collision.gameObject.CompareTag("AsteriodField"))
             {
                 locName = collision.transform.parent.gameObject.name.ToUpper();
-                StartCoroutine(onTrigger(collision));
-                systemUI.GetComponent<Text>().text = collision.transform.parent.gameObject.name;
+                StartCoroutine(OnTrigger(collision));
+                SystemUi.GetComponent<Text>().text = collision.transform.parent.gameObject.name;
                 for (var body = 0; body < collision.transform.childCount; body++)
                 {
                     if (collision.transform.GetChild(body).GetComponent<Target>() != null)
@@ -42,10 +57,11 @@ namespace Assets.Scripts.Player
                         collision.transform.GetChild(body).GetComponent<Target>().enabled = false;
                     }
                 }
+                transform.GetComponent<ShipVariables>().UpdateShip();
             }
         }
 
-        private IEnumerator onTrigger(Collider2D collision)
+        private IEnumerator OnTrigger(Collider2D collision)
         {
             LocationText.GetComponent<Text>().text = locName;
             for (float a = 0; a < 1; a += .05f)

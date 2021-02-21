@@ -10,11 +10,11 @@ namespace Assets.Scripts.Player
 
         public Inventory ShipInventory = new Inventory();
 
-        public void Add(String Item, int Amount)
+        public void Add(String item, int amount)
         {
-            if (Item == "Alunimum")
+            if (item == "Alunimum")
             {
-                ShipInventory.Aluminum += Amount;
+                ShipInventory.Aluminum += amount;
             }
         }
     }

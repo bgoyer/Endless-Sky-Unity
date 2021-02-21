@@ -1,3 +1,5 @@
+using Assets.Scripts.Ship;
+using Assets.Scripts.System;
 using UnityEngine;
 
 namespace Assets.Scripts.AI
@@ -8,28 +10,20 @@ namespace Assets.Scripts.AI
         private GameObject ai;
         private GameObject ship;
         private bool warping;
+        private Rigidbody2D rd2;
+        private GameObject sceneScripts;
+        private string personality;
+        private ThrusterController thrusters;
+        private SteeringController steering;
+
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             ai = animator.gameObject;
             ship = ai.transform.GetChild(0).gameObject;
-            warping = false;
-        }
+            rd2 = ship.GetComponent<Rigidbody2D>();
+            sceneScripts = GameObject.Find("SceneScripts");
+            currentSystem = ship.GetComponent<ShipVariables>().CurrentSystem.name;
 
-        //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-        public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-        {
-            if (!warping)
-            {
-                warping = true;
-                ai.GetComponent<AIController>().StartCoroutine("Warp");
-            }
         }
-
-        //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-        public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-        {
-        
-        }
-
     }
 }

@@ -14,7 +14,7 @@ namespace Assets.Scripts.Ship
         // Update is called once per frame
         void Update()
         {
-            if (this.GetComponent<ShipVariables>().HullHP <= 0)
+            if (this.GetComponent<ShipVariables>().HullHp <= 0)
             {
 
             }
@@ -24,7 +24,7 @@ namespace Assets.Scripts.Ship
         {
             if (col.tag == "AIBullet" || col.tag == "PlayerBullet")
             {
-                this.transform.parent.GetComponent<AIController>().target = col.GetComponent<BulletController>().parentShip;
+                this.transform.parent.GetComponent<AIController>().Target = col.GetComponent<BulletController>().ParentShip;
                 this.transform.parent.GetComponent<AIController>().Hit(col);
             }
         }

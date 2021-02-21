@@ -20,18 +20,20 @@ namespace Assets.Scripts.Player
 
         void Start()
         {
+            this.gameObject.SetActive(false);
             sceneScripts = GameObject.Find("/SceneScripts");
             ship = this.transform.GetChild(0).gameObject;
             keyMap = sceneScripts.GetComponent<KeyMap>();
             setupShip = sceneScripts.GetComponent<SetUpAndSwitchShip>();
-            thrusterA = ship.transform.GetChild(1).GetChild(0).GetChild(0).gameObject;
-            thrusterB = ship.transform.GetChild(1).GetChild(1).GetChild(0).gameObject;
             stearing = sceneScripts.GetComponent<SteeringController>();
             weapons = sceneScripts.GetComponent<WeaponController>();
             thruster = sceneScripts.GetComponent<ThrusterController>();
             canControl = ship.GetComponent<ShipVariables>().CanControl;
-            setupShip.CreateWeapon(ship);
-            setupShip.CreateWeapon(ship);
+            setupShip.CreateWeapon(ship, "Energy Blaster");
+            setupShip.CreateWeapon(ship, "Energy Blaster");
+            setupShip.CreateEngine(ship, "Greyhound Plasma Thruster");
+            thrusterA = ship.transform.GetChild(1).GetChild(0).GetChild(0).gameObject;
+            thrusterB = ship.transform.GetChild(1).GetChild(1).GetChild(0).gameObject;
         }
 
         void FixedUpdate()

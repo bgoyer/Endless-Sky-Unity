@@ -9,10 +9,10 @@ namespace Assets.Scripts
         // Start is called before the first frame update
         private void Start()
         {
-            StartCoroutine("FPScounter");
+            StartCoroutine("FPSCounter");
         }
 
-        private IEnumerator FPScounter()
+        private IEnumerator FPSCounter()
         {
             while (true)
             {

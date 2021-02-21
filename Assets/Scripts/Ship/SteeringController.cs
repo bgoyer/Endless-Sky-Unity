@@ -23,16 +23,12 @@ namespace Assets.Scripts.Ship
             r2D.AddTorque(-rotSpeed, ForceMode2D.Impulse);
         }
 
-        public void RotateTowards(GameObject ship, Vector3 direction, float multiplier = default)
+        public void RotateTowards(GameObject ship, Vector3 direction, float multiplier = 1)
         {
             rotSpeed = ship.transform.GetChild(2).GetChild(0).GetComponent<SteeringVariables>().RotationSpeed;
             r2D = ship.GetComponent<Rigidbody2D>();
             Vector3 forwardVector = ship.transform.up;
             float angle = Vector3.Angle(forwardVector, direction);
-            if (multiplier == 0)
-            {
-                multiplier = 1;
-            }
             if (Vector3.Cross(forwardVector,direction).z < 0)
             {
                 ship.transform.Rotate(0,0, (angle * -1) * rotSpeed * multiplier / 100);

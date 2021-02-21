@@ -14,7 +14,7 @@ namespace Assets.Scripts.OffScreenIndicator
         [Tooltip("Distance offset of the indicators from the centre of the screen")]
         [SerializeField] private float screenBoundOffset = 0.9f;
 
-        public bool isTargetVisible;
+        public bool IsTargetVisible;
         private Camera mainCamera;
         private Vector3 screenCentre;
         private Vector3 screenBounds;
@@ -51,41 +51,41 @@ namespace Assets.Scripts.OffScreenIndicator
                 if (target.NeedBoxIndicator && isTargetVisible)
                 {
                     screenPosition.z = 0;
-                    indicator = GetIndicator(ref target.indicator, IndicatorType.BOX); // Gets the box indicator from the pool.
+                    indicator = GetIndicator(ref target.Indicator, IndicatorType.Box); // Gets the box indicator from the pool.
                 }
                 else if (target.NeedArrowIndicator && !isTargetVisible)
                 {
                     float angle = float.MinValue;
                     OffScreenIndicatorCore.GetArrowIndicatorPositionAndAngle(ref screenPosition, ref angle, screenCentre, screenBounds);
-                    indicator = GetIndicator(ref target.indicator, IndicatorType.ARROW); // Gets the arrow indicator from the pool.
+                    indicator = GetIndicator(ref target.Indicator, IndicatorType.Arrow); // Gets the arrow indicator from the pool.
                     indicator.transform.rotation = Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg); // Sets the rotation for the arrow indicator.
                 }
                 else if (target.NeedStarIndicator && !isTargetVisible)
                 {
                     float angle = float.MinValue;
                     OffScreenIndicatorCore.GetStarIndicatorPositionAndAngle(ref screenPosition, ref angle, screenCentre, screenBounds);
-                    indicator = GetIndicator(ref target.indicator, IndicatorType.STAR); // Gets the arrow indicator from the pool.
+                    indicator = GetIndicator(ref target.Indicator, IndicatorType.Star); // Gets the arrow indicator from the pool.
                     indicator.transform.rotation = Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg); // Sets the rotation for the arrow indicator.
                 }
                 else if (target.NeedEnemyOutpostIndicator && !isTargetVisible)
                 {
                     float angle = float.MinValue;
                     OffScreenIndicatorCore.GetEnemyOutpostIndicatorPositionAndAngle(ref screenPosition, ref angle, screenCentre, screenBounds);
-                    indicator = GetIndicator(ref target.indicator, IndicatorType.ENEMYOUTPOST); // Gets the arrow indicator from the pool.
+                    indicator = GetIndicator(ref target.Indicator, IndicatorType.Enemyoutpost); // Gets the arrow indicator from the pool.
                     indicator.transform.rotation = Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg); // Sets the rotation for the arrow indicator.
                 }
                 else if (target.NeedPlanetIndicator && !isTargetVisible)
                 {
                     float angle = float.MinValue;
                     OffScreenIndicatorCore.GetPlanetIndicatorPositionAndAngle(ref screenPosition, ref angle, screenCentre, screenBounds);
-                    indicator = GetIndicator(ref target.indicator, IndicatorType.PLANET); // Gets the arrow indicator from the pool.
+                    indicator = GetIndicator(ref target.Indicator, IndicatorType.Planet); // Gets the arrow indicator from the pool.
                     indicator.transform.rotation = Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg); // Sets the rotation for the arrow indicator.
                 }
                 else if (target.NeedAsteroidFieldIndicator && !isTargetVisible)
                 {
                     float angle = float.MinValue;
                     OffScreenIndicatorCore.GetAsteroidFieldIndicatorPositionAndAngle(ref screenPosition, ref angle, screenCentre, screenBounds);
-                    indicator = GetIndicator(ref target.indicator, IndicatorType.STAR); // Gets the arrow indicator from the pool.
+                    indicator = GetIndicator(ref target.Indicator, IndicatorType.Star); // Gets the arrow indicator from the pool.
                     indicator.transform.rotation = Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg); // Sets the rotation for the arrow indicator.
                 }
                 if (indicator)
@@ -113,8 +113,8 @@ namespace Assets.Scripts.OffScreenIndicator
             }
             else
             {
-                target.indicator?.Activate(false);
-                target.indicator = null;
+                target.Indicator?.Activate(false);
+                target.Indicator = null;
                 targets.Remove(target);
             }
         }
@@ -139,28 +139,28 @@ namespace Assets.Scripts.OffScreenIndicator
                 {
                     indicator.Activate(false);
 
-                    indicator = type == IndicatorType.BOX ? BoxObjectPool.current.GetPooledObject()
+                    indicator = type == IndicatorType.Box ? BoxObjectPool.Current.GetPooledObject()
 
-                        : ArrowObjectPool.current.GetPooledObject();
+                        : ArrowObjectPool.Current.GetPooledObject();
 
                     indicator.Activate(true); // Sets the indicator as active.
                 }
             }
             else
             {
-                indicator = type == IndicatorType.BOX ? BoxObjectPool.current.GetPooledObject()
+                indicator = type == IndicatorType.Box ? BoxObjectPool.Current.GetPooledObject()
 
-                    : type == IndicatorType.STAR ? StarObjectPool.current.GetPooledObject()
+                    : type == IndicatorType.Star ? StarObjectPool.Current.GetPooledObject()
 
-                    : type == IndicatorType.ENEMYOUTPOST ? EnemyOutpostObjectPool.current.GetPooledObject()
+                    : type == IndicatorType.Enemyoutpost ? EnemyOutpostObjectPool.Current.GetPooledObject()
 
-                    : type == IndicatorType.OUTPOST ? OutpostObjectPool.current.GetPooledObject()
+                    : type == IndicatorType.Outpost ? OutpostObjectPool.Current.GetPooledObject()
 
-                    : type == IndicatorType.PLANET ? PlanetObjectPool.current.GetPooledObject()
+                    : type == IndicatorType.Planet ? PlanetObjectPool.Current.GetPooledObject()
 
-                    : type == IndicatorType.ASTEROIDFIELD ? AsteroidFieldObjectPool.current.GetPooledObject()
+                    : type == IndicatorType.Asteroidfield ? AsteroidFieldObjectPool.Current.GetPooledObject()
 
-                    : ArrowObjectPool.current.GetPooledObject();
+                    : ArrowObjectPool.Current.GetPooledObject();
 
                 indicator.Activate(true); // Sets the indicator as active.
             }

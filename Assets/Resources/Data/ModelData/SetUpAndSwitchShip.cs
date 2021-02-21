@@ -7,16 +7,22 @@ namespace Assets.Resources.Data.ModelData
     public class SetUpAndSwitchShip : MonoBehaviour
     {
         private readonly WeaponService weaponService = new WeaponService();
+        private readonly EnginesService engineService = new EnginesService();
         private static GameObject _weaponPlaceHolder;
+        private static GameObject _thrusterPlaceHolder;
         private GameObject weaponClone;
+        private GameObject thrusterClone;
+
         private void Start()
         {
             _weaponPlaceHolder = UnityEngine.Resources.Load<GameObject>($"Prefabs/Weapons/Weapon");
+            _thrusterPlaceHolder = UnityEngine.Resources.Load<GameObject>($"Prefabs/Engines/Thruster");
         }
-        public void CreateWeapon(GameObject ship)
+
+        public void CreateWeapon(GameObject ship, string gunToCreate)
         {
-            var blaster = weaponService.GetByName("Energy Blaster");
-            
+            var blaster = weaponService.GetByName(gunToCreate);
+
             if (blaster.Category == "Guns")
             {
                 foreach (Transform weaponSlot in ship.transform.GetChild(0).GetChild(0))
@@ -41,7 +47,24 @@ namespace Assets.Resources.Data.ModelData
             weaponCloneVar.ShieldDamage = blaster.ShieldDamage;
             weaponCloneVar.HullDamage = blaster.HullDamage;
             weaponCloneVar.Velocity = blaster.Velocity * 50;
-            weaponClone.SetActive(true);
+        }
+
+        public void CreateEngine(GameObject ship, string engineToCreate)
+        {
+            var thruster = engineService.GetByName("Greyhound Plasma Thruster");
+
+            foreach (Transform thrusterSlot in ship.transform.GetChild(1))
+            {
+                if (thrusterSlot.childCount == 0)
+                {
+                    thrusterClone = Instantiate(_thrusterPlaceHolder, thrusterSlot.position,
+                        thrusterSlot.rotation, thrusterSlot);
+                    ThrusterVariables thrusterClonevar = thrusterClone.GetComponent<ThrusterVariables>();
+                    thrusterClonevar.ThrustEnergy= thruster.ThrustingEnergy * 2700;
+                    thrusterClonevar.MaxSpeed = 10;
+                }
+            }
+
         }
     }
 }

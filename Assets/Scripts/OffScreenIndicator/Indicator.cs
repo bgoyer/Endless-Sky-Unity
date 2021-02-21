@@ -10,8 +10,8 @@ namespace Assets.Scripts.OffScreenIndicator
     {
         [SerializeField] private IndicatorType indicatorType;
         private Image indicatorImage;
-        public Text distanceText;
-        public Text nameText;
+        public Text DistanceText;
+        public Text NameText;
 
         /// <summary>
         /// Gets if the game object is active in hierarchy.
@@ -47,9 +47,9 @@ namespace Assets.Scripts.OffScreenIndicator
         public void SetImageColor(Color color)
         {
             indicatorImage.color = color;
-            if (distanceText != null)
+            if (DistanceText != null)
             {
-                distanceText.color = Color.white;
+                DistanceText.color = Color.white;
             }
         }
 
@@ -59,14 +59,14 @@ namespace Assets.Scripts.OffScreenIndicator
         /// <param name="value"></param>
         public void SetDistanceText(float value, Target target)
         {
-            if (nameText != null)
+            if (NameText != null)
             {
-                nameText.text = target.gameObject.name.ToUpper();
+                NameText.text = target.gameObject.name.ToUpper();
             }
-            if (distanceText != null)
+            if (DistanceText != null)
             {
                 {
-                    distanceText.text = value >= 1.496e+4 ? (value / 1.496e+4).ToString("0.0") + "AU" : value >= 0 ? Mathf.Floor(value) + "KM" : "";
+                    DistanceText.text = value >= 1.496e+4 ? (value / 1.496e+4).ToString("0.0") + "AU" : value >= 0 ? Mathf.Floor(value) + "KM" : "";
                 }
             }
         }
@@ -77,9 +77,9 @@ namespace Assets.Scripts.OffScreenIndicator
         /// <param name="rotation"></param>
         public void SetTextRotation(Quaternion rotation)
         {
-            if (distanceText != null)
+            if (DistanceText != null)
             {
-                distanceText.rectTransform.rotation = rotation;
+                DistanceText.rectTransform.rotation = rotation;
             }
         }
 
@@ -95,12 +95,12 @@ namespace Assets.Scripts.OffScreenIndicator
 
     public enum IndicatorType
     {
-        BOX,
-        ARROW,
-        PLANET,
-        STAR,
-        ENEMYOUTPOST,
-        ASTEROIDFIELD,
-        OUTPOST
+        Box,
+        Arrow,
+        Planet,
+        Star,
+        Enemyoutpost,
+        Asteroidfield,
+        Outpost
     }
 }

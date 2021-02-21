@@ -5,31 +5,31 @@ namespace Assets.Scripts.OffScreenIndicator
 {
     internal class AsteroidFieldObjectPool : MonoBehaviour
     {
-        public static AsteroidFieldObjectPool current;
+        public static AsteroidFieldObjectPool Current;
 
         [Tooltip("Assign the asteriod field prefab.")]
-        public Indicator pooledObject;
+        public Indicator PooledObject;
 
         [Tooltip("Initial pooled amount.")]
-        public int pooledAmount = 1;
+        public int PooledAmount = 1;
 
         [Tooltip("Should the pooled amount increase.")]
-        public bool willGrow = true;
+        public bool WillGrow = true;
 
         private List<Indicator> pooledObjects;
 
         private void Awake()
         {
-            current = this;
+            Current = this;
         }
 
         private void Start()
         {
             pooledObjects = new List<Indicator>();
 
-            for (int i = 0; i < pooledAmount; i++)
+            for (int i = 0; i < PooledAmount; i++)
             {
-                Indicator asteroidField = Instantiate(pooledObject);
+                Indicator asteroidField = Instantiate(PooledObject);
                 asteroidField.transform.SetParent(transform, false);
                 asteroidField.Activate(false);
                 pooledObjects.Add(asteroidField);
@@ -49,9 +49,9 @@ namespace Assets.Scripts.OffScreenIndicator
                     return pooledObjects[i];
                 }
             }
-            if (willGrow)
+            if (WillGrow)
             {
-                Indicator asteroidField = Instantiate(pooledObject);
+                Indicator asteroidField = Instantiate(PooledObject);
                 asteroidField.transform.SetParent(transform, false);
                 asteroidField.Activate(false);
                 pooledObjects.Add(asteroidField);

@@ -22,7 +22,7 @@ public class HealthBar : MonoBehaviour
         high = new Color(0, 175, 0);
         ship = gameObject;
         slider = this.transform.GetChild(10).GetChild(0).GetComponent<Slider>();
-        slider.maxValue = ship.GetComponent<ShipVariables>().MaxHullHP;
+        slider.maxValue = ship.GetComponent<ShipVariables>().MaxHullHp;
 
     }
 
@@ -30,8 +30,8 @@ public class HealthBar : MonoBehaviour
     void Update()
     {
         slider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(low, high, slider.normalizedValue);
-        slider.gameObject.SetActive(ship.GetComponent<ShipVariables>().HullHP < ship.GetComponent<ShipVariables>().MaxHullHP);
-        slider.value = ship.GetComponent<ShipVariables>().HullHP;
+        slider.gameObject.SetActive(ship.GetComponent<ShipVariables>().HullHp < ship.GetComponent<ShipVariables>().MaxHullHp);
+        slider.value = ship.GetComponent<ShipVariables>().HullHp;
         slider.transform.position = Camera.main.WorldToScreenPoint(slider.transform.parent.parent.position + Offset);
     }
 }

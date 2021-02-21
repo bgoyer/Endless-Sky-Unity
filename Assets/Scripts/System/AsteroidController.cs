@@ -19,25 +19,15 @@ namespace Assets.Scripts.System
             Flotsam = UnityEngine.Resources.Load<GameObject>("Prefabs/Asteroid/Flotsams/Aluminumflotasam");
             rotateSpeed = Random.Range(1, 3);
         }
-
-        private void OnTriggerEnter2D(Component collision)
-        {
-            if (collision.gameObject.CompareTag("PlayerBullet"))
-            {
-                Health -= collision.gameObject.GetComponent<BulletController>().damage;
-                collision.gameObject.GetComponent<BulletController>().OnHit();
-            }
-        }
-
         private void Update()
         {
             StartCoroutine("Rotate");
             if (Health <= 0)
             {
-                GameObject _flotsam = Instantiate(Flotsam, GarbageHolder.transform);
-                _flotsam.transform.position = this.transform.position;
-                _flotsam.GetComponent<FlotsamController>().matAmount = MatAmountPer;
-                _flotsam.GetComponent<FlotsamController>().matType = AsteriodType;
+                GameObject flotsam = Instantiate(Flotsam, GarbageHolder.transform);
+                flotsam.transform.position = this.transform.position;
+                flotsam.GetComponent<FlotsamController>().MatAmount = MatAmountPer;
+                flotsam.GetComponent<FlotsamController>().MatType = AsteriodType;
                 Destroy(this.gameObject);
             }
         }

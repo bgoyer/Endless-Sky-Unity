@@ -4,7 +4,7 @@ namespace Assets.Scripts.Ship
 {
     public class ThrusterVariables : MonoBehaviour
     {
-        public int ThrustEnergy;
+        public double ThrustEnergy;
         public int MaxSpeed;
 
         void Start()

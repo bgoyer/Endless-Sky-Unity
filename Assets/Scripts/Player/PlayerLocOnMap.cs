@@ -4,12 +4,12 @@ namespace Assets.Scripts.Player
 {
     public class PlayerLocOnMap : MonoBehaviour
     {
-        public GameObject ship;
+        public GameObject Ship;
 
     
         void Update()
         {
-            this.GetComponent<RectTransform>().anchoredPosition = new Vector2((ship.transform.position.x) / 15f, (ship.transform.position.y) / 15f); 
+            this.GetComponent<RectTransform>().anchoredPosition = new Vector2((Ship.transform.position.x) / 75f, (Ship.transform.position.y) / 75f); 
         }
     }
 }

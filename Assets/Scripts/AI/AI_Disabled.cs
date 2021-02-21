@@ -20,7 +20,7 @@ public class AI_Disabled : StateMachineBehaviour
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (ship.GetComponent<ShipVariables>().HullHP < 1)
+        if (ship.GetComponent<ShipVariables>().HullHp < 1)
         {
             animator.SetInteger("State", 9);
         }

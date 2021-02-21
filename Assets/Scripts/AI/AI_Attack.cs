@@ -26,13 +26,13 @@ namespace Assets.Scripts.AI
             thrusters = sceneScripts.GetComponent<ThrusterController>();
             weapons = sceneScripts.GetComponent<WeaponController>();
             steering = sceneScripts.GetComponent<SteeringController>();
-            target = ai.GetComponent<AIController>().target;
+            target = ai.GetComponent<AIController>().Target;
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            if (ship.GetComponent<ShipVariables>().HullHP < ship.GetComponent<ShipVariables>().MaxHullHP * .1f)
+            if (ship.GetComponent<ShipVariables>().HullHp < ship.GetComponent<ShipVariables>().MaxHullHp * .2f)
             {
                 animator.SetInteger("State", 8);
             }
@@ -59,7 +59,7 @@ namespace Assets.Scripts.AI
 
             if (target.tag == "AIShip" || target.tag == "PlayerShip")
             {
-                if (target.GetComponent<ShipVariables>().HullHP < target.GetComponent<ShipVariables>().MaxHullHP * .1f)
+                if (target.GetComponent<ShipVariables>().HullHp < target.GetComponent<ShipVariables>().MaxHullHp * .1f)
                 {
                     animator.SetInteger("State", 0);
                 }

@@ -7,7 +7,7 @@ namespace Assets.Scripts.Player
     {
         public GameObject Player;
         public Text Credits;
-        private Player Stats;
+        private Player stats;
 
         private void Start()
         {

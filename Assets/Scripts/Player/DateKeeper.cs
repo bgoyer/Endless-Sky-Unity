@@ -7,15 +7,15 @@ namespace Assets.Scripts.Player
 {
     public class DateKeeper : MonoBehaviour
     {
-        public Text SystemTextUI;
-        private int[] CurrentDate;
+        public Text SystemTextUi;
+        private int[] currentDate;
 
         private bool running = false;
         private string[] months = new string[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
 
         void Start()
         {
-            CurrentDate = new int[3] {1, 1, 2095};
+            currentDate = new int[3] {1, 1, 2095};
             StartCoroutine("StartTimeLoop");
         }
 
@@ -25,18 +25,18 @@ namespace Assets.Scripts.Player
             running = true;
             while (running)
             {
-                CurrentDate[0] += 1;
-                if (CurrentDate[0] >= 30)
+                currentDate[0] += 1;
+                if (currentDate[0] >= 30)
                 {
-                    CurrentDate[0] = 1;
-                    CurrentDate[1] += 1;
-                    if (CurrentDate[1] >= 13)
+                    currentDate[0] = 1;
+                    currentDate[1] += 1;
+                    if (currentDate[1] >= 13)
                     {
-                        CurrentDate[1] = 1;
-                        CurrentDate[2] += 1;
+                        currentDate[1] = 1;
+                        currentDate[2] += 1;
                     }
                 }
-                SystemTextUI.text = $"{CurrentDate[0]} {months[CurrentDate[1] - 1]} {CurrentDate[2]}";
+                SystemTextUi.text = $"{currentDate[0]} {months[currentDate[1] - 1]} {currentDate[2]}";
                 yield return new WaitForSeconds(15f);
             }
         }

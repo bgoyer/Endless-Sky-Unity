@@ -4,7 +4,7 @@ namespace Assets.Scripts
 {
     public class Quit : MonoBehaviour
     {
-        public void quit()
+        public void QuitGame()
         {
             Application.Quit();
         }

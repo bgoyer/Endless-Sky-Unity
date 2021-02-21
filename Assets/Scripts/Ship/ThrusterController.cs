@@ -11,6 +11,7 @@ namespace Assets.Scripts.Ship
 
         public void Accelerate(GameObject ship)
         {
+            if (!ship.transform.GetComponent<ShipVariables>().CanControl) {return;}
             thrusterA = ship.transform.GetChild(1).GetChild(0).GetChild(0).gameObject;
             thrusterB = ship.transform.GetChild(1).GetChild(1).GetChild(0).gameObject;
             thrusterA.transform.GetChild(0).gameObject.SetActive(true);
@@ -18,7 +19,7 @@ namespace Assets.Scripts.Ship
             r2D = ship.GetComponent<Rigidbody2D>();
             if (ship.transform.GetComponent<Rigidbody2D>().velocity.sqrMagnitude <= thrusterA.transform.parent.parent.GetComponent<ThrusterVariables>().MaxSpeed)
             {
-                r2D.AddRelativeForce(Vector3.up * thrusterA.transform.parent.parent.GetComponent<ThrusterVariables>().ThrustEnergy);
+                r2D.AddRelativeForce(Vector3.up * (float)thrusterA.transform.parent.parent.GetComponent<ThrusterVariables>().ThrustEnergy);
             }
             else
             {

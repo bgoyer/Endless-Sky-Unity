@@ -6,10 +6,10 @@ namespace Assets.Scripts.Ship
 {
     public class BulletController : MonoBehaviour
     {
-        public float range = 3f;
+        public float Range = 3f;
         public Rigidbody2D R2D;
-        public int damage = 10;
-        public GameObject parentShip;
+        public int Damage = 10;
+        public GameObject ParentShip;
 
         private void Start()
         {
@@ -18,16 +18,16 @@ namespace Assets.Scripts.Ship
 
         IEnumerator DestroyBullet()
         {
-            yield return new WaitForSeconds(range - .5f);
+            yield return new WaitForSeconds(Range - .5f);
             this.GetComponent<Animator>().SetBool("Destroy", true);
             yield return new WaitForSeconds(.5f);
             Destroy(this.gameObject);
         }
 
-        public void OnHit()
+        public void OnHit(Collider2D col)
         { 
             this.GetComponent<Animator>().SetBool("Destroy", true);
-            this.R2D.velocity = new Vector2(0, 0);
+            //this.R2D.velocity = col.gameObject.GetComponent<Rigidbody2D>().velocity;
             Destroy(this.gameObject, .5f);
         }
 
@@ -35,13 +35,13 @@ namespace Assets.Scripts.Ship
         {
             if (col.gameObject.tag == "PlayerShip" && this.tag.Equals("AIBullet"))
             {
-                col.GetComponent<ShipVariables>().HullHP -= damage;
-                OnHit();
+                col.GetComponent<ShipVariables>().HullHp -= Damage;
+                OnHit(col);
             }
             if (col.gameObject.tag == "AIShip" && this.tag.Equals("PlayerBullet"))
             {
-                col.GetComponent<ShipVariables>().HullHP -= damage;
-                OnHit();
+                col.GetComponent<ShipVariables>().HullHp -= Damage;
+                OnHit(col);
 
             }
 

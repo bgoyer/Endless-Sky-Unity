@@ -5,31 +5,31 @@ namespace Assets.Scripts.OffScreenIndicator
 {
     public class BoxObjectPool : MonoBehaviour
     {
-        public static BoxObjectPool current;
+        public static BoxObjectPool Current;
 
         [Tooltip("Assign the box prefab.")]
-        public Indicator pooledObject;
+        public Indicator PooledObject;
 
         [Tooltip("Initial pooled amount.")]
-        public int pooledAmount = 1;
+        public int PooledAmount = 1;
 
         [Tooltip("Should the pooled amount increase.")]
-        public bool willGrow = true;
+        public bool WillGrow = true;
 
         private List<Indicator> pooledObjects;
 
         private void Awake()
         {
-            current = this;
+            Current = this;
         }
 
         private void Start()
         {
             pooledObjects = new List<Indicator>();
 
-            for (int i = 0; i < pooledAmount; i++)
+            for (int i = 0; i < PooledAmount; i++)
             {
-                Indicator box = Instantiate(pooledObject);
+                Indicator box = Instantiate(PooledObject);
                 box.transform.SetParent(transform, false);
                 box.Activate(false);
                 pooledObjects.Add(box);
@@ -49,9 +49,9 @@ namespace Assets.Scripts.OffScreenIndicator
                     return pooledObjects[i];
                 }
             }
-            if (willGrow)
+            if (WillGrow)
             {
-                Indicator box = Instantiate(pooledObject);
+                Indicator box = Instantiate(PooledObject);
                 box.transform.SetParent(transform, false);
                 box.Activate(false);
                 pooledObjects.Add(box);

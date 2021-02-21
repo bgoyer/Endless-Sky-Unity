@@ -90,8 +90,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indicatorType: 1
-  distanceText: {fileID: 114225423569729942}
-  nameText: {fileID: 0}
+  DistanceText: {fileID: 114225423569729942}
+  NameText: {fileID: 0}
 --- !u!1 &1139357039166344
 GameObject:
   m_ObjectHideFlags: 0
