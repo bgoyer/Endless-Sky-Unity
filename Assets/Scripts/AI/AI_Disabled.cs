@@ -15,6 +15,7 @@ public class AI_Disabled : StateMachineBehaviour
         ai = animator.gameObject;
         ship = ai.transform.GetChild(0).gameObject;
         rd2 = ship.GetComponent<Rigidbody2D>();
+        ship.GetComponent<ShipVariables>().CanControl = false;
     }
 
 

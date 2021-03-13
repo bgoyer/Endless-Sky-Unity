@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Assets.Scripts.Ship;
 using Assets.Scripts.System;
 using UnityEngine;
@@ -15,8 +16,9 @@ namespace Assets.Scripts.AI
         private ThrusterController thrusters;
         private WeaponController weapons;
         private SteeringController steering;
+        private List<GameObject> targetList = new List<GameObject> { };
 
-        /// OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+        // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             ai = animator.gameObject;
@@ -32,6 +34,13 @@ namespace Assets.Scripts.AI
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
+            attack(animator);
+
+        }
+
+        private void attack(Animator animator)
+        {
+            var weaponSlots = ship.transform.GetChild(0).GetChild(0);
             if (ship.GetComponent<ShipVariables>().HullHp < ship.GetComponent<ShipVariables>().MaxHullHp * .2f)
             {
                 animator.SetInteger("State", 8);
@@ -48,7 +57,6 @@ namespace Assets.Scripts.AI
                 steering.RotateTowards(ship, -(ship.transform.position - target.transform.position).normalized);
                 rd2.drag = 0f;
             }
-            var weaponSlots = ship.transform.GetChild(0).GetChild(0);
             foreach (Transform weapon in weaponSlots)
             {
                 if (weapon.childCount > 0 & Vector3.Distance(ship.transform.position, target.transform.position) < 10)
@@ -72,19 +80,7 @@ namespace Assets.Scripts.AI
                     animator.SetInteger("State", 7);
                 }
             }
-            
-
-
-
-
-
-
-
-
-
-
         }
-
         // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {

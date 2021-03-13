@@ -23,7 +23,7 @@ namespace Assets.Scripts.AI
             ship = this.transform.GetChild(0).gameObject;
             setupShip.CreateWeapon(ship, "Energy Blaster");
             setupShip.CreateWeapon(ship, "Energy Blaster");
-            setupShip.CreateEngine(ship, "Greyhound Plasma Thruster");
+                setupShip.CreateEngine(ship, "Greyhound Plasma Thruster");
         }
         public void Hit(Collider2D col)
         {

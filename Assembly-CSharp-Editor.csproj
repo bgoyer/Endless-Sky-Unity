@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Editor\Create System.cs" />
     <Compile Include="Assets\Editor\Json Creation Tool.cs" />
+    <Compile Include="Assets\ARG\Editor\RouteInspector.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\NuGet\Editor\DotNetZip.dll" />
@@ -808,6 +809,15 @@
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.CacheServer">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.CacheServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline">
+      <HintPath>Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -9,22 +9,25 @@ namespace Assets.Scripts.Ship
         private float rotSpeed;
         private Rigidbody2D r2D;
 
-        public void TurnLeft(GameObject ship)
+        public void TurnLeft(GameObject ship, bool overide = false)
         {
+            if (!ship.GetComponent<ShipVariables>().CanControl && !overide) return;
             rotSpeed = ship.transform.GetChild(2).GetChild(0).GetComponent<SteeringVariables>().RotationSpeed;
             r2D = ship.GetComponent<Rigidbody2D>();
             r2D.AddTorque(rotSpeed, ForceMode2D.Impulse);
         }
 
-        public void TurnRight(GameObject ship)
+        public void TurnRight(GameObject ship, bool overide = false)
         {
+            if (!ship.GetComponent<ShipVariables>().CanControl && !overide) return;
             rotSpeed = ship.transform.GetChild(2).GetChild(0).GetComponent<SteeringVariables>().RotationSpeed;
             r2D = ship.GetComponent<Rigidbody2D>();
             r2D.AddTorque(-rotSpeed, ForceMode2D.Impulse);
         }
 
-        public void RotateTowards(GameObject ship, Vector3 direction, float multiplier = 1)
+        public void RotateTowards(GameObject ship, Vector3 direction, float multiplier = 1, bool overide = false)
         {
+            if (!ship.GetComponent<ShipVariables>().CanControl && !overide) return;
             rotSpeed = ship.transform.GetChild(2).GetChild(0).GetComponent<SteeringVariables>().RotationSpeed;
             r2D = ship.GetComponent<Rigidbody2D>();
             Vector3 forwardVector = ship.transform.up;

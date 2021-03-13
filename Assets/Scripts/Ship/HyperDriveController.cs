@@ -31,7 +31,6 @@ namespace Assets.Scripts.Ship
         private IEnumerator StartAutoPilot(Transform target, GameObject ship)
         {
             shipVar = ship.GetComponent<ShipVariables>();
-            canControl = shipVar.CanControl;
             r2D = ship.GetComponent<Rigidbody2D>();
             WarpdriveVariables warpVar = ship.transform.GetChild(3).GetChild(0).GetComponent<WarpdriveVariables>();
             warpThrust = warpVar.WarpThrust;
@@ -40,12 +39,13 @@ namespace Assets.Scripts.Ship
             inWarpSfx = ship.transform.GetChild(3).GetChild(0).GetChild(0).gameObject.GetComponent<AudioSource>();
             trail = ship.transform.GetChild(3).GetChild(0).gameObject.GetComponent<TrailRenderer>();
             float distance = Vector3.Distance(target.position, ship.transform.position);
-            if (distance >= 50 && canControl == true)
+            if (distance >= 50)
             {
+                Debug.Log(target.name);
                 float startTime = Time.realtimeSinceStartup;
                 float endTime;
                 float totalTime;
-                    canControl = false;
+                ship.GetComponent<ShipVariables>().CanControl = false;
 
                 r2D.drag = 10f;
 
@@ -56,7 +56,7 @@ namespace Assets.Scripts.Ship
                 Vector3 vectorToTarget = -(ship.transform.position - target.position).normalized;
                 while (Vector3.Angle(ship.transform.up, vectorToTarget) > 0)
                 {
-                    steering.RotateTowards(ship, vectorToTarget, 3);
+                    steering.RotateTowards(ship, vectorToTarget, 3, true);
                     yield return new WaitForSeconds(0.01f);
 
                 }
@@ -81,13 +81,13 @@ namespace Assets.Scripts.Ship
 
                         yield return new WaitUntil(() => r2D.velocity.magnitude == 0);
 
-                        canControl = true;
                         trail.emitting = false;
                         r2D.drag = 0f;
                         endTime = Time.timeSinceLevelLoad;
                         totalTime = endTime - startTime;
 
                         print($"You started the warp at {startTime} and finished at {endTime}! Total time {Mathf.Floor(totalTime / 60)} minutes {totalTime % 60} seconds");
+                        ship.GetComponent<ShipVariables>().CanControl = true;
                         yield break;
                     }
                     yield return null;
@@ -98,13 +98,13 @@ namespace Assets.Scripts.Ship
 
                 yield return new WaitUntil(() => r2D.velocity.magnitude == 0);
 
-                canControl = true;
                 trail.emitting = false;
                 r2D.drag = 0f;
                 endTime = Time.timeSinceLevelLoad;
                 totalTime = endTime - startTime;
 
                 print($"You started the warp at {startTime} and finished at {endTime}! Total time {Mathf.Floor(totalTime / 60)} minutes {totalTime % 60} seconds");
+                ship.GetComponent<ShipVariables>().CanControl = true;
             }
         }
         private void SoundWarp()

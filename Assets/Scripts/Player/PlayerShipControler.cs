@@ -22,12 +22,12 @@ namespace Assets.Scripts.Player
         {
             this.gameObject.SetActive(false);
             sceneScripts = GameObject.Find("/SceneScripts");
-            ship = this.transform.GetChild(0).gameObject;
             keyMap = sceneScripts.GetComponent<KeyMap>();
             setupShip = sceneScripts.GetComponent<SetUpAndSwitchShip>();
             stearing = sceneScripts.GetComponent<SteeringController>();
             weapons = sceneScripts.GetComponent<WeaponController>();
             thruster = sceneScripts.GetComponent<ThrusterController>();
+            ship = this.transform.GetChild(0).gameObject;
             canControl = ship.GetComponent<ShipVariables>().CanControl;
             setupShip.CreateWeapon(ship, "Energy Blaster");
             setupShip.CreateWeapon(ship, "Energy Blaster");
@@ -38,6 +38,10 @@ namespace Assets.Scripts.Player
 
         void FixedUpdate()
         {
+            if (!ship)
+            {
+                ship = this.transform.GetChild(0).gameObject;
+            }
             if (canControl == true)
             {
                 if (Input.GetKey(keyMap.TurnLeft))

@@ -35,12 +35,20 @@ namespace Assets.Scripts.Ship
         {
             if (col.gameObject.tag == "PlayerShip" && this.tag.Equals("AIBullet"))
             {
-                col.GetComponent<ShipVariables>().HullHp -= Damage;
+                if (col.GetComponent<ShipVariables>().ShieldHp > 0)
+                {
+                    col.GetComponent<ShipVariables>().ShieldHp -= Damage;
+                }
+                else col.GetComponent<ShipVariables>().HullHp -= Damage;
                 OnHit(col);
             }
             if (col.gameObject.tag == "AIShip" && this.tag.Equals("PlayerBullet"))
             {
-                col.GetComponent<ShipVariables>().HullHp -= Damage;
+                if (col.GetComponent<ShipVariables>().ShieldHp > 0)
+                {
+                    col.GetComponent<ShipVariables>().ShieldHp -= Damage;
+                }
+                else col.GetComponent<ShipVariables>().HullHp -= Damage;
                 OnHit(col);
 
             }

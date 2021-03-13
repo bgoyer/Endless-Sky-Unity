@@ -11,18 +11,9 @@ namespace Assets.Scripts.Ship
         
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-            if (this.GetComponent<ShipVariables>().HullHp <= 0)
-            {
-
-            }
-        }
-
         void OnTriggerEnter2D(Collider2D col)
         {
-            if (col.tag == "AIBullet" || col.tag == "PlayerBullet")
+            if ((col.tag == "AIBullet" || col.tag == "PlayerBullet") && this.CompareTag("AIShip"))
             {
                 this.transform.parent.GetComponent<AIController>().Target = col.GetComponent<BulletController>().ParentShip;
                 this.transform.parent.GetComponent<AIController>().Hit(col);

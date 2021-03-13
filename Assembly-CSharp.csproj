@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Resources\Data\ModelData\Models\Inventory\Weapon\WeaponModel.cs" />
     <Compile Include="Assets\Scripts\Ship\BulletController.cs" />
+    <Compile Include="Assets\UnifiedIO\UnifiedIO_WSAAsync_File.cs" />
     <Compile Include="Assets\Resources\Data\ModelData\Models\ModelBase.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerLocOnMap.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerShipControler.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Assets\Scripts\OffScreenIndicator\AsteroidFieldObjectPool.cs" />
     <Compile Include="Assets\Scripts\Ship\WeaponController.cs" />
     <Compile Include="Assets\Scripts\Ship\SteeringController.cs" />
+    <Compile Include="Assets\UnifiedIO\UnifiedIO_WSA_Directory.cs" />
     <Compile Include="Assets\Resources\Data\ModelData\SetUpAndSwitchShip.cs" />
     <Compile Include="Assets\Scripts\System\PopulateCharacters.cs" />
     <Compile Include="Assets\Scripts\OffScreenIndicator\SetBoxIndicatorName.cs" />
@@ -89,6 +91,8 @@
     <Compile Include="Assets\ObjectHandeler.cs" />
     <Compile Include="Assets\Resources\Data\ModelData\DatabaseTest.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerHyperdriveController.cs" />
+    <Compile Include="Assets\UnifiedIO\UnifiedIO_WSA_File.cs" />
+    <Compile Include="Assets\UnifiedIO\UnifiedIO_SystemIO_File.cs" />
     <Compile Include="Assets\Scripts\AI\AI_Warp.cs" />
     <Compile Include="Assets\Scripts\Player\SystemUIController.cs" />
     <Compile Include="Assets\Scripts\OffScreenIndicator\OutpostObjectPool5.cs" />
@@ -102,10 +106,12 @@
     <Compile Include="Assets\Resources\Data\ModelData\Models\Player\PlayerModel.cs" />
     <Compile Include="Assets\Scripts\OffScreenIndicator\StarObjectPool4.cs" />
     <Compile Include="Assets\Resources\Data\ModelData\Services\MineralService.cs" />
+    <Compile Include="Assets\UnifiedIO\UnifiedIO_WSAAsync_Directory.cs" />
     <Compile Include="Assets\Resources\Data\ModelData\Models\CelestialBodyModel.cs" />
     <Compile Include="Assets\Scripts\AI\AI_Mine.cs" />
     <Compile Include="Assets\Scripts\Ship\Laser.cs" />
     <Compile Include="Assets\Scripts\System\AsteroidController.cs" />
+    <Compile Include="Assets\UnifiedIO\UnifiedIO_SystemIO_Directory.cs" />
     <Compile Include="Assets\Resources\Data\ModelData\Services\EngineService.cs" />
     <Compile Include="Assets\Scripts\Ship\ShipVariables.cs" />
     <Compile Include="Assets\Scripts\OffScreenIndicator\ArrowObjectPool.cs" />
@@ -123,8 +129,10 @@
     <Compile Include="Assets\Resources\Data\ModelData\Services\WeaponService.cs" />
     <Compile Include="Assets\Scripts\Player\DateKeeper.cs" />
     <Compile Include="Assets\HealthBar.cs" />
+    <Compile Include="Assets\UnifiedIO\UnifiedIO_WSAAsync_Internal.cs" />
     <Compile Include="Assets\Scripts\Player\InstructionText.cs" />
     <Compile Include="Assets\Scripts\Player\BuySell.cs" />
+    <Compile Include="Assets\UnifiedIO\UnifiedIO_SystemIO_Internal.cs" />
     <Compile Include="Assets\Scripts\AI\AI_Idle.cs" />
     <Compile Include="Assets\Scripts\System\AsteroidFieldController.cs" />
     <Compile Include="Assets\Resources\Data\ModelData\Services\ServiceBase.cs" />
@@ -132,14 +140,12 @@
     <Compile Include="Assets\Scripts\FPS.cs" />
     <Compile Include="Assets\PlayerWeaponVariables.cs" />
     <Compile Include="Assets\Scripts\Player\FollowPlayer.cs" />
-    <Compile Include="Assets\UnifiedIO\UnifiedIO_WSAAsync_Directory.cs" />
-    <Compile Include="Assets\UnifiedIO\UnifiedIO_WSAAsync_File.cs" />
-    <Compile Include="Assets\UnifiedIO\UnifiedIO_WSAAsync_Internal.cs" />
-    <Compile Include="Assets\UnifiedIO\UnifiedIO_WSA_Directory.cs" />
-    <Compile Include="Assets\UnifiedIO\UnifiedIO_SystemIO_File.cs" />
-    <Compile Include="Assets\UnifiedIO\UnifiedIO_SystemIO_Internal.cs" />
-    <Compile Include="Assets\UnifiedIO\UnifiedIO_SystemIO_Directory.cs" />
-    <Compile Include="Assets\UnifiedIO\UnifiedIO_WSA_File.cs" />
+    <Compile Include="Assets\ARG\RouteGenerator\RouteGenerator.cs" />
+    <Compile Include="Assets\ARG\RouteGenerator\RouteEditor.cs" />
+    <Compile Include="Assets\ARG\RouteGenerator\PositionChange.cs" />
+    <Compile Include="Assets\ARG\RouteGenerator\RotationChange.cs" />
+    <Compile Include="Assets\PlayerHealth.cs" />
+    <Compile Include="Assets\ShieldController.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
@@ -149,6 +155,7 @@
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\Packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <None Include="Assets\ARG\readme.txt" />
      <None Include="Assets\Packages\Microsoft.CSharp.4.5.0\LICENSE.TXT" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
@@ -863,6 +870,15 @@
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.CacheServer">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.CacheServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline">
+      <HintPath>Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
