@@ -6440,6 +6440,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1247818791}
   - component: {fileID: 1247818792}
+  - component: {fileID: 1247818793}
   m_Layer: 0
   m_Name: Fuel
   m_TagString: Untagged
@@ -6519,6 +6520,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1247818793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247818790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 301a8432478fd0f47b9de8d3dde79c94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 657496215}
 --- !u!1 &1274026965
 GameObject:
   m_ObjectHideFlags: 0
@@ -7454,6 +7468,14 @@ PrefabInstance:
     - target: {fileID: 92861927, guid: 2ca9fe34dbb7494498832a6d4344b7af, type: 3}
       propertyPath: MaxShieldHp
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 92861927, guid: 2ca9fe34dbb7494498832a6d4344b7af, type: 3}
+      propertyPath: HyperdriveFuel
+      value: 32000
+      objectReference: {fileID: 0}
+    - target: {fileID: 92861927, guid: 2ca9fe34dbb7494498832a6d4344b7af, type: 3}
+      propertyPath: MaxHyperdriveFuel
+      value: 32000
       objectReference: {fileID: 0}
     - target: {fileID: 92861932, guid: 2ca9fe34dbb7494498832a6d4344b7af, type: 3}
       propertyPath: systemUI

@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\Ship\BulletController.cs" />
     <Compile Include="Assets\UnifiedIO\UnifiedIO_WSAAsync_File.cs" />
     <Compile Include="Assets\Resources\Data\ModelData\Models\ModelBase.cs" />
+    <Compile Include="Assets\ShieldController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerLocOnMap.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerShipControler.cs" />
     <Compile Include="Assets\Scripts\OffScreenIndicator\OffScreenIndicatorCore.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Assets\Scripts\OffScreenIndicator\SetBoxIndicatorName.cs" />
     <Compile Include="Assets\Scripts\OffScreenIndicator\PlanetObjectPool.cs" />
     <Compile Include="Assets\ObjectHandeler.cs" />
+    <Compile Include="Assets\ARG\RouteGenerator\RouteEditor.cs" />
     <Compile Include="Assets\Resources\Data\ModelData\DatabaseTest.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerHyperdriveController.cs" />
     <Compile Include="Assets\UnifiedIO\UnifiedIO_WSA_File.cs" />
@@ -108,12 +110,14 @@
     <Compile Include="Assets\Resources\Data\ModelData\Services\MineralService.cs" />
     <Compile Include="Assets\UnifiedIO\UnifiedIO_WSAAsync_Directory.cs" />
     <Compile Include="Assets\Resources\Data\ModelData\Models\CelestialBodyModel.cs" />
+    <Compile Include="Assets\ARG\RouteGenerator\PositionChange.cs" />
     <Compile Include="Assets\Scripts\AI\AI_Mine.cs" />
     <Compile Include="Assets\Scripts\Ship\Laser.cs" />
     <Compile Include="Assets\Scripts\System\AsteroidController.cs" />
     <Compile Include="Assets\UnifiedIO\UnifiedIO_SystemIO_Directory.cs" />
     <Compile Include="Assets\Resources\Data\ModelData\Services\EngineService.cs" />
     <Compile Include="Assets\Scripts\Ship\ShipVariables.cs" />
+    <Compile Include="Assets\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\OffScreenIndicator\ArrowObjectPool.cs" />
     <Compile Include="Assets\Resources\Data\ModelData\Models\Inventory\InventoryModelBase.cs" />
     <Compile Include="Assets\Scripts\OffScreenIndicator\BoxObjectPool.cs" />
@@ -137,15 +141,12 @@
     <Compile Include="Assets\Scripts\System\AsteroidFieldController.cs" />
     <Compile Include="Assets\Resources\Data\ModelData\Services\ServiceBase.cs" />
     <Compile Include="Assets\Scripts\KeyMap.cs" />
+    <Compile Include="Assets\ARG\RouteGenerator\RouteGenerator.cs" />
+    <Compile Include="Assets\ARG\RouteGenerator\RotationChange.cs" />
     <Compile Include="Assets\Scripts\FPS.cs" />
     <Compile Include="Assets\PlayerWeaponVariables.cs" />
     <Compile Include="Assets\Scripts\Player\FollowPlayer.cs" />
-    <Compile Include="Assets\ARG\RouteGenerator\RouteGenerator.cs" />
-    <Compile Include="Assets\ARG\RouteGenerator\RouteEditor.cs" />
-    <Compile Include="Assets\ARG\RouteGenerator\PositionChange.cs" />
-    <Compile Include="Assets\ARG\RouteGenerator\RotationChange.cs" />
-    <Compile Include="Assets\PlayerHealth.cs" />
-    <Compile Include="Assets\ShieldController.cs" />
+    <Compile Include="Assets\PlayerFuelUIController.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
@@ -778,14 +779,17 @@
     <Reference Include="PsdPlugin">
       <HintPath>Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
+    <Reference Include="UnityEditor.CacheServer">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.CacheServer.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
@@ -859,8 +863,14 @@
     <Reference Include="Unity.2D.Common.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline">
+      <HintPath>Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.SpriteShape.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Common.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
@@ -870,15 +880,6 @@
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.CacheServer">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.CacheServer.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ScriptableBuildPipeline">
-      <HintPath>Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ScriptableBuildPipeline.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

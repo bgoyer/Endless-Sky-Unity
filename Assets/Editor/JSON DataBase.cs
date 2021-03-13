@@ -22,7 +22,6 @@ namespace Assets.Editor
             if (createNewFile)
             {
                 fileName = EditorGUILayout.TextField("File Name", fileName);
-                EditorGUILayout.DropdownButton();
                 UnifiedIO.Directory.Create(Path.Combine("DataBase", fileName + ".json"));
             }
             if (editFile)
