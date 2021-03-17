@@ -2,7 +2,6 @@ using UnityEngine;
 
 namespace Assets.Scripts.Ship
 {
-
     public class ThrusterController : MonoBehaviour
     {
         private GameObject thrusterA;
@@ -11,7 +10,7 @@ namespace Assets.Scripts.Ship
 
         public void Accelerate(GameObject ship)
         {
-            if (!ship.transform.GetComponent<ShipVariables>().CanControl) {return;}
+            if (!ship.transform.GetComponent<ShipVariables>().CanControl) { return; }
             thrusterA = ship.transform.GetChild(1).GetChild(0).GetChild(0).gameObject;
             thrusterB = ship.transform.GetChild(1).GetChild(1).GetChild(0).gameObject;
             thrusterA.transform.GetChild(0).gameObject.SetActive(true);

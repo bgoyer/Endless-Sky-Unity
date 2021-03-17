@@ -18,7 +18,7 @@ namespace Assets.Scripts.Player
         private WeaponController weapons;
         private bool canControl;
 
-        void Start()
+        private void Start()
         {
             this.gameObject.SetActive(false);
             sceneScripts = GameObject.Find("/SceneScripts");
@@ -29,14 +29,17 @@ namespace Assets.Scripts.Player
             thruster = sceneScripts.GetComponent<ThrusterController>();
             ship = this.transform.GetChild(0).gameObject;
             canControl = ship.GetComponent<ShipVariables>().CanControl;
-            setupShip.CreateWeapon(ship, "Energy Blaster");
-            setupShip.CreateWeapon(ship, "Energy Blaster");
-            setupShip.CreateEngine(ship, "Greyhound Plasma Thruster");
+//            setupShip.CreateWeapon(ship, "Energy Blaster");
+//            setupShip.CreateWeapon(ship, "Energy Blaster");
+ //           setupShip.CreateEngine(ship, "Greyhound Plasma Thruster");
             thrusterA = ship.transform.GetChild(1).GetChild(0).GetChild(0).gameObject;
             thrusterB = ship.transform.GetChild(1).GetChild(1).GetChild(0).gameObject;
+            
+            ship.GetComponent<ShipVariables>().UpdateShip();
+            ship.GetComponent<ShipVariables>().CheckShip();
         }
 
-        void FixedUpdate()
+        private void FixedUpdate()
         {
             if (!ship)
             {

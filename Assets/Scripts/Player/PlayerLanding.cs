@@ -8,7 +8,7 @@ namespace Assets.Scripts.Player
     {
         public GameObject LandingTip;
         public GameObject LandingScreen;
-    
+
         private GameObject player;
         private KeyMap keyMap;
         private int currentFuel;
@@ -23,12 +23,13 @@ namespace Assets.Scripts.Player
             currentFuel = this.transform.GetComponent<ShipVariables>().HyperdriveFuel;
             maxFuel = this.transform.GetComponent<ShipVariables>().MaxHyperdriveFuel;
         }
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.CompareTag("HabitableBody"))
             {
                 LandingTip.GetComponent<Text>().text = $"Press {keyMap.Land} to land";
-                
+
                 if (Input.GetKeyDown(keyMap.Land))
                 {
                     print("land");

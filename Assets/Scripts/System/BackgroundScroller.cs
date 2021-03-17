@@ -9,7 +9,6 @@ namespace Assets.Scripts.System
 
         private void Update()
         {
-
             MeshRenderer background = GetComponent<MeshRenderer>();
             Material mat = background.material;
             Vector2 offset = mat.mainTextureOffset;

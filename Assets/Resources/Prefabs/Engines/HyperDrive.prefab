@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -8557713694589992217}
   - component: {fileID: 8825605627700682523}
   - component: {fileID: 8456331172990083638}
+  - component: {fileID: 736066063071699538}
   m_Layer: 0
   m_Name: HyperDrive
   m_TagString: Untagged
@@ -95,11 +96,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 13217547437483690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ca5f9b32a4a94349897efa1591f6271, type: 3}
+  m_Script: {fileID: 11500000, guid: 9adf178700b11e347864b418eb145090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   WarpThrust: 100000
   RotSpeed: 40
+  FuelUsage: 1.4
 --- !u!96 &8456331172990083638
 TrailRenderer:
   serializedVersion: 2
@@ -207,6 +209,18 @@ TrailRenderer:
   m_MinVertexDistance: 0
   m_Autodestruct: 0
   m_Emitting: 0
+--- !u!114 &736066063071699538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13217547437483690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 326bfbe6c427dd346a3a5a7ea9cd8284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3092034641092224666
 GameObject:
   m_ObjectHideFlags: 0

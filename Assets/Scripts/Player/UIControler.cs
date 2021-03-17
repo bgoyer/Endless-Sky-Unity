@@ -1,4 +1,3 @@
-using Assets.Scripts.Ship;
 using UnityEngine;
 
 namespace Assets.Scripts.Player
@@ -19,7 +18,7 @@ namespace Assets.Scripts.Player
             keyMap = GameObject.Find("/SceneScripts").GetComponent<KeyMap>();
             foreach (Transform uiElement in this.transform)
             {
-                if (uiElement.gameObject.name == "MainMenu" ||uiElement.name == "Tip")
+                if (uiElement.gameObject.name == "MainMenu" || uiElement.name == "Tip")
                 {
                     uiElement.gameObject.SetActive(true);
                 }

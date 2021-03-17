@@ -1,6 +1,6 @@
-using System.Collections;
 using Assets.Scripts.OffScreenIndicator;
 using Assets.Scripts.Ship;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 

@@ -11,12 +11,11 @@ namespace Assets.Scripts.Player
 
         private void Start()
         {
-       
         }
 
         private void Update()
         {
-            Credits.text = Player.GetComponent<Player>().Credits +" credits";
+            Credits.text = Player.GetComponent<Player>().Credits + " credits";
         }
     }
 }

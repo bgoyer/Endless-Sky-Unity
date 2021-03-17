@@ -1,3 +1,5 @@
+using Assets.Resources.Data.ModelData.Models.Inventory.Engines;
+using Assets.Resources.Data.ModelData.Services;
 using System.IO;
 using TMPro;
 using UnityEditor;
@@ -22,7 +24,7 @@ namespace Assets.Editor
             if (createNewFile)
             {
                 fileName = EditorGUILayout.TextField("File Name", fileName);
-                UnifiedIO.Directory.Create(Path.Combine("DataBase", fileName + ".json"));
+                
             }
             if (editFile)
             {
@@ -36,11 +38,18 @@ namespace Assets.Editor
             GUILayout.Space(15);
             GUILayout.BeginHorizontal();
             GUILayout.Space(10);
-            if (GUILayout.Button("Create File"))
+            if (GUILayout.Button("Create Object"))
             {
                 createNewFile = true;
                 editFile = false;
                 deleteFile = false;
+                
+//                EnginesService steeringService = new EnginesService();
+//                EngineModel engine = new EngineModel();
+ //               engine.Name = "blatastic";
+
+
+  //              engineService.Save(engine);
             }
             if (GUILayout.Button("Edit File"))
             {

@@ -1,4 +1,3 @@
-using Assets.Scripts.AI;
 using Assets.Scripts.Ship;
 using UnityEngine;
 
@@ -17,7 +16,6 @@ public class AI_Disabled : StateMachineBehaviour
         rd2 = ship.GetComponent<Rigidbody2D>();
         ship.GetComponent<ShipVariables>().CanControl = false;
     }
-
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {

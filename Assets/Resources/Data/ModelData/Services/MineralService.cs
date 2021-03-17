@@ -2,7 +2,7 @@
 
 namespace Assets.Resources.Data.ModelData.Services
 {
-    public class MineralService: ServiceBase<MineralModel>
+    public class MineralService : ServiceBase<MineralModel>
     {
         public MineralService() : base("mineral")
         {

@@ -1,12 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Ship
 {
     public class WeaponController : MonoBehaviour
     {
-
         public void Shoot(GameObject ship, GameObject weaponGo)
         {
             WeaponVariables weapon;
@@ -26,13 +24,11 @@ namespace Assets.Scripts.Ship
                 ammoClone.tag = $"{ship.transform.parent.tag}Bullet";
                 ammoClone.GetComponent<Rigidbody2D>().velocity = ship.GetComponent<Rigidbody2D>().velocity;
                 ammoClone.GetComponent<Rigidbody2D>()
-                    .AddRelativeForce(ammoClone.transform.up * (float) weapon.Velocity);
+                    .AddRelativeForce(ammoClone.transform.up * (float)weapon.Velocity);
                 ammoClone.GetComponent<BulletController>().ParentShip = ship;
                 StartCoroutine(ReloadGun(weapon));
             }
-
         }
-
 
         private IEnumerator ReloadGun(WeaponVariables weapon)
         {

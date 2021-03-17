@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using UnityEditor;
 using UnityEngine;
 
 namespace Assets.Scripts.Ship
@@ -16,7 +15,7 @@ namespace Assets.Scripts.Ship
             StartCoroutine(DestroyBullet());
         }
 
-        IEnumerator DestroyBullet()
+        private IEnumerator DestroyBullet()
         {
             yield return new WaitForSeconds(Range - .5f);
             this.GetComponent<Animator>().SetBool("Destroy", true);
@@ -25,7 +24,7 @@ namespace Assets.Scripts.Ship
         }
 
         public void OnHit(Collider2D col)
-        { 
+        {
             this.GetComponent<Animator>().SetBool("Destroy", true);
             //this.R2D.velocity = col.gameObject.GetComponent<Rigidbody2D>().velocity;
             Destroy(this.gameObject, .5f);
@@ -50,9 +49,7 @@ namespace Assets.Scripts.Ship
                 }
                 else col.GetComponent<ShipVariables>().HullHp -= Damage;
                 OnHit(col);
-
             }
-
         }
     }
 }

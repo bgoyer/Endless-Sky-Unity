@@ -1,13 +1,13 @@
-using System;
 using Assets.Resources.Data.ModelData.Models.Player;
 using Assets.Resources.Data.ModelData.Services;
+using System;
 using UnityEngine;
 
 namespace Assets.Scripts.Player
 {
     public class PlayerLoad : MonoBehaviour
     {
-        PlayerService service = new PlayerService("en");
+        private PlayerService service = new PlayerService("en");
 
         // Start is called before the first frame update
         public void Load()
@@ -20,7 +20,8 @@ namespace Assets.Scripts.Player
                 player.Location.X = -216;
                 player.Location.Y = -216;
 
-                if (!service.Exists(player)) {
+                if (!service.Exists(player))
+                {
                     player = service.Save(player);
                 }
 
@@ -34,9 +35,8 @@ namespace Assets.Scripts.Player
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
-        
         }
     }
 }

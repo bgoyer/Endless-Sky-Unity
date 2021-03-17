@@ -1,8 +1,7 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
-public class RotationChange : MonoBehaviour 
+public class RotationChange : MonoBehaviour
 {
     /// <summary>
     /// 将G^2连续的n次广义有理bezier样条中所有离散点都储存在矩阵C中,行向量是点的坐标    all the discrete points of a G^2 generalized rational B´ezier curve of degree n are stored in matrix C
@@ -14,7 +13,7 @@ public class RotationChange : MonoBehaviour
     /// <param name="beta2">beta2储存的是G^1Hermite插值的一阶及二阶几何连续形状参数的(N-1)*4矩阵，行向量是每段广义有理n次Bezier曲线在t=0和t=1处的一阶及t=0和t=1处的二阶几何连续的形状参数 A (N-1)*4 matrix of which the k-th row vector stores the four shape parameters of the k-th Bezier curve segment of G^2 Hermite interpolation spline at the endpoints</param>
     /// <param name="tao">tao表示离散的步长  step length</param>
     /// <returns>坐标点数组  all the discrete points of a G^2 generalized rational B´ezier curve of degree n </returns>
-    static float[,] G2SrbSpline(float[,] rotInterData, float[,] vrotInterData, float[,] crotInterData, float[,] W, float[,] beta2, float tao)
+    private static float[,] G2SrbSpline(float[,] rotInterData, float[,] vrotInterData, float[,] crotInterData, float[,] W, float[,] beta2, float tao)
     {
         int N = rotInterData.GetLength(0); //N是插值点个数   the number of the positional interpolation vectors is N
         int M = rotInterData.GetLength(1); //维数  dimension
@@ -56,7 +55,7 @@ public class RotationChange : MonoBehaviour
     /// <param name="w">w是储存n+1个第0级（初始）权因子的行向量 w is a row vector which stores n+1 initial weights </param>
     /// <param name="t">t是时间参数   time parameter </param>
     /// <returns>返回值是n次有理球面Bezier曲线在t时刻的取值  the value of the generalized rational Bezier curve of degree n at t</returns>
-    static float[] RB(float[,] X, float[] w, float t)
+    private static float[] RB(float[,] X, float[] w, float t)
     {
         int r = X.GetLength(1);
         int n = w.GetLength(0) - 1; //n+1个第0级（初始）权因子对应n次广义有理Bezier曲线 n+1 initial weights correspond to the generalized rational Bezier curve of degree n
@@ -68,8 +67,8 @@ public class RotationChange : MonoBehaviour
             float[] x1 = new float[r];
             float[] x2 = new float[r];
             float[] c = new float[2];
-            c[0] = C[0,j];
-            c[1] = C[0,j+1];
+            c[0] = C[0, j];
+            c[1] = C[0, j + 1];
             for (int z = 0; z < r; z++)
             {
                 x1[z] = X[j, z];
@@ -89,8 +88,8 @@ public class RotationChange : MonoBehaviour
                     float[] a1 = new float[r];
                     float[] a2 = new float[r];
                     float[] c = new float[2];
-                    c[0] = C[k,j];
-                    c[1] = C[k,j+1];
+                    c[0] = C[k, j];
+                    c[1] = C[k, j + 1];
                     for (int z = 0; z < r; z++)
                     {
                         a1[z] = A[j, z];
@@ -115,13 +114,13 @@ public class RotationChange : MonoBehaviour
     /// </summary>
     /// <param name="w">w是储存n=2个第0级（初始）权因子的行向量 w is a row vector which stores n+1=2 initial weights </param>
     /// <param name="t">t是参数</param>
-    static float[] RB1(float[] X, float[] Y, float[] w, float t)
+    private static float[] RB1(float[] X, float[] Y, float[] w, float t)
     {
         int r = X.GetLength(0);
         float[,] C = W(w, t); //矩阵C的第k行储存的是第k-1级权因子,k=1,...,n+1  the k-th row of matrix C stores the (k-1)-th weights
         float[,] u = U(C, t); //矩阵u的第k行储存的是第k-1级比例系数,k=1,...,n  the k-th row of matrix u stores the (k-1)-th scale coefficient
         float d = Dot(X, Y);
-        float a = Mathf.Acos(d); //a是曲线相邻控制点对应向量的夹角theta0 a is the angle between two neighbouring control points of the curve   
+        float a = Mathf.Acos(d); //a是曲线相邻控制点对应向量的夹角theta0 a is the angle between two neighbouring control points of the curve
         float[] A = new float[r];
         if (d == -1)
         {
@@ -146,7 +145,7 @@ public class RotationChange : MonoBehaviour
     /// <param name="W">矩阵W的第k行储存的是第k-1级共（n+2-k）个权因子，k=1,...,n+1  the k-th row of matrix W stores the (k-1)-th weights of which the number is n+2-k </param>
     /// <param name="t">t是参数</param>
     /// <returns>返回值的第k行储存的是第k-1级共(n+1-k)个比例系数，k=1,...,n  the k-th row of the returning matrix stores the (k-1)-th scale coefficient of which the number is n+1-k</returns>
-    static float[,] U(float[,] W, float t)
+    private static float[,] U(float[,] W, float t)
     {
         int n = W.GetLength(1) - 1; //n+1个第0级（初始）权因子对应n次广义有理Bezier曲线  n+1 initial weights correspond to the generalized rational Bezier curve of degree n
         float[,] A = new float[n, n];
@@ -166,7 +165,7 @@ public class RotationChange : MonoBehaviour
     /// <param name="w">w是储存n次广义有理Bezier曲线的n+1个第0级（初始）权因子的行向量（w_0=1,w_1,...,w_n）w is a row vector which stores n+1=2 initial weights the generalized rational Bezier curve of degree n</param>
     /// <param name="t">t是参数</param>
     /// <returns>返回值的第k行储存的是第k-1级权因子，k=1,...,n+1 the k-th row of the returning matrix stores the (k-1)-th weights of which the number is n+2-k</returns>
-    static float[,] W(float[] w, float t)
+    private static float[,] W(float[] w, float t)
     {
         int n = w.GetLength(0) - 1; //n+1个第0级（初始）权因子对应n次广义有理Bezier曲线 n+1 initial weights correspond to the generalized rational Bezier curve of degree n
         float[,] A = new float[n + 1, n + 1];
@@ -193,7 +192,7 @@ public class RotationChange : MonoBehaviour
     /// <param name="W">W储存的是广义有理n次Bezier曲线的初始权因子的(N-1)*(n+1)矩阵，行向量是每段广义有理n次Bezier曲线的n+1个（初始）权因子（w_0,w_1,...,w_n）W is a (N-1)*(n+1) matrix of which the row vector stores n+1 initial weights of the generalized rational Bezier curve of degree n</param>
     /// <param name="beta2">beta2储存的是G^1Hermite插值的一阶及二阶几何连续形状参数的(N-1)*4矩阵，行向量是每段广义有理n次Bezier曲线在t=0和t=1处的一阶及t=0和t=1处的二阶几何连续的形状参数 A (N-1)*4 matrix of which the k-th row vector stores the four shape parameters of the k-th generalized rational Bezier curve segment of G^2 Hermite interpolation spline at the endpoints</param>
     /// <returns>返回值是G^2Hermite插值的广义有理n次Bezier样条(由N-1段广义有理n次Bezier曲线组成)的全部控制点的(n+1)(N-1)*4矩阵，行向量是控制点坐标  a (n+1)(N-1)*4 matrix of which the ((n+1)*(k-1)+j)-th row vector represents the j-th control point of the k-th generalized rational Bezier curve segment of G^2 Hermite interpolation spline</returns>
-    static float[,] rotAllControl2(float[,] rotInterData, float[,] vrotInterData, float[,] crotInterData, float[,] W, float[,] beta2)
+    private static float[,] rotAllControl2(float[,] rotInterData, float[,] vrotInterData, float[,] crotInterData, float[,] W, float[,] beta2)
     {
         int n = 5; //球面Bezier曲线的次数是n=5(G^2Hermite插值)the degree of the generalized rational Bezier spline for G^2 Hermite interpolation is n=5
         int N = rotInterData.GetLength(0); //值点的个数是N，样条由N-1段曲线组成 the number of the positional interpolation vectors is N, the spline is composed of N-1 segments
@@ -239,11 +238,11 @@ public class RotationChange : MonoBehaviour
     /// <param name="beta02">beta02是t=0处二阶几何连续的形状参数  beta02 is the shape parameter of G^2 continuity at t=0</param>
     /// <param name="beta02">beta12是t=1处二阶几何连续的形状参数  beta12 is the shape parameter of G^2 continuity at t=1</param>
     /// <returns>返回值是储存n+1个曲线控制点（b_0,b_1,...,b_n）的(n+1)*r维矩阵，行向量是控制点坐标  a (n+1)*r matrix of which the row vectors represent the control points of the interpolation curve</returns>
-    static float[,] Jscontrol2(float[,] Z, float[,] V1, float[,] V2, float[] w, float beta01, float beta11, float beta02, float beta12)
+    private static float[,] Jscontrol2(float[,] Z, float[,] V1, float[,] V2, float[] w, float beta01, float beta11, float beta02, float beta12)
     {
         int r = Z.GetLength(1); //获取数组维数 r is the dimension
         float[,] C = new float[2, r]; //C是储存2个曲率向量向切平面的投影c_0,c_1的2*4维矩阵，行向量是投影向量坐标   C is a 2*4 matrix of which the row vectors represent the projection of the ordinary acceleration vectors onto the tangent space
-        int n = 5; //球面Bezier曲线的次数是n次,n=5  the degree of the generalized rational Bezier spline for G^2 Hermite interpolation is n=5 
+        int n = 5; //球面Bezier曲线的次数是n次,n=5  the degree of the generalized rational Bezier spline for G^2 Hermite interpolation is n=5
         float[,] x = new float[n + 1, r]; //x是储存n+1个曲线控制点（b_0,b_1,...,b_n）的(n+1)*r维矩阵，行向量是控制点坐标   x is a (n+1)*r matrix of which the row vectors represent the control points of the interpolation curve
         float[] theta = new float[n]; //theta是储存n次广义有理Bezier曲线n个相邻两控制点夹角（theta_0,theta_1,...,theta_n-1）的行向量  theta is a row vector of which the i-th element is the angle between the i-th and the (i+1)-th control points of the curve
         for (int i = 0; i < r; i++)
@@ -281,9 +280,9 @@ public class RotationChange : MonoBehaviour
             xn0[i] = x[n - 1, i];
             xn1[i] = x[n, i];
         }
-        float[] v0 = DB10(x0, w[0], x1, w[1]); //v0是b_{0}^1(t)在t=0处的一阶导数 v0 is the first order derivative of b_{0}^1(t) at t=0 
-        float[] v1 = DB11(x0, w[0], x1, w[1]); //v1是b_{0}^1(t)在t=1处的一阶导数 v1 is the first order derivative of b_{0}^1(t) at t=1 
-        float[] v2 = DB11(xn0, w[n - 1], xn1, w[n]); //v2是b_{n-1}^1(t)在t=1处的一阶导数 v2 is the first order derivative of b_{n-1}^1(t) at t=1 
+        float[] v0 = DB10(x0, w[0], x1, w[1]); //v0是b_{0}^1(t)在t=0处的一阶导数 v0 is the first order derivative of b_{0}^1(t) at t=0
+        float[] v1 = DB11(x0, w[0], x1, w[1]); //v1是b_{0}^1(t)在t=1处的一阶导数 v1 is the first order derivative of b_{0}^1(t) at t=1
+        float[] v2 = DB11(xn0, w[n - 1], xn1, w[n]); //v2是b_{n-1}^1(t)在t=1处的一阶导数 v2 is the first order derivative of b_{n-1}^1(t) at t=1
         float[] v3 = DB10(xn0, w[n - 1], xn1, w[n]); //v3是b_{n-1}^1(t)在t=0处的一阶导数 v3 is the first order derivative of b_{n-1}^1(t) at t=0
         float[] dX0 = new float[r]; //dX0是b_1^1(t)在t=0处的一阶导数 dX0 is the first order derivative of b_{1}^1(t) at t=0
         float[] dX1 = new float[r]; //dX1是b_{n-2}^1(t)在t=1处的一阶导数  dX1 is the first order derivative of b_{n-2}^1(t) at t=1
@@ -313,7 +312,7 @@ public class RotationChange : MonoBehaviour
     /// </summary>
     /// <param name="w1">w1是控制点X1处的第0级（初始）权因子  w1 is the initial weight of control point X1</param>
     /// <param name="w2">w2是控制点X2处的第0级（初始）权因子  w2 is the initial weight of control point X2</param>
-    static float[] DB10(float[] X1, float w1, float[] X2, float w2)
+    private static float[] DB10(float[] X1, float w1, float[] X2, float w2)
     {
         float theta = Mathf.Acos(Dot(X1, X2)); //theta是向量X1,X2的夹角 theta is the angle between the vectors X1 and X2
         int n = X1.GetLength(0);
@@ -341,7 +340,7 @@ public class RotationChange : MonoBehaviour
     /// </summary>
     /// <param name="w1">w1是控制点X1处的第0级（初始）权因子  w1 is the initial weight of control point X1</param>
     /// <param name="w2">w2是控制点X2处的第0级（初始）权因子  w2 is the initial weight of control point X2</param>
-    static float[] DB11(float[] X1, float w1, float[] X2, float w2)
+    private static float[] DB11(float[] X1, float w1, float[] X2, float w2)
     {
         float theta = Mathf.Acos(Dot(X1, X2)); //theta是向量X1,X2的夹角 theta is the angle between the vectors X1 and X2
         int n = X1.GetLength(0);
@@ -367,7 +366,7 @@ public class RotationChange : MonoBehaviour
     /// <summary>
     /// 计算两个向量点乘 compute the inner product of two vectors
     /// </summary>
-    static float Dot(float[] X1, float[] X2)
+    private static float Dot(float[] X1, float[] X2)
     {
         float s = 0f;
         for (int i = 0; i < X1.GetLength(0); i++)
@@ -380,7 +379,7 @@ public class RotationChange : MonoBehaviour
     /// <summary>
     /// 求四元向量的二范数 compute the 2-norm of a quaternion
     /// </summary>
-    static float Norm(float[] a)
+    private static float Norm(float[] a)
     {
         return Mathf.Sqrt(a[0] * a[0] + a[1] * a[1] + a[2] * a[2] + a[3] * a[3]);
     }
@@ -388,7 +387,7 @@ public class RotationChange : MonoBehaviour
     /// <summary>
     /// 四元向量标准化 normalize a quaternion
     /// </summary>
-    static float[] Normr(float[] a)
+    private static float[] Normr(float[] a)
     {
         float[] v = new float[4];
         float r = Norm(a);
@@ -406,7 +405,7 @@ public class RotationChange : MonoBehaviour
     /// <param name="dC">dC的行向量储存的是插值点处的一阶导信息 the row vectors of matrix C represent the first order derivatives at the interpolation points</param>
     /// <param name="d2C">d2C的行向量储存的是插值点处的二阶导信息 the row vectors of matrix C represent the second order derivatives at the interpolation points</param>
     /// <returns>满足球面条件的插值数据 interpolation data satisfying spherical conditions</returns>
-    static float[,] TransData(float[,] C, float[,] dC, float[,] d2C)
+    private static float[,] TransData(float[,] C, float[,] dC, float[,] d2C)
     {
         int N = C.GetLength(0); //N是矩阵C的行数，即为插值点个数 N is the number of rows of matrix C which is also the number of interpolation points
         int d = C.GetLength(1); //d是矩阵C的列数，即为插值点维数 d is the number of columns of matrix C which is also the dimension of interpolation points
@@ -428,11 +427,11 @@ public class RotationChange : MonoBehaviour
             for (int z = 0; z < d; z++)
             {
                 H[i, z] = Normr(c)[z];
-                h1[z] = Normr(c)[z];                
+                h1[z] = Normr(c)[z];
             }
             for (int z = 0; z < d; z++)
             {
-                hNorm[z] = dc[z] - Dot(h1, dc) * h1[z];                
+                hNorm[z] = dc[z] - Dot(h1, dc) * h1[z];
             }
             for (int z = 0; z < d; z++)
             {
@@ -450,11 +449,11 @@ public class RotationChange : MonoBehaviour
     }
 
     /// <summary>
-    /// 获取实际使用旋转数组 obtain the practical orientional data 
+    /// 获取实际使用旋转数组 obtain the practical orientional data
     /// </summary>
     /// <param name="rotIniData">原始输入点旋转链表  the links of the original given data </param>
     /// <returns>去除开始两点与末尾两点的n-4组旋转四元素 n-4 sets of coordinates without the first and the last two points</returns>
-    static float[,] GiveBackRot(List<Quaternion> rotIniData)
+    private static float[,] GiveBackRot(List<Quaternion> rotIniData)
     {
         int lengh = rotIniData.Count;
         float[,] rotInterData = new float[lengh - 4, 4];
@@ -473,7 +472,7 @@ public class RotationChange : MonoBehaviour
     /// </summary>
     /// <param name="rotIniData">原始输入点旋转链表 the link of the original given data </param>
     /// <returns>旋转插值数据处的一阶导向量 the first order derivatives at the orientional interpolation points</returns>
-    static float[,] GiveBackD1Rot(List<Quaternion> rotIniData)
+    private static float[,] GiveBackD1Rot(List<Quaternion> rotIniData)
     {
         float w1 = 1f;
         float w2 = 1f;
@@ -511,7 +510,7 @@ public class RotationChange : MonoBehaviour
     /// </summary>
     /// <param name="rotIniData">原始输入点旋转链表 the link of the original given data</param>
     /// <returns>旋转插值数据处的二阶导向量 the second order derivatives at the orientional interpolation points</returns>
-    static float[,] GiveBackD2Rot(List<Quaternion> rotIniData)
+    private static float[,] GiveBackD2Rot(List<Quaternion> rotIniData)
     {
         float w1 = 1f;
         float w2 = 1f;
@@ -574,7 +573,7 @@ public class RotationChange : MonoBehaviour
     /// <summary>
     /// 形状参数的选取  choose the shape parameters
     /// </summary>
-    static float[,] GetBetaR(float[,] d1RotInterData, float[,] d2RotInterData, float[,] H)
+    private static float[,] GetBetaR(float[,] d1RotInterData, float[,] d2RotInterData, float[,] H)
     {
         int N = d1RotInterData.GetLength(0);
         float[,] betaR = new float[N - 1, 4];
@@ -609,7 +608,7 @@ public class RotationChange : MonoBehaviour
     /// </summary>
     /// <param name="l">初始点个数 the number of initial points</param>
     /// <returns>权重数组 a matrix stores the weights</returns>
-    static float[,] GetW(int l)
+    private static float[,] GetW(int l)
     {
         float[,] w = new float[l - 5, 6];
         for (int i = 0; i < l - 6; i++)
@@ -629,7 +628,7 @@ public class RotationChange : MonoBehaviour
     }
 
     /// <summary>
-    /// 根据原始旋转状态返回插值后的旋转状态 orientations obtained from the interpolant of the original orientional data 
+    /// 根据原始旋转状态返回插值后的旋转状态 orientations obtained from the interpolant of the original orientional data
     /// </summary>
     /// <param name="rotationOld">原始旋转状态 the original orientional data </param>
     /// <param name="tao">步长 step length</param>
@@ -661,19 +660,19 @@ public class RotationChange : MonoBehaviour
         List<Quaternion> result = new List<Quaternion>();
         for (int i = 0; i < m; i++)
         {
-			if(q[i, 0] == float.NaN && q[i, 1] == float.NaN && q[i, 2] == float.NaN && q[i, 3] == float.NaN && i > 0)
-			{
-				result.Add(result[i-1]);
-			}
-			else
-			{
-	            Quaternion rot = new Quaternion();
-	            for (int z = 0; z < 4; z++)
-	            {
-	                rot[z] = q[i, z];
-	            }
-	            result.Add(rot);
-			}
+            if (q[i, 0] == float.NaN && q[i, 1] == float.NaN && q[i, 2] == float.NaN && q[i, 3] == float.NaN && i > 0)
+            {
+                result.Add(result[i - 1]);
+            }
+            else
+            {
+                Quaternion rot = new Quaternion();
+                for (int z = 0; z < 4; z++)
+                {
+                    rot[z] = q[i, z];
+                }
+                result.Add(rot);
+            }
         }
         return result;
     }

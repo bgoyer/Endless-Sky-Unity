@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,12 +12,11 @@ namespace Assets.Scripts.Player
         private bool running = false;
         private string[] months = new string[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
 
-        void Start()
+        private void Start()
         {
-            currentDate = new int[3] {1, 1, 2095};
+            currentDate = new int[3] { 1, 1, 2095 };
             StartCoroutine("StartTimeLoop");
         }
-
 
         public IEnumerator StartTimeLoop()
         {
@@ -40,6 +38,7 @@ namespace Assets.Scripts.Player
                 yield return new WaitForSeconds(15f);
             }
         }
+
         public void StopTimeLoop()
         {
             running = false;

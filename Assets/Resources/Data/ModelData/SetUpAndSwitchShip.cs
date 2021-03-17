@@ -7,7 +7,7 @@ namespace Assets.Resources.Data.ModelData
     public class SetUpAndSwitchShip : MonoBehaviour
     {
         private readonly WeaponService weaponService = new WeaponService();
-        private readonly EnginesService engineService = new EnginesService();
+        private readonly ThrusterService engineService = new ThrusterService();
         private static GameObject _weaponPlaceHolder;
         private static GameObject _thrusterPlaceHolder;
         private GameObject weaponClone;
@@ -60,11 +60,10 @@ namespace Assets.Resources.Data.ModelData
                     thrusterClone = Instantiate(_thrusterPlaceHolder, thrusterSlot.position,
                         thrusterSlot.rotation, thrusterSlot);
                     ThrusterVariables thrusterClonevar = thrusterClone.GetComponent<ThrusterVariables>();
-                    thrusterClonevar.ThrustEnergy= thruster.ThrustingEnergy * 2700;
+                    thrusterClonevar.ThrustEnergy = thruster.Thrust;
                     thrusterClonevar.MaxSpeed = 10;
                 }
             }
-
         }
     }
 }

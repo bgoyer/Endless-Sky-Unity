@@ -1,6 +1,4 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
 
 namespace Assets.Scripts.Ship
 {
@@ -32,15 +30,14 @@ namespace Assets.Scripts.Ship
             r2D = ship.GetComponent<Rigidbody2D>();
             Vector3 forwardVector = ship.transform.up;
             float angle = Vector3.Angle(forwardVector, direction);
-            if (Vector3.Cross(forwardVector,direction).z < 0)
+            if (Vector3.Cross(forwardVector, direction).z < 0)
             {
-                ship.transform.Rotate(0,0, (angle * -1) * rotSpeed * multiplier / 100);
+                ship.transform.Rotate(0, 0, (angle * -1) * rotSpeed * multiplier / 100);
             }
             else
             {
                 ship.transform.Rotate(0, 0, (angle) * rotSpeed * multiplier / 100);
             }
-
         }
     }
 }

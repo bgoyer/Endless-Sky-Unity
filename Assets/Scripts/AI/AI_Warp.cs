@@ -1,5 +1,4 @@
 using Assets.Scripts.Ship;
-using Assets.Scripts.System;
 using UnityEngine;
 
 namespace Assets.Scripts.AI
@@ -23,7 +22,6 @@ namespace Assets.Scripts.AI
             rd2 = ship.GetComponent<Rigidbody2D>();
             sceneScripts = GameObject.Find("SceneScripts");
             currentSystem = ship.GetComponent<ShipVariables>().CurrentSystem.name;
-
         }
     }
 }

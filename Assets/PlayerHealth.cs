@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using Assets.Scripts.Ship;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,15 +13,16 @@ public class PlayerHealth : MonoBehaviour
     private int maxShieldHealth;
 
     private ShipVariables shipVar;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         ship = Player.transform.GetChild(0).gameObject;
         shipVar = ship.GetComponent<ShipVariables>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         hullHealth = shipVar.HullHp;
         maxHullHealth = shipVar.MaxHullHp;
@@ -38,6 +37,5 @@ public class PlayerHealth : MonoBehaviour
         {
             this.GetComponent<Image>().fillAmount = (float)hullHealth / (float)maxHullHealth;
         }
-
     }
 }

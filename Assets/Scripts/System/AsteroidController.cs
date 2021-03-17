@@ -1,5 +1,4 @@
 using System.Collections;
-using Assets.Scripts.Ship;
 using UnityEngine;
 
 namespace Assets.Scripts.System
@@ -19,6 +18,7 @@ namespace Assets.Scripts.System
             Flotsam = UnityEngine.Resources.Load<GameObject>("Prefabs/Asteroid/Flotsams/Aluminumflotasam");
             rotateSpeed = Random.Range(1, 3);
         }
+
         private void Update()
         {
             StartCoroutine("Rotate");
@@ -34,7 +34,6 @@ namespace Assets.Scripts.System
 
         private IEnumerator Rotate()
         {
-            
             if (!this.GetComponent<SpriteRenderer>().isVisible) yield break;
             transform.Rotate(0, 0, 50 * Time.deltaTime * (float)rotateSpeed, Space.Self);
             yield return new WaitForSeconds(.01f);

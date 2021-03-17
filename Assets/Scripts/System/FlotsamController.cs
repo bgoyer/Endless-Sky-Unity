@@ -1,5 +1,5 @@
-using System.Collections;
 using Assets.Scripts.Player;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +10,7 @@ namespace Assets.Scripts.System
         public int MatAmount;
         public string MatType;
         private GameObject lootTip;
+
         private void Start()
         {
             lootTip = GameObject.Find("/HUD/HideWhenMapIsOpen/Tip");
@@ -17,16 +18,16 @@ namespace Assets.Scripts.System
             MatAmount = 10;
             MatType = "Aluminium";
         }
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag("PlayerShip")|| collision.CompareTag("AIShip"))
+            if (collision.CompareTag("PlayerShip") || collision.CompareTag("AIShip"))
             {
                 StartCoroutine("OnTrigger", collision);
             }
-
         }
 
-        IEnumerator OnTrigger(Collider2D col)
+        private IEnumerator OnTrigger(Collider2D col)
         {
             col.GetComponent<InventoryController>().Add(MatType, MatAmount);
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
@@ -34,8 +35,6 @@ namespace Assets.Scripts.System
             yield return new WaitForSeconds(3);
             lootTip.GetComponent<Text>().text = "";
             Destroy(this.gameObject);
-
-
         }
     }
 }

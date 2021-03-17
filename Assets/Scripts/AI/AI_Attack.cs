@@ -1,6 +1,6 @@
-using System.Collections.Generic;
 using Assets.Scripts.Ship;
 using Assets.Scripts.System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.AI
@@ -35,7 +35,6 @@ namespace Assets.Scripts.AI
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             attack(animator);
-
         }
 
         private void attack(Animator animator)
@@ -81,6 +80,7 @@ namespace Assets.Scripts.AI
                 }
             }
         }
+
         // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {

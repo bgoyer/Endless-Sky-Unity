@@ -6,10 +6,9 @@ namespace Assets.Scripts.Player
     {
         public GameObject Ship;
 
-    
-        void Update()
+        private void Update()
         {
-            this.GetComponent<RectTransform>().anchoredPosition = new Vector2((Ship.transform.position.x) / 75f, (Ship.transform.position.y) / 75f); 
+            this.GetComponent<RectTransform>().anchoredPosition = new Vector2((Ship.transform.position.x) / 75f, (Ship.transform.position.y) / 75f);
         }
     }
 }

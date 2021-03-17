@@ -7,6 +7,5 @@ namespace Assets.Scripts.Player
         public GameObject SoundHolder;
         public AudioSource HyperDrive;
         public AudioSource WarpHum;
-
     }
 }

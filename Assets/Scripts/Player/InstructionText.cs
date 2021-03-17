@@ -6,11 +6,12 @@ namespace Assets.Scripts.Player
     public class InstructionText : MonoBehaviour
     {
         private KeyMap keyMap;
+
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             keyMap = GameObject.Find("/SceneScripts").GetComponent<KeyMap>();
-            this.GetComponent<Text>().text = 
+            this.GetComponent<Text>().text =
                 @$"
 {keyMap.Foreward}: Forward
 
@@ -28,7 +29,7 @@ namespace Assets.Scripts.Player
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
             this.GetComponent<Text>().text =
                 @$"

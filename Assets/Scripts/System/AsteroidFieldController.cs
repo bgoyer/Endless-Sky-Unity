@@ -8,6 +8,7 @@ namespace Assets.Scripts.System
         private CircleCollider2D coll2d;
         private float range;
         private float maxObjects;
+
         private void Start()
         {
             coll2d = this.gameObject.GetComponent<CircleCollider2D>();
@@ -25,8 +26,8 @@ namespace Assets.Scripts.System
                     asteroidClone.transform.position = new Vector2(this.transform.position.x + Random.Range(-range, range), this.transform.position.y + Random.Range(-range, range));
                 }
             }
-
         }
+
         private void OnTriggerExit2D(Collider2D collision)
         {
             if (collision.gameObject.CompareTag("PlayerShip"))

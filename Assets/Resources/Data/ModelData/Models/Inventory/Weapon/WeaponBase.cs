@@ -1,8 +1,9 @@
 ﻿namespace Assets.Resources.Data.ModelData.Models.Inventory.Weapon
 {
     public class WeaponBase : InventoryModelBase
-    { 
-        public double WeaponCapacity { get; set; }
+    {
+        public double WeaponSize{ get; set; }
+        public string Category { get; set; }
         public double GunPorts { get; set; }
         public string Sprite { get; set; }
         public string Sound { get; set; }

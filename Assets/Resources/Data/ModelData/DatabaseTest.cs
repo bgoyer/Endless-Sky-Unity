@@ -12,7 +12,7 @@ namespace Assets.Resources.Data.ModelData
 
         private void Import()
         {
-            var service = new EnginesService();
+            var service = new ThrusterService();
             var ab = service.GetByName("Afterburner");
 
             print(ab.Name);

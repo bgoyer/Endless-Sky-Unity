@@ -63,10 +63,10 @@
     <Compile Include="Assets\ShieldController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerLocOnMap.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerShipControler.cs" />
+    <Compile Include="Assets\PlayerFuelUIController.cs" />
     <Compile Include="Assets\Scripts\OffScreenIndicator\OffScreenIndicatorCore.cs" />
     <Compile Include="Assets\Scripts\System\BackgroundScroller.cs" />
     <Compile Include="Assets\Scripts\Ship\ThrusterVariables.cs" />
-    <Compile Include="Assets\Scripts\Ship\WarpdriveVariables.cs" />
     <Compile Include="Assets\Resources\Data\ModelData\Imports\Engines\EnginesImport.cs" />
     <Compile Include="Assets\Scripts\Ship\WeaponVariables.cs" />
     <Compile Include="Assets\Scripts\Quit.cs" />
@@ -115,7 +115,7 @@
     <Compile Include="Assets\Scripts\Ship\Laser.cs" />
     <Compile Include="Assets\Scripts\System\AsteroidController.cs" />
     <Compile Include="Assets\UnifiedIO\UnifiedIO_SystemIO_Directory.cs" />
-    <Compile Include="Assets\Resources\Data\ModelData\Services\EngineService.cs" />
+    <Compile Include="Assets\Resources\Data\ModelData\Services\Steering Service.cs" />
     <Compile Include="Assets\Scripts\Ship\ShipVariables.cs" />
     <Compile Include="Assets\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\OffScreenIndicator\ArrowObjectPool.cs" />
@@ -146,7 +146,15 @@
     <Compile Include="Assets\Scripts\FPS.cs" />
     <Compile Include="Assets\PlayerWeaponVariables.cs" />
     <Compile Include="Assets\Scripts\Player\FollowPlayer.cs" />
-    <Compile Include="Assets\PlayerFuelUIController.cs" />
+    <Compile Include="Assets\GeneratorController.cs" />
+    <Compile Include="Assets\BatteryController.cs" />
+    <Compile Include="Assets\PlayerHeatUIController.cs" />
+    <Compile Include="Assets\PlayerEnergyUIController.cs" />
+    <Compile Include="Assets\Resources\Data\ModelData\Models\Inventory\Engines\Steering Model.cs" />
+    <Compile Include="Assets\Resources\Data\ModelData\Services\Thruster Service.cs" />
+    <Compile Include="Assets\Resources\Data\ModelData\Models\Inventory\Engines\Thruster Model.cs" />
+    <Compile Include="Assets\Resources\Data\ModelData\Models\Ship Model.cs" />
+    <Compile Include="Assets\Scripts\Ship\HyperdriveVariables.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />

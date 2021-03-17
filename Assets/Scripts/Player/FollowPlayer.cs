@@ -7,6 +7,7 @@ namespace Assets.Scripts.Player
         public int zOffset = -10;
         private Transform ship;
         public GameObject Player;
+
         private void Start()
         {
         }

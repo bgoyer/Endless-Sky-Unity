@@ -37,6 +37,7 @@ namespace Assets.Resources.Data.ModelData.Models.Player
                 return celestialBody;
             }
         }
+
         public int Y { get; set; }
         public int X { get; set; }
     }

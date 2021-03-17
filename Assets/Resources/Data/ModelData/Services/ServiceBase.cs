@@ -1,10 +1,9 @@
-﻿using System;
+﻿using Assets.Resources.Data.ModelData.Models;
+using JsonFlatFileDataStore;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net.Mime;
-using Assets.Resources.Data.ModelData.Models;
-using JsonFlatFileDataStore;
 using UnityEngine;
 
 namespace Assets.Resources.Data.ModelData.Services
@@ -12,26 +11,27 @@ namespace Assets.Resources.Data.ModelData.Services
     public class ServiceBase<TModel>
         where TModel : ModelBase, new()
     {
-        DataStore store;
-        string tableName;
+        private DataStore store;
+        private string tableName;
 
         public ServiceBase(string tableName)
         {
             SetDatabase(tableName, "en");
         }
 
-        public ServiceBase(string tableName, string lang) 
+        public ServiceBase(string tableName, string lang)
         {
             SetDatabase(tableName, lang);
         }
 
-        public TModel NewModel() {
-            return new TModel(); 
+        public TModel NewModel()
+        {
+            return new TModel();
         }
 
-        public IDocumentCollection<TModel> Collection 
+        public IDocumentCollection<TModel> Collection
         {
-            get 
+            get
             {
                 return store.GetCollection<TModel>();
             }
@@ -57,8 +57,6 @@ namespace Assets.Resources.Data.ModelData.Services
         public TModel GetByName(string name)
         {
             var collection = Collection.AsQueryable();
-
-
 
             return collection.Where(m => m.Name == name)
                 .FirstOrDefault();
@@ -86,7 +84,7 @@ namespace Assets.Resources.Data.ModelData.Services
 
         public IEnumerable<TModel> SaveMany(IEnumerable<TModel> items)
         {
-            foreach (var item in items) 
+            foreach (var item in items)
             {
                 Save(item);
             }

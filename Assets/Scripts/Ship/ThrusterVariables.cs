@@ -7,7 +7,7 @@ namespace Assets.Scripts.Ship
         public double ThrustEnergy;
         public int MaxSpeed;
 
-        void Start()
+        private void Start()
         {
             if (transform.GetChild(0).childCount > 0 && transform.GetChild(1).childCount > 0)
             {

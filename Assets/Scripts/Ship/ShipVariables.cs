@@ -1,17 +1,21 @@
-using System;
 using UnityEngine;
 
 namespace Assets.Scripts.Ship
 {
     public class ShipVariables : MonoBehaviour
     {
-        public bool CanControl = false;
+        public int Mass;
         public int HyperdriveFuel = 22500;
         public int MaxHyperdriveFuel = 22500;
         public int MaxHullHp = 100;
         public int HullHp;
         public int MaxShieldHp = 100;
         public int ShieldHp;
+        public int BatteryCapacity;
+        public int CurrentBatteryEnergy;
+        public int Temp;
+        public int OverHeatTemp;
+        public bool CanControl = false;
         public bool HasHyperDrive = false;
         public bool HasThrusters = false;
         public bool HasStearing = false;
@@ -24,13 +28,15 @@ namespace Assets.Scripts.Ship
         private void Start()
         {
             HullHp = MaxHullHp;
-            UpdateShip();
-            CheckShip();
+            OverHeatTemp = Mathf.CeilToInt((float)(Mass * .8));
         }
+
         public void UpdateShip()
         {
             CurrentSystem = this.transform.parent.parent.parent.gameObject;
+            this.GetComponent<Rigidbody2D>().mass = Mass;
         }
+
         public void CheckShip()
         {
             HasHyperDrive = false;
@@ -41,9 +47,9 @@ namespace Assets.Scripts.Ship
             HasGenerator = false;
             HasCooling = false;
             var thrusterCount = 0;
-            for (var child = 0; child < this.transform.GetChild(1).childCount; child++)
+            foreach (Transform thruster in this.transform.GetChild(1))
             {
-                if (this.transform.GetChild(1).GetChild(child).childCount > 0)
+                if (thruster.childCount > 0)
                 {
                     thrusterCount += 1;
                 }
@@ -65,6 +71,7 @@ namespace Assets.Scripts.Ship
             {
                 HasBattery = true;
             }
+            else BatteryCapacity = 0;
             if (this.transform.GetChild(5).childCount > 0)
             {
                 HasGenerator = true;
@@ -77,6 +84,7 @@ namespace Assets.Scripts.Ship
             {
                 HasShields = true;
             }
+            else ShieldHp = 0;
             if (HasThrusters && HasStearing && HasHyperDrive && HasBattery && HasGenerator && HasCooling)
             {
                 CanControl = true;

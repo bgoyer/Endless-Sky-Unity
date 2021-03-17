@@ -12,10 +12,10 @@ namespace Assets.Scripts.AI
         private Inventory shipInv;
         private SteeringController steer;
         private WeaponController weapons;
-        private ThrusterController thruster; 
+        private ThrusterController thruster;
+
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            
         }
 
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
