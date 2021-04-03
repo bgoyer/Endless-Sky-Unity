@@ -58,9 +58,9 @@
   <ItemGroup>
     <Compile Include="Assets\Editor\Create System.cs" />
     <Compile Include="Assets\Editor\Json Creation Tool.cs" />
+    <Compile Include="Assets\Editor\AddItemsToDataBase.cs" />
     <Compile Include="Assets\Editor\JSON DataBase.cs" />
     <Compile Include="Assets\ARG\Editor\RouteInspector.cs" />
-    <Compile Include="Assets\Editor\AddItemsToDataBase.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\NuGet\Editor\DotNetZip.dll" />

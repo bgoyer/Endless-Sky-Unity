@@ -6,6 +6,8 @@ namespace Assets.Scripts.Ship
     {
         public double ThrustEnergy;
         public int MaxSpeed;
+        public int EnergyConsumption;
+        public int HeatGeneration;
 
         private void Start()
         {

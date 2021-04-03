@@ -2,7 +2,7 @@
 
 namespace Assets.Resources.Data.ModelData.Services
 {
-    public class SteeringService : ServiceBase<EngineModel>
+    public class SteeringService : ServiceBase<SteeringModel>
     {
 /*        public EnginesService() : base("steering")
         {

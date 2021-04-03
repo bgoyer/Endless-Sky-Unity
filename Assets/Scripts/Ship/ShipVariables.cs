@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace Assets.Scripts.Ship
@@ -25,12 +26,16 @@ namespace Assets.Scripts.Ship
         public bool HasCooling = false;
         public GameObject CurrentSystem;
 
+        private bool disabled = false;
+
         private void Start()
         {
             HullHp = MaxHullHp;
             OverHeatTemp = Mathf.CeilToInt((float)(Mass * .8));
+            InvokeRepeating("CheckVitals", 0f, .01f);
+            CheckShip();
+            UpdateShip();
         }
-
         public void UpdateShip()
         {
             CurrentSystem = this.transform.parent.parent.parent.gameObject;
@@ -85,10 +90,29 @@ namespace Assets.Scripts.Ship
                 HasShields = true;
             }
             else ShieldHp = 0;
-            if (HasThrusters && HasStearing && HasHyperDrive && HasBattery && HasGenerator && HasCooling)
+            if (HasThrusters && HasStearing && HasHyperDrive && HasBattery && HasGenerator && HasCooling && !disabled)
             {
                 CanControl = true;
             }
+        }
+        private void CheckVitals()
+        {
+            if (Temp >= OverHeatTemp * .9 && this.gameObject.activeInHierarchy)
+            {
+                StartCoroutine("Disable");
+            }
+            if (CurrentBatteryEnergy <= BatteryCapacity * .1 && this.gameObject.activeInHierarchy)
+            {
+                StartCoroutine("Disable");
+            }
+        }
+        IEnumerator Disable()
+        {
+            disabled = true;
+            CanControl = false;
+            yield return new WaitForSeconds(10);
+            CanControl = true;
+            disabled = false;
         }
     }
 }

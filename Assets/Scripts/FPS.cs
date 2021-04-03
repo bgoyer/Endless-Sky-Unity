@@ -9,17 +9,13 @@ namespace Assets.Scripts
         // Start is called before the first frame update
         private void Start()
         {
-            StartCoroutine("FPSCounter");
+            InvokeRepeating("FPSCounter", 0f, 1f);
         }
 
-        private IEnumerator FPSCounter()
+        private void FPSCounter()
         {
-            while (true)
-            {
-                float fps = 1.0f / Time.deltaTime;
-                this.transform.GetComponent<Text>().text = fps.ToString();
-                yield return new WaitForSeconds(1);
-            }
+            float fps = 1.0f / Time.deltaTime;
+            this.transform.GetComponent<Text>().text = fps.ToString();
         }
     }
 }

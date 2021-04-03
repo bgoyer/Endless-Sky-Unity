@@ -398,6 +398,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56363411}
   m_CullTransparentMesh: 1
+--- !u!1001 &56693693
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 372216597}
+    m_Modifications:
+    - target: {fileID: 650525135121163829, guid: e9135388037810243ae6acab8901861e,
+        type: 3}
+      propertyPath: m_Name
+      value: Generator
+      objectReference: {fileID: 0}
+    - target: {fileID: 650525135121163830, guid: e9135388037810243ae6acab8901861e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 650525135121163830, guid: e9135388037810243ae6acab8901861e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 650525135121163830, guid: e9135388037810243ae6acab8901861e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 650525135121163830, guid: e9135388037810243ae6acab8901861e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 650525135121163830, guid: e9135388037810243ae6acab8901861e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 650525135121163830, guid: e9135388037810243ae6acab8901861e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 650525135121163830, guid: e9135388037810243ae6acab8901861e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 650525135121163830, guid: e9135388037810243ae6acab8901861e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 650525135121163830, guid: e9135388037810243ae6acab8901861e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 650525135121163830, guid: e9135388037810243ae6acab8901861e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 650525135121163830, guid: e9135388037810243ae6acab8901861e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e9135388037810243ae6acab8901861e, type: 3}
 --- !u!1 &71997126
 GameObject:
   m_ObjectHideFlags: 0
@@ -2057,6 +2126,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 367485323}
   m_CullTransparentMesh: 1
+--- !u!4 &372216597 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7852842189372080869, guid: 2ca9fe34dbb7494498832a6d4344b7af,
+    type: 3}
+  m_PrefabInstance: {fileID: 1557482830}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &439791837
 GameObject:
   m_ObjectHideFlags: 0
@@ -4499,7 +4574,17 @@ PrefabInstance:
     - target: {fileID: -4004527389276216318, guid: 2f2645f3cdb4a1f4eaa220f5be802631,
         type: 3}
       propertyPath: ThrustEnergy
+      value: 1250
+      objectReference: {fileID: 0}
+    - target: {fileID: -4004527389276216318, guid: 2f2645f3cdb4a1f4eaa220f5be802631,
+        type: 3}
+      propertyPath: HeatGeneration
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: -4004527389276216318, guid: 2f2645f3cdb4a1f4eaa220f5be802631,
+        type: 3}
+      propertyPath: EnergyConsumption
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 13217547437483690, guid: 2f2645f3cdb4a1f4eaa220f5be802631,
         type: 3}
@@ -5540,7 +5625,17 @@ PrefabInstance:
     - target: {fileID: -4004527389276216318, guid: 2f2645f3cdb4a1f4eaa220f5be802631,
         type: 3}
       propertyPath: ThrustEnergy
+      value: 1250
+      objectReference: {fileID: 0}
+    - target: {fileID: -4004527389276216318, guid: 2f2645f3cdb4a1f4eaa220f5be802631,
+        type: 3}
+      propertyPath: HeatGeneration
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: -4004527389276216318, guid: 2f2645f3cdb4a1f4eaa220f5be802631,
+        type: 3}
+      propertyPath: EnergyConsumption
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 13217547437483690, guid: 2f2645f3cdb4a1f4eaa220f5be802631,
         type: 3}
@@ -6539,6 +6634,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Battery
+      objectReference: {fileID: 0}
+    - target: {fileID: 5816521201949409790, guid: b3c99d0366b74274eba6319f42f8aba6,
+        type: 3}
+      propertyPath: BatteryCapacity
+      value: 1500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3c99d0366b74274eba6319f42f8aba6, type: 3}
@@ -7753,6 +7853,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404805064}
   m_CullTransparentMesh: 1
+--- !u!1 &1420854923 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3739273021503938637, guid: aef2561c0f48dd24ca0abc424f12de85,
+    type: 3}
+  m_PrefabInstance: {fileID: 1464561661}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1420854925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420854923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b3d9a528bba52e4cb60915b37db5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoolAmount: 25
 --- !u!1 &1421788885
 GameObject:
   m_ObjectHideFlags: 0
@@ -8010,6 +8129,10 @@ PrefabInstance:
       value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 92861927, guid: 2ca9fe34dbb7494498832a6d4344b7af, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 92861927, guid: 2ca9fe34dbb7494498832a6d4344b7af, type: 3}
       propertyPath: MaxShieldHp
       value: 0
       objectReference: {fileID: 0}
@@ -8018,8 +8141,16 @@ PrefabInstance:
       value: 32000
       objectReference: {fileID: 0}
     - target: {fileID: 92861927, guid: 2ca9fe34dbb7494498832a6d4344b7af, type: 3}
+      propertyPath: BatteryCapacity
+      value: 95
+      objectReference: {fileID: 0}
+    - target: {fileID: 92861927, guid: 2ca9fe34dbb7494498832a6d4344b7af, type: 3}
       propertyPath: MaxHyperdriveFuel
       value: 32000
+      objectReference: {fileID: 0}
+    - target: {fileID: 92861927, guid: 2ca9fe34dbb7494498832a6d4344b7af, type: 3}
+      propertyPath: CurrentBatteryEnergy
+      value: 81
       objectReference: {fileID: 0}
     - target: {fileID: 92861932, guid: 2ca9fe34dbb7494498832a6d4344b7af, type: 3}
       propertyPath: systemUI
@@ -8955,6 +9086,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stearing
+      objectReference: {fileID: 0}
+    - target: {fileID: 3655336387580681547, guid: 785fc68f73126444f80c8f833f150e75,
+        type: 3}
+      propertyPath: HeatGeneration
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 8414503934219402418, guid: 785fc68f73126444f80c8f833f150e75,
         type: 3}

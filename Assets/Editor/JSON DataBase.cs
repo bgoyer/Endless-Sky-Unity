@@ -43,13 +43,13 @@ namespace Assets.Editor
                 createNewFile = true;
                 editFile = false;
                 deleteFile = false;
-                
-//                EnginesService steeringService = new EnginesService();
-//                EngineModel engine = new EngineModel();
- //               engine.Name = "blatastic";
+
+                ThrusterService thrusterService = new ThrusterService();
+                ThrusterModel engine = new ThrusterModel();
+                engine.Name = "blatastic";
 
 
-  //              engineService.Save(engine);
+                thrusterService.Save(engine);
             }
             if (GUILayout.Button("Edit File"))
             {
