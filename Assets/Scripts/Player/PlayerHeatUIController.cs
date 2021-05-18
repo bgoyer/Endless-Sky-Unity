@@ -7,8 +7,10 @@ using UnityEngine.UI;
 public class PlayerHeatUIController : MonoBehaviour
 {
     public GameObject Player;
-    void Update()
+    private float oldtemp;
+    void FixedUpdate()
     {
-        this.GetComponent<Image>().fillAmount = (float)Player.transform.GetChild(0).GetComponent<ShipVariables>().Temp / (float)Player.transform.GetChild(0).GetComponent<ShipVariables>().OverHeatTemp;
+        this.GetComponent<Image>().fillAmount = Mathf.Lerp(oldtemp, (float)Player.transform.GetChild(0).GetComponent<ShipVariables>().Temp / Player.transform.GetChild(0).GetComponent<ShipVariables>().OverHeatTemp, 120 * Time.deltaTime);
+        oldtemp = Player.transform.GetChild(0).GetComponent<ShipVariables>().Temp / Player.transform.GetChild(0).GetComponent<ShipVariables>().OverHeatTemp;
     }
 }

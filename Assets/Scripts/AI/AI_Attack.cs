@@ -53,7 +53,9 @@ namespace Assets.Scripts.AI
             else
             {
                 thrusters.Accelerate(ship);
-                steering.RotateTowards(ship, -(ship.transform.position - target.transform.position).normalized);
+                Vector2 leadDirection = target.transform.position - ai.transform.position;
+                leadDirection += leadDirection.magnitude * target.GetComponent<Rigidbody2D>().velocity.normalized * target.GetComponent<Rigidbody2D>().velocity.magnitude / 200;
+                steering.RotateTowards(ship, leadDirection);
                 rd2.drag = 0f;
             }
             foreach (Transform weapon in weaponSlots)

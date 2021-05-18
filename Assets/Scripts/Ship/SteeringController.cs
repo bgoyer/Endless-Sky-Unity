@@ -10,42 +10,45 @@ namespace Assets.Scripts.Ship
 
         private bool takeEnergy = true;
         private bool gainHeat = true;
-        private WaitForSeconds delay = new WaitForSeconds(.01f);
         public void TurnLeft(GameObject ship, bool overide = false)
         {
-            if (!ship.GetComponent<ShipVariables>().CanControl && !overide) return;
+            if (ship.GetComponent<ShipVariables>().CanControl == false && overide == false) return;
             rotSpeed = ship.transform.GetChild(2).GetChild(0).GetComponent<SteeringVariables>().RotationSpeed;
             r2D = ship.GetComponent<Rigidbody2D>();
             r2D.AddTorque(rotSpeed, ForceMode2D.Impulse);
             if (takeEnergy)
             {
-                StartCoroutine("TakeEnergy",ship);
+                takeEnergy = false;
+                ship.GetComponent<ShipVariables>().CurrentBatteryEnergy -= ship.transform.GetChild(2).GetChild(0).GetComponent<SteeringVariables>().EnergyConsumption;
             }
             if (gainHeat)
             {
-                StartCoroutine("GainHeat", ship);
+                gainHeat = false;
+                ship.GetComponent<ShipVariables>().Temp += ship.transform.GetChild(2).GetChild(0).GetComponent<SteeringVariables>().HeatGeneration;
             }
         }
 
         public void TurnRight(GameObject ship, bool overide = false)
         {
-            if (!ship.GetComponent<ShipVariables>().CanControl && !overide) return;
+            if (ship.GetComponent<ShipVariables>().CanControl == false && overide == false) return;
             rotSpeed = ship.transform.GetChild(2).GetChild(0).GetComponent<SteeringVariables>().RotationSpeed;
             r2D = ship.GetComponent<Rigidbody2D>();
             r2D.AddTorque(-rotSpeed, ForceMode2D.Impulse);
             if (takeEnergy)
             {
-                StartCoroutine("TakeEnergy", ship);
+                takeEnergy = false;
+                ship.GetComponent<ShipVariables>().CurrentBatteryEnergy -= ship.transform.GetChild(2).GetChild(0).GetComponent<SteeringVariables>().EnergyConsumption;
             }
             if (gainHeat)
             {
-                StartCoroutine("GainHeat", ship);
+                gainHeat = false;
+                ship.GetComponent<ShipVariables>().Temp += ship.transform.GetChild(2).GetChild(0).GetComponent<SteeringVariables>().HeatGeneration;
             }
         }
 
         public void RotateTowards(GameObject ship, Vector3 direction, float multiplier = 1, bool overide = false)
         {
-            if (!ship.GetComponent<ShipVariables>().CanControl && !overide) return;
+            if (ship.GetComponent<ShipVariables>().CanControl == false && overide == false) return;
             rotSpeed = ship.transform.GetChild(2).GetChild(0).GetComponent<SteeringVariables>().RotationSpeed;
             r2D = ship.GetComponent<Rigidbody2D>();
             Vector3 forwardVector = ship.transform.up;
@@ -60,35 +63,21 @@ namespace Assets.Scripts.Ship
             }
             if (takeEnergy)
             {
-                StartCoroutine("TakeEnergy", ship);
+                takeEnergy = false;
+                ship.GetComponent<ShipVariables>().CurrentBatteryEnergy -= ship.transform.GetChild(2).GetChild(0).GetComponent<SteeringVariables>().EnergyConsumption;
             }
             if (gainHeat)
             {
-                StartCoroutine("GainHeat", ship);
-            }
-        }
-
-        private IEnumerator TakeEnergy(GameObject ship)
-        {
-            takeEnergy = false;
-            if ((ship.GetComponent<ShipVariables>().CurrentBatteryEnergy -= ship.transform.GetChild(2).GetChild(0).GetComponent<SteeringVariables>().EnergyConsumption) > 0)
-            {
-                ship.GetComponent<ShipVariables>().CurrentBatteryEnergy -= ship.transform.GetChild(2).GetChild(0).GetComponent<SteeringVariables>().EnergyConsumption;
-
-            }else { ship.GetComponent<ShipVariables>().CurrentBatteryEnergy = 0; }
-            yield return delay;
-            takeEnergy = true;
-        }
-        private IEnumerator GainHeat(GameObject ship)
-        {
-            gainHeat = false;
-            if ((ship.GetComponent<ShipVariables>().Temp += ship.transform.GetChild(2).GetChild(0).GetComponent<SteeringVariables>().HeatGeneration) < ship.GetComponent<ShipVariables>().OverHeatTemp)
-            {
+                gainHeat = false;
                 ship.GetComponent<ShipVariables>().Temp += ship.transform.GetChild(2).GetChild(0).GetComponent<SteeringVariables>().HeatGeneration;
             }
-            else { ship.GetComponent<ShipVariables>().Temp = ship.GetComponent<ShipVariables>().OverHeatTemp; }
-            yield return delay;
+        }
+        public void StopStearing(GameObject ship)
+        {
+            takeEnergy = true;
             gainHeat = true;
+            ship.GetComponent<ShipVariables>().CurrentBatteryEnergy += ship.transform.GetChild(2).GetChild(0).GetComponent<SteeringVariables>().EnergyConsumption;
+            ship.GetComponent<ShipVariables>().Temp -= ship.transform.GetChild(2).GetChild(0).GetComponent<SteeringVariables>().HeatGeneration;
         }
     }
 }

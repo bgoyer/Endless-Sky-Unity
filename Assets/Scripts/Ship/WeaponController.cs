@@ -14,6 +14,7 @@ namespace Assets.Scripts.Ship
                 if (weapon.IsReloaded != true) return;
                 if ((weapon.Lifetime > 1))
                 {
+
                     weapon.IsReloaded = false;
                     weapon.Ammo = UnityEngine.Resources.Load<GameObject>(path: $"Prefabs/Projectiles/Cannon");
                     var ammoClone = Instantiate(original: weapon.Ammo, GameObject.Find("/GarbageHolder").transform,

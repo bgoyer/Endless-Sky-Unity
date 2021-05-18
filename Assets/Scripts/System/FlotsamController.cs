@@ -21,19 +21,29 @@ namespace Assets.Scripts.System
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag("PlayerShip") || collision.CompareTag("AIShip"))
+            bool player = false;
+            if (collision.CompareTag("PickUp"))
             {
-                StartCoroutine("OnTrigger", collision);
+                if (collision.transform.parent.CompareTag("PlayerShip"))
+                {
+                    player = true;
+                }
+                StartCoroutine("OnTrigger", (collision, player));
             }
         }
 
-        private IEnumerator OnTrigger(Collider2D col)
+        private IEnumerator OnTrigger(Collider2D col, bool player)
         {
             col.GetComponent<InventoryController>().Add(MatType, MatAmount);
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            lootTip.GetComponent<Text>().text = $"You looted {MatAmount} {MatType}";
-            yield return new WaitForSeconds(3);
-            lootTip.GetComponent<Text>().text = "";
+            print(player);
+            if (player)
+            {
+                lootTip.GetComponent<Text>().text = $"You looted {MatAmount} {MatType}";
+                yield return new WaitForSeconds(3);
+                lootTip.GetComponent<Text>().text = "";
+
+            }
             Destroy(this.gameObject);
         }
     }

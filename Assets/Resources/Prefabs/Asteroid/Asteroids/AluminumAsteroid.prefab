@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7662975498330777764}
   - component: {fileID: 7662975498330777787}
   - component: {fileID: 7662975498330777786}
-  - component: {fileID: 3189288631658496623}
+  - component: {fileID: 246405290459619440}
   m_Layer: 0
   m_Name: AluminumAsteroid
   m_TagString: Asteroid
@@ -44,6 +44,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -101,8 +102,8 @@ MonoBehaviour:
   AsteriodType: Alunimum
   Flotsam: {fileID: 0}
   GarbageHolder: {fileID: 0}
---- !u!58 &3189288631658496623
-CircleCollider2D:
+--- !u!68 &246405290459619440
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -115,5 +116,21 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.7
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.07, y: 0.38}
+  - {x: 0.15, y: 0.37}
+  - {x: 0.23, y: 0.26}
+  - {x: 0.32, y: 0.15}
+  - {x: 0.35, y: -0.01}
+  - {x: 0.27, y: -0.11}
+  - {x: 0.28, y: -0.23}
+  - {x: 0.11, y: -0.36}
+  - {x: -0.42, y: -0.13}
+  - {x: -0.42, y: 0.12}
+  - {x: -0.09, y: 0.34}
+  - {x: 0.07, y: 0.38}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

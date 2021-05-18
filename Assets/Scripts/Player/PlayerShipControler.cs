@@ -38,7 +38,26 @@ namespace Assets.Scripts.Player
             ship.GetComponent<ShipVariables>().UpdateShip();
             ship.GetComponent<ShipVariables>().CheckShip();
         }
+        private void Update()
+        {
+            if (Input.GetKeyUp(keyMap.TurnLeft))
+            {
+                stearing.StopStearing(ship);
+            }
+            if (Input.GetKeyUp(keyMap.TurnRight))
+            {
+                stearing.StopStearing(ship);
+            }
+            if (Input.GetKeyUp(keyMap.TurnAround))
+            {
+                stearing.StopStearing(ship);
+            }
+            if (Input.GetKeyUp(keyMap.Foreward))
+            {
+                thruster.StopThruster(ship);
+            }
 
+        }
         private void FixedUpdate()
         {
             if (!ship)
@@ -57,20 +76,20 @@ namespace Assets.Scripts.Player
                     stearing.TurnRight(ship);
                 }
 
+
+
                 if (Input.GetKey(keyMap.TurnAround))
                 {
                     stearing.RotateTowards(ship, -ship.GetComponent<Rigidbody2D>().velocity);
                 }
+
 
                 if (Input.GetKey(keyMap.Foreward))
                 {
                     thruster.Accelerate(ship);
                 }
 
-                if (Input.GetKeyUp(keyMap.Foreward))
-                {
-                    thruster.StopThruster(ship);
-                }
+
 
                 if (Input.GetKey(keyMap.Fire))
                 {

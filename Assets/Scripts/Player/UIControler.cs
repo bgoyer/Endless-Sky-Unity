@@ -31,9 +31,10 @@ namespace Assets.Scripts.Player
 
         private void Update()
         {
-            if (Player.activeInHierarchy == true && Input.GetKeyDown(keyMap.OpenMap))
+            if (Player.activeSelf && Input.GetKey(keyMap.OpenMap))
             {
-                if (Map.activeSelf == true)
+                print("");
+                if (Map.activeInHierarchy)
                 {
                     Map.SetActive(false);
                     HideHud.SetActive(true);
@@ -42,21 +43,6 @@ namespace Assets.Scripts.Player
                 {
                     Map.SetActive(true);
                     HideHud.SetActive(false);
-                }
-            }
-            if (Input.GetKeyDown(KeyCode.Escape) && Player.activeInHierarchy == true)
-            {
-                if (Menu.activeSelf == true)
-                {
-                    Menu.SetActive(false);
-                    HideHud.SetActive(true);
-                    sceneScripts.GetComponent<GameController>().Play();
-                }
-                else
-                {
-                    Menu.SetActive(true);
-                    HideHud.SetActive(false);
-                    sceneScripts.GetComponent<GameController>().Pause();
                 }
             }
         }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.System;
+using System.Collections;
 using UnityEngine;
 
 namespace Assets.Scripts.Ship
@@ -26,7 +27,11 @@ namespace Assets.Scripts.Ship
         public void OnHit(Collider2D col)
         {
             this.GetComponent<Animator>().SetBool("Destroy", true);
-            //this.R2D.velocity = col.gameObject.GetComponent<Rigidbody2D>().velocity;
+            if (col.gameObject.GetComponent<Rigidbody2D>())
+            {
+                this.R2D.velocity = col.gameObject.GetComponent<Rigidbody2D>().velocity;
+            }
+            else { this.R2D.velocity = new Vector2(0, 0); }
             Destroy(this.gameObject, .5f);
         }
 
@@ -48,6 +53,11 @@ namespace Assets.Scripts.Ship
                     col.GetComponent<ShipVariables>().ShieldHp -= Damage;
                 }
                 else col.GetComponent<ShipVariables>().HullHp -= Damage;
+                OnHit(col);
+            }
+            if (col.CompareTag("Asteroid"))
+            {
+                col.GetComponent<AsteroidController>().Health -= Damage;
                 OnHit(col);
             }
         }

@@ -5,17 +5,16 @@ namespace Assets.Scripts.Player
     public class BuySell : MonoBehaviour
     {
         private Inventory playerInventory;
-        private Player player;
+        public GameObject player;
 
         private void Start()
         {
-            playerInventory = GameObject.Find("/Player").transform.GetChild(0).GetComponent<InventoryController>().ShipInventory;
-            player = GameObject.Find("/Player").GetComponent<Player>();
+            playerInventory = player.transform.GetChild(0).GetComponent<InventoryController>().ShipInventory;
         }
 
         public void Sell()
         {
-            player.Credits += playerInventory.Aluminum * 50;
+            player.GetComponent<Player>().Credits += playerInventory.Aluminum * 50;
             playerInventory.Aluminum = 0;
         }
     }

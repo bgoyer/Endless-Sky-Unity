@@ -12,9 +12,9 @@ namespace Assets.Scripts.Ship
         private bool gainHeat = true;
         private WaitForSeconds delay = new WaitForSeconds(.01f);
 
-        public void Accelerate(GameObject ship)
+        public void Accelerate(GameObject ship, bool overide = false)
         {
-            if (ship.transform.GetComponent<ShipVariables>().CanControl == true)
+            if (ship.transform.GetComponent<ShipVariables>().CanControl == true || overide == true)
             {
                 thrusterA = ship.transform.GetChild(1).GetChild(0).GetChild(0).gameObject;
                 thrusterB = ship.transform.GetChild(1).GetChild(1).GetChild(0).gameObject;
@@ -31,11 +31,13 @@ namespace Assets.Scripts.Ship
                 }
                 if (takeEnergy)
                 {
-                    StartCoroutine("TakeEnergy", ship);
+                    takeEnergy = false;
+                    ship.GetComponent<ShipVariables>().CurrentBatteryEnergy -= thrusterA.GetComponent<ThrusterVariables>().EnergyConsumption;
                 }
                 if (gainHeat)
                 {
-                    StartCoroutine("GainHeat", ship);
+                    gainHeat = false;
+                    ship.GetComponent<ShipVariables>().Temp += thrusterA.GetComponent<ThrusterVariables>().HeatGeneration;
                 }
             }
         }
@@ -46,28 +48,9 @@ namespace Assets.Scripts.Ship
             thrusterB = ship.transform.GetChild(1).GetChild(1).GetChild(0).gameObject;
             thrusterA.transform.GetChild(0).gameObject.SetActive(false);
             thrusterB.transform.GetChild(0).gameObject.SetActive(false);
-        }
-        private IEnumerator TakeEnergy(GameObject ship)
-        {
-            takeEnergy = false;
-            if ((ship.GetComponent<ShipVariables>().CurrentBatteryEnergy -= thrusterA.transform.GetComponent<ThrusterVariables>().EnergyConsumption) > 0)
-            {
-                ship.GetComponent<ShipVariables>().CurrentBatteryEnergy -= thrusterA.transform.GetComponent<ThrusterVariables>().EnergyConsumption;
-
-            }
-            else { ship.GetComponent<ShipVariables>().CurrentBatteryEnergy = 0; }
-            yield return delay;
+            ship.GetComponent<ShipVariables>().Temp -= thrusterA.GetComponent<ThrusterVariables>().HeatGeneration;
+            ship.GetComponent<ShipVariables>().CurrentBatteryEnergy += thrusterA.GetComponent<ThrusterVariables>().EnergyConsumption;
             takeEnergy = true;
-        }
-        private IEnumerator GainHeat(GameObject ship)
-        {
-            gainHeat = false;
-            if ((ship.GetComponent<ShipVariables>().Temp += thrusterA.transform.GetComponent<ThrusterVariables>().HeatGeneration) < ship.GetComponent<ShipVariables>().OverHeatTemp)
-            {
-                ship.GetComponent<ShipVariables>().Temp += thrusterA.transform.GetComponent<ThrusterVariables>().HeatGeneration;
-            }
-            else { ship.GetComponent<ShipVariables>().Temp = ship.GetComponent<ShipVariables>().OverHeatTemp; }
-            yield return delay;
             gainHeat = true;
         }
     }

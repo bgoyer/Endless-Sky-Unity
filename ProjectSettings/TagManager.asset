@@ -15,6 +15,7 @@ TagManager:
   - AIBullet
   - AsteriodField
   - Asteroid
+  - PickUp
   layers:
   - Default
   - TransparentFX
@@ -24,11 +25,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - TaskAtlas
+  - FogVolumeShadowCaster
+  - FogVolume
+  - FogVolumeSurrogate
+  - FogVolumeUniform
   - 
   - 
   - 

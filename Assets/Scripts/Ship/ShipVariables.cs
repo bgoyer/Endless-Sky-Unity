@@ -32,7 +32,7 @@ namespace Assets.Scripts.Ship
         {
             HullHp = MaxHullHp;
             OverHeatTemp = Mathf.CeilToInt((float)(Mass * .8));
-            InvokeRepeating("CheckVitals", 0f, .01f);
+            InvokeRepeating("CheckVitals", 0f, .1f);
             CheckShip();
             UpdateShip();
         }
@@ -90,23 +90,38 @@ namespace Assets.Scripts.Ship
                 HasShields = true;
             }
             else ShieldHp = 0;
-            if (HasThrusters && HasStearing && HasHyperDrive && HasBattery && HasGenerator && HasCooling && !disabled)
+            if (HasThrusters && HasStearing && HasHyperDrive && HasBattery && HasGenerator && HasCooling && !disabled && CanControl != false)
             {
                 CanControl = true;
             }
         }
+        public void TakeOff()
+        {
+            CanControl = true;
+        }
         private void CheckVitals()
         {
-            if (Temp >= OverHeatTemp * .9 && this.gameObject.activeInHierarchy)
-            {
-                StartCoroutine("Disable");
-            }
-            if (CurrentBatteryEnergy <= BatteryCapacity * .1 && this.gameObject.activeInHierarchy)
-            {
-                StartCoroutine("Disable");
-            }
+            if (CanControl == true) { 
+
+                if (Temp >= OverHeatTemp && this.gameObject.activeInHierarchy)
+                {
+                    StartCoroutine("TempDisable");
+                }
+                if (Temp < 0)
+                {
+                    Temp = 0;
+                }
+                if (CurrentBatteryEnergy <= 0 && this.gameObject.activeInHierarchy)
+                {
+                   StartCoroutine("TempDisable");
+                }
+                if (CurrentBatteryEnergy > transform.GetChild(5).GetChild(0).GetComponent<GeneratorController>().GenerationAmount)
+                {
+                    CurrentBatteryEnergy = transform.GetChild(5).GetChild(0).GetComponent<GeneratorController>().GenerationAmount;
+                }
         }
-        IEnumerator Disable()
+    }
+        IEnumerator TempDisable()
         {
             disabled = true;
             CanControl = false;

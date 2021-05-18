@@ -12,5 +12,6 @@ namespace Assets.Scripts
         public KeyCode PauseMenu = KeyCode.Escape;
         public KeyCode Land = KeyCode.E;
         public KeyCode Fire = KeyCode.Space;
+        public KeyCode CancelWarp = KeyCode.C;
     }
 }
