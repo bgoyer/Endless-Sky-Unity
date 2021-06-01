@@ -483,6 +483,24 @@
     <Reference Include="NugetForUnity">
       <HintPath>Assets\NuGet\Editor\NugetForUnity.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Burst.Unsafe">
+      <HintPath>Library\PackageCache\com.unity.burst@1.4.1\Unity.Burst.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf">
+      <HintPath>Library\PackageCache\com.unity.barracuda@1.3.3-preview\Barracuda\Runtime\Plugins\ProtoBuffer\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Interactive.Async">
+      <HintPath>C:\Users\Brendan\Downloads\ml-agents-com.unity.ml-agents_2.0.0\ml-agents-com.unity.ml-agents_2.0.0\com.unity.ml-agents\Plugins\ProtoBuffer\System.Interactive.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Abstractions.TestingHelpers">
+      <HintPath>C:\Users\Brendan\Downloads\ml-agents-com.unity.ml-agents_2.0.0\ml-agents-com.unity.ml-agents_2.0.0\com.unity.ml-agents\Plugins\System.IO.Abstractions.TestingHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Abstractions">
+      <HintPath>C:\Users\Brendan\Downloads\ml-agents-com.unity.ml-agents_2.0.0\ml-agents-com.unity.ml-agents_2.0.0\com.unity.ml-agents\Plugins\System.IO.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Core">
+      <HintPath>C:\Users\Brendan\Downloads\ml-agents-com.unity.ml-agents_2.0.0\ml-agents-com.unity.ml-agents_2.0.0\com.unity.ml-agents\Plugins\ProtoBuffer\Grpc.Core.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
     </Reference>
@@ -857,6 +875,10 @@
     <ProjectReference Include="Unity.ShaderGraph.Editor.csproj">
       <Project>{46DB8DEF-4622-3D84-9283-86CE7DCEC3FC}</Project>
       <Name>Unity.ShaderGraph.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Burst.Editor.csproj">
+      <Project>{4D3C481A-6C63-FB0B-1C81-72D40434CE42}</Project>
+      <Name>Unity.Burst.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Mathematics.Editor.csproj">
       <Project>{4623D6D7-2377-9FDD-BD52-8D970F1D5B0C}</Project>

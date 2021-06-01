@@ -44,6 +44,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -192,3 +193,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb05a9244b7ebf241984c44fbc46a406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Sprite: 
+  Sound: 
+  ProjectileSprite: 
+  HitEffect: 
+  Inaccuracy: 3
+  Velocity: 500
+  Lifetime: 10
+  Reload: 5
+  FiringEnergy: 6
+  FiringHeat: 5
+  ShieldDamage: 10
+  HullDamage: 100
+  IsReloaded: 0
+  BulletHolder: {fileID: 0}
+  Ammo: {fileID: 0}
