@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 64d620ed42bdf4d4984a5b888da829ad
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Flotsam: {fileID: 2504680460866397445, guid: c852b2e7ac47034429b198fcc032e6af,
+      type: 3}
+  - GarbageHolder: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

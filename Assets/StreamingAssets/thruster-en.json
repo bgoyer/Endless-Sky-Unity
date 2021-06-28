@@ -1,0 +1,35 @@
+{
+  "engineModel": [
+    {
+      "engineCapacity": -34,
+      "energy": 0.0,
+      "fuel": 0.0,
+      "heat": 0.0,
+      "effect": null,
+      "flareSound": "plasma small",
+      "flareSprite": "effect/plasma flare/small",
+      "frameRate": 6.0,
+      "afterburnerThrust": null,
+      "afterburnerFuel": 0.0,
+      "afterburnerHeat": 0.0,
+      "afterburnerEffect": null,
+      "thrust": 18.4,
+      "thrustingEnergy": 1.8,
+      "thrustingHeat": 3.4,
+      "turn": 0,
+      "turningEnergy": 0.0,
+      "turningHeat": 0.0,
+      "category": "Engines",
+      "cost": 45000.0,
+      "thumbnail": "outfit/small plasma thruster",
+      "mass": 34.0,
+      "installable": false,
+      "description": "This thruster is intended for small ships and for freighters. It comes in a crate decorated with a stylized cartoon of a running greyhound. Plasma engines are a bit more powerful than ion engines of the same size, but they are less energy efficient and produce more heat.",
+      "outfitSpace": -34.0,
+      "id": "24e069e8-9dc2-4bd9-b7da-6ca09c9d8194",
+      "name": "Greyhound Plasma Thruster",
+      "plural": null,
+      "type": "Outfit"
+    }
+  ]
+}
